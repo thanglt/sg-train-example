@@ -66,6 +66,8 @@
         <!-- Plugin configuration. There are many available options, see gwt-maven-plugin 
           documentation at codehaus.org -->
         <configuration>
+          <!--change generated-sources directory-->
+          <!--<generateDirectory>${project.basedir}/src/main/java</generateDirectory>-->
           <runTarget>myMVP.html</runTarget>
           <hostedWebapp>${webappDirectory}</hostedWebapp>
           <i18nMessagesBundle>com.train.client.Messages</i18nMessagesBundle>
