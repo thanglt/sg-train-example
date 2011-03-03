@@ -73,6 +73,7 @@
                     <runTarget>Contacts.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <i18nMessagesBundle>com.google.gwt.sample.contacts.client.Messages</i18nMessagesBundle>
+                    <i18nConstantsBundle>com.google.gwt.sample.contacts.client.Constants</i18nConstantsBundle>
                 </configuration>
             </plugin>
 
