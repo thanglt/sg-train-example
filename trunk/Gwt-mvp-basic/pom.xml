@@ -72,7 +72,7 @@
                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                     <runTarget>Contacts.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
-                    <i18nMessagesBundle>com.train.client.Messages</i18nMessagesBundle>
+                    <i18nMessagesBundle>com.google.gwt.sample.contacts.client.Messages</i18nMessagesBundle>
                 </configuration>
             </plugin>
 
