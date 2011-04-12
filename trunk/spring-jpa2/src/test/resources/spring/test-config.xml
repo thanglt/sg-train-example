@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+	http://www.springframework.org/schema/context
+ 	http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+       default-autowire="byName">
+
+    <!-- JDBC参数配置 -->
+    <context:property-placeholder location="classpath:/jdbc.properties"/>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+
+    <!-- Configure a JPA vendor adapter -->
+    <bean id="jpaAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <!--showSql-->
+        <property name="showSql" value="${jdbc.show_sql}"/>
+        <!--generate ddl-->
+        <property name="generateDdl" value="${jdbc.generate_ddl}"/>
+        <!--database dialect-->
+        <property name="databasePlatform" value="${jdbc.dialect}"/>
+        <property name="database" value="${jdbc.database}"/>
+    </bean>
+
+    <!--entityManagerFactory-->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaVendorAdapter" ref="jpaAdapter"/>
+        <!-- config in persistence.xml-->
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml"/>
+        <property name="persistenceUnitName" value="test"/>
+        <!--???-->
+       <!-- <property name="loadTimeWeaver">
+            <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+        </property>-->
+        <property name="jpaPropertyMap">
+          <map>
+            <entry key="hibernate.ejb.interceptor" value="com.ncs.order.interceptor.EntityInterceptor"/>
+          </map>
+        </property>
+    </bean>
+
+    <!-- Setup the transaction manager -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!--spring annotation -->
+    <context:annotation-config/>
+    <!-- 指定需要扫描的包 -->
+    <context:component-scan base-package="com.ncs.order.dao"/>
+    <context:component-scan base-package="com.ncs.order.service"/>
+
+    <!-- transactionManager -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>
