@@ -9,6 +9,7 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>GWT Maven Archetype</name>
+    <description>a simple SmartGwt project made by gwt maven plugin</description>
 
     <properties>
         <!-- GWT version -->
