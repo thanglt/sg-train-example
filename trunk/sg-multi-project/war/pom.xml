@@ -44,7 +44,8 @@
                 </executions>
 
                 <configuration>
-                    <runTarget>org.codehaus.mojo.gwt.test.Hello/Hello.html</runTarget>
+                    <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+                    <runTarget>com.ncs.train.Hello/Hello.html</runTarget>
                     <draftCompile>true</draftCompile>
                     <optimizationLevel>1</optimizationLevel>
                 </configuration>
