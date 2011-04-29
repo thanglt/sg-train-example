@@ -1,4 +1,4 @@
-package org.codehaus.mojo.gwt.test.domain;
+package com.ncs.train.domain;
 
 public class User
 {
