@@ -16,8 +16,14 @@
     </modules>
 
     <properties>
-        <gwtVersion>2.2.0</gwtVersion>
-        <sgVersion>2.3</sgVersion>
+        <!--compiler level-->
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <!-- encoding-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--versions-->
+        <gwt.version>2.2.0</gwt.version>
+        <sg.version>2.4</sg.version>
     </properties>
 
     <build>
@@ -26,7 +32,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
-                    <version>${gwtVersion}</version>
+                    <version>${gwt.version}</version>
                 </plugin>
 
                 <plugin>
@@ -53,22 +59,39 @@
             <dependency>
                 <groupId>com.google.gwt</groupId>
                 <artifactId>gwt-servlet</artifactId>
-                <version>${gwtVersion}</version>
+                <version>${gwt.version}</version>
                 <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>com.google.gwt</groupId>
                 <artifactId>gwt-user</artifactId>
-                <version>${gwtVersion}</version>
+                <version>${gwt.version}</version>
                 <scope>provided</scope>
             </dependency>
             <!-- smart gwt -->
             <dependency>
                 <groupId>com.smartgwt</groupId>
                 <artifactId>smartgwt</artifactId>
-                <version>${sgVersion}</version>
+                <version>${sg.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.smartgwt</groupId>
+                <artifactId>smartgwt-skins</artifactId>
+                <version>${sg.version}</version>
+                <type>jar</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>smartgwt</id>
+            <name>SmartGwt</name>
+            <url>http://www.smartclient.com/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

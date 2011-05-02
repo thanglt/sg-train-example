@@ -1,39 +1,40 @@
 package com.ncs.train.multiproject.client;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RootPanel;
-import com.ncs.train.multiproject.domain.User;
+import com.smartgwt.client.util.SC;
+import com.smartgwt.client.widgets.IButton;
+import com.smartgwt.client.widgets.events.ClickEvent;
+import com.smartgwt.client.widgets.events.ClickHandler;
+import com.smartgwt.client.widgets.layout.VLayout;
 
 public class Hello implements EntryPoint {
     final HelloServiceAsync service = HelloServiceAsync.Util.getInstance();
 
     public void onModuleLoad() {
-        User user = new User();
-        final Label label = new Label("GWT says : " + user.sayHello());
-        RootPanel.get().add(label);
 
-        Button button = new Button("click me !");
-        RootPanel.get().add(button);
-        button.addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                service.sayHello("hello", new AsyncCallback<String>() {
-                    public void onFailure(Throwable caught) {
-                        label.setText("RPC failure " + caught.getMessage());
-                        GWT.log("RPC failure", caught);
+        VLayout layout = new VLayout();
+        layout.setWidth100();
+        layout.setHeight100();
+        layout.setBackgroundColor("yellow");
+
+        IButton btn = new IButton();
+        btn.setTitle("click me");
+
+        btn.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent clickEvent) {
+                service.sayHello("hjl" , new AsyncCallback<String>(){
+                    public void onFailure(Throwable e) {
+                        System.out.println(e.toString());
                     }
-
                     public void onSuccess(String result) {
-                        label.setText(result);
+                        SC.say(result);
                     }
                 });
             }
         });
 
+        layout.addMember(btn);
+        layout.draw();
     }
 }
