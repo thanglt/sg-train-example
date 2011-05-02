@@ -3,13 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-    <servlet>
-        <servlet-name>com.ncs.train.multiproject.Hello HelloService</servlet-name>
-        <servlet-class>com.ncs.train.multiproject.server.HelloRemoteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>com.ncs.train.multiproject.Hello HelloService</servlet-name>
-        <url-pattern>/hello/Hello</url-pattern>
-    </servlet-mapping>
+   <servlet>
+     <servlet-name>hello</servlet-name>
+     <servlet-class>com.ncs.train.multiproject.server.HelloRemoteServlet</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+     <servlet-name>hello</servlet-name>
+     <url-pattern>/hello/Hello</url-pattern>
+   </servlet-mapping>
+
+
 </web-app>
 
