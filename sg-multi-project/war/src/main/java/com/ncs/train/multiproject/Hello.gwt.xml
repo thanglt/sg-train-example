@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="hello">
+  <inherits name="com.google.gwt.user.User"/>
+  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+
+  <inherits name="com.ncs.train.multiproject.Domain"/>
+
+  <entry-point class="com.ncs.train.multiproject.client.Hello"/>
+
+  <servlet class="com.ncs.train.multiproject.server.HelloRemoteServlet" path="/Hello"/>
+  <!--<set-property name="user.agent" value="gecko1_8"/>-->
+</module>
