@@ -9,7 +9,7 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>GWT Maven Archetype</name>
-    <description>a simple SmartGwt project made by gwt maven plugin</description>
+    <description>a simple SmartGwt project with FindBugs Maven Plugin</description>
 
     <properties>
         <!-- GWT version -->
@@ -98,6 +98,102 @@
                 </executions>
                 <configuration>
                     <webappDirectory>${webappDirectory}</webappDirectory>
+                </configuration>
+            </plugin>
+
+            <!--findbugs-maven-plugin-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <!--<threshold>Low</threshold>-->
+                    <threshold>Normal</threshold>
+                    <xmlOutput>true</xmlOutput>
+                    <visitors>BooleanReturnNull
+                        ,CheckImmutableAnnotation
+                        ,DroppedException
+                        ,FindNonSerializableStoreIntoSession
+                        ,FindOpenStream
+                        ,FindRefComparison
+                        ,MethodReturnCheck
+                        ,Naming
+                        ,FindHEmismatch
+                        ,FindNullDeref
+                        ,SerializableIdiom
+                        ,BadSyntaxForRegularExpression
+                        ,BadlyOverriddenAdapter
+                        ,FindMaskedFields
+                        ,FindNullDerefsInvolvingNonShortCircuitEvaluation
+                        ,FindSelfComparison
+                        ,FindSelfComparison2
+                        ,FindUninitializedGet
+                        ,InfiniteLoop
+                        ,InfiniteRecursiveLoop
+                        ,QuestionableBooleanAssignment
+                        ,ReadOfInstanceFieldInMethodInvokedByConstructorInSuperclass
+                        ,RepeatedConditionals
+                        ,SuperfluousInstanceOf
+                        ,SuspiciousThreadInterrupted
+                        ,UncallableMethodOfAnonymousClass
+                        ,VarArgsProblems
+                        ,FindBadCast2
+                        ,FindDeadLocalStores
+                        ,FindFieldSelfAssignment
+                        ,FindFloatEquality
+                        ,FormatStringChecker
+                        ,IDivResultCastToDouble
+                        ,SwitchFallthrough
+                        ,UnreadFields
+                        ,BadUseOfReturnValue
+                        ,ConfusedInheritance
+                        ,ConfusionBetweenInheritedAndOuterMethod
+                        ,DuplicateBranches
+                        ,FindBadForLoop
+                        ,FindLocalSelfAssignment2
+                        ,FindNonSerializableValuePassedToWriteObject
+                        ,FindNonShortCircuit
+                        ,FindUselessControlFlow
+                        ,PreferZeroLengthArrays
+                        ,RuntimeExceptionCapture
+                        ,LostLoggerDueToWeakReference
+                        ,FindReturnRef
+                        ,MutableStaticFields
+                        ,DontIgnoreResultOfPutIfAbsent
+                        ,FindDoubleCheck
+                        ,FindEmptySynchronizedBlock
+                        ,FindInconsistentSync2
+                        ,FindJSR166LockMonitorenter
+                        ,FindMismatchedWaitOrNotify
+                        ,FindNakedNotify
+                        ,FindRunInvocations
+                        ,FindSleepWithLockHeld
+                        ,FindSpinLoop
+                        ,FindTwoLockWait
+                        ,FindUnconditionalWait
+                        ,FindUnreleasedLock
+                        ,FindUnsyncGet
+                        ,LazyInit
+                        ,MutableLock
+                        ,StartInConstructor
+                        ,StaticCalendarDetector
+                        ,SynchronizeAndNullCheckField
+                        ,SynchronizeOnClassLiteralNotGetClass
+                        ,SynchronizingOnContentsOfFieldToProtectField
+                        ,VolatileUsage
+                        ,WaitInLoop
+                        ,FindUncalledPrivateMethods
+                        ,HugeSharedStringConstants
+                        ,InefficientToArray
+                        ,NumberConstructor
+                        ,StringConcatenation
+                        ,URLProblems
+                        ,UnnecessaryMath
+                        ,WrongMapIterator
+                        ,CrossSiteScripting
+                        ,FindSqlInjection
+                    </visitors>
                 </configuration>
             </plugin>
 
