@@ -1,0 +1,10 @@
+<FindBugsFilter>
+    <Match>
+        <Class name="com.train.client.Messages"/>
+    </Match>
+
+    <!--<Match>
+       <Bug category="PERFORMANCE" />
+     </Match>-->
+
+</FindBugsFilter>
