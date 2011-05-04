@@ -99,11 +99,11 @@
             </plugin>
 
             <!--findbugs-maven-plugin-->
-            <!--<plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>2.3.2</version>
-                &lt;!&ndash;<executions>
+                <executions>
                     <execution>
                         <phase>compile</phase>
                         <goals>
@@ -111,14 +111,97 @@
                             <goal>gui</goal>
                         </goals>
                     </execution>
-                </executions>&ndash;&gt;
+                </executions>
                 <configuration>
-                    <includeFilterFile>${project.basedir}/findbugs-include.xml</includeFilterFile>
-                    &lt;!&ndash;<excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>&ndash;&gt;
+                    <!--<includeFilterFile>${project.basedir}/findbugs-include.xml</includeFilterFile>-->
+                    <excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>
                     <effort>Max</effort>
                     <xmlOutput>true</xmlOutput>
+                    <visitors>BooleanReturnNull
+                        ,CheckImmutableAnnotation
+                        ,DroppedException
+                        ,FindNonSerializableStoreIntoSession
+                        ,FindOpenStream
+                        ,FindRefComparison
+                        ,MethodReturnCheck
+                        ,Naming
+                        ,FindHEmismatch
+                        ,FindNullDeref
+                        ,SerializableIdiom
+                        ,BadSyntaxForRegularExpression
+                        ,BadlyOverriddenAdapter
+                        ,FindMaskedFields
+                        ,FindNullDerefsInvolvingNonShortCircuitEvaluation
+                        ,FindSelfComparison
+                        ,FindSelfComparison2
+                        ,FindUninitializedGet
+                        ,InfiniteLoop
+                        ,InfiniteRecursiveLoop
+                        ,QuestionableBooleanAssignment
+                        ,ReadOfInstanceFieldInMethodInvokedByConstructorInSuperclass
+                        ,RepeatedConditionals
+                        ,SuperfluousInstanceOf
+                        ,SuspiciousThreadInterrupted
+                        ,UncallableMethodOfAnonymousClass
+                        ,VarArgsProblems
+                        ,FindBadCast2
+                        ,FindDeadLocalStores
+                        ,FindFieldSelfAssignment
+                        ,FindFloatEquality
+                        ,FormatStringChecker
+                        ,IDivResultCastToDouble
+                        ,SwitchFallthrough
+                        ,UnreadFields
+                        ,BadUseOfReturnValue
+                        ,ConfusedInheritance
+                        ,ConfusionBetweenInheritedAndOuterMethod
+                        ,DuplicateBranches
+                        ,FindBadForLoop
+                        ,FindLocalSelfAssignment2
+                        ,FindNonSerializableValuePassedToWriteObject
+                        ,FindNonShortCircuit
+                        ,FindUselessControlFlow
+                        ,PreferZeroLengthArrays
+                        ,RuntimeExceptionCapture
+                        ,LostLoggerDueToWeakReference
+                        ,FindReturnRef
+                        ,MutableStaticFields
+                        ,DontIgnoreResultOfPutIfAbsent
+                        ,FindDoubleCheck
+                        ,FindEmptySynchronizedBlock
+                        ,FindInconsistentSync2
+                        ,FindJSR166LockMonitorenter
+                        ,FindMismatchedWaitOrNotify
+                        ,FindNakedNotify
+                        ,FindRunInvocations
+                        ,FindSleepWithLockHeld
+                        ,FindSpinLoop
+                        ,FindTwoLockWait
+                        ,FindUnconditionalWait
+                        ,FindUnreleasedLock
+                        ,FindUnsyncGet
+                        ,LazyInit
+                        ,MutableLock
+                        ,StartInConstructor
+                        ,StaticCalendarDetector
+                        ,SynchronizeAndNullCheckField
+                        ,SynchronizeOnClassLiteralNotGetClass
+                        ,SynchronizingOnContentsOfFieldToProtectField
+                        ,VolatileUsage
+                        ,WaitInLoop
+                        ,FindUncalledPrivateMethods
+                        ,HugeSharedStringConstants
+                        ,InefficientToArray
+                        ,NumberConstructor
+                        ,StringConcatenation
+                        ,URLProblems
+                        ,UnnecessaryMath
+                        ,WrongMapIterator
+                        ,CrossSiteScripting
+                        ,FindSqlInjection
+                    </visitors>
                 </configuration>
-            </plugin>-->
+            </plugin>
 
         </plugins>
     </build>
@@ -133,21 +216,5 @@
             </snapshots>
         </repository>
     </repositories>
-
-
-    <reporting>
-        <plugins>
-        <!--findbugs-maven-plugin-->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <effort>Max</effort>
-                    <xmlOutput>true</xmlOutput>
-                </configuration>
-            </plugin>
-         </plugins>
-    </reporting>
 
 </project>

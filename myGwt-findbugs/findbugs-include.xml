@@ -1,0 +1,5 @@
+<FindBugsFilter>
+    <Match>
+        <Class name="com.train.client.myGwt"/>
+    </Match>
+</FindBugsFilter>
