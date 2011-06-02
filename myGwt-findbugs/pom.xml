@@ -99,11 +99,11 @@
             </plugin>
 
             <!--findbugs-maven-plugin-->
-            <!--<plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>2.3.2</version>
-                &lt;!&ndash;<executions>
+                <executions>
                     <execution>
                         <phase>compile</phase>
                         <goals>
@@ -111,14 +111,17 @@
                             <goal>gui</goal>
                         </goals>
                     </execution>
-                </executions>&ndash;&gt;
+                </executions>
                 <configuration>
+                	<!--
                     <includeFilterFile>${project.basedir}/findbugs-include.xml</includeFilterFile>
-                    &lt;!&ndash;<excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>&ndash;&gt;
+                    -->
+                    <excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>
+                    <threshold>Default</threshold>
                     <effort>Max</effort>
                     <xmlOutput>true</xmlOutput>
                 </configuration>
-            </plugin>-->
+            </plugin>
 
         </plugins>
     </build>
