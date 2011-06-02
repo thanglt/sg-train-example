@@ -6,7 +6,7 @@
 
   <extend-property name="locale" values="zh"/>
 
-  <entry-point class='com.train.client.myGwt'/>
+  <entry-point class='com.train.client.MyGwt'/>
   <source path='client'/>
   <source path='shared'/>
 
