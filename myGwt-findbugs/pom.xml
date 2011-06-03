@@ -13,7 +13,10 @@
 
     <properties>
         <!-- GWT version -->
-        <gwtVersion>2.2.0</gwtVersion>
+        <gwt.version>2.2.0</gwt.version>
+        <gwt.plugin.version>2.2.0</gwt.plugin.version>
+        <!--<gwt.plugin.version>2.3.0-SNAPSHOT</gwt.plugin.version>-->
+        <sg.version>2.4</sg.version>
         <!--compiler level-->
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
@@ -26,14 +29,19 @@
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
-            <version>${gwtVersion}</version>
+            <version>${gwt.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
-            <version>${gwtVersion}</version>
+            <version>${gwt.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwt.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -46,7 +54,12 @@
         <dependency>
             <groupId>com.smartgwt</groupId>
             <artifactId>smartgwt</artifactId>
-            <version>2.4</version>
+            <version>${sg.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.smartgwt</groupId>
+            <artifactId>smartgwt-skins</artifactId>
+            <version>${sg.version}</version>
         </dependency>
 
     </dependencies>
@@ -60,7 +73,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
-                <version>2.2.0</version>
+                <version>${gwt.plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -108,7 +121,7 @@
                         <phase>compile</phase>
                         <goals>
                             <goal>findbugs</goal>
-                            <goal>gui</goal>
+                            <!--<goal>gui</goal>-->
                         </goals>
                     </execution>
                 </executions>
