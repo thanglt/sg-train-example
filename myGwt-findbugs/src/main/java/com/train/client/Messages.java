@@ -2,7 +2,7 @@ package com.train.client;
 
 /**
  * Interface to represent the messages contained in resource bundle:
- * 	E:/svn/openSource/sg-train-example/myGwt-findbugs/src/main/resources/com/train/client/Messages.properties'.
+ * 	/media/storage/svn/opensource/sg-train-example/myGwt-findbugs/src/main/resources/com/train/client/Messages.properties'.
  */
 public interface Messages extends com.google.gwt.i18n.client.Messages {
   
