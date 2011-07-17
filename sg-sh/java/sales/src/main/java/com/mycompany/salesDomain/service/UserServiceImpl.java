@@ -1,7 +1,7 @@
-package com.mycompany.sales.service;
+package com.mycompany.salesDomain.service;
 
-import com.mycompany.sales.dao.UserDao;
-import com.mycompany.sales.entity.User;
+import com.mycompany.salesDomain.dao.UserDao;
+import com.mycompany.salesDomain.entity.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -15,36 +15,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <gwt.version>2.2.0</gwt.version>
-        <sg.version>2.4</sg.version>
-    </properties>
-
     <modules>
         <module>gwtSales</module>
+        <!--<module>gwtStock</module>-->
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <!--gwt-->
-            <dependency>
-                <groupId>com.google.gwt</groupId>
-                <artifactId>gwt-servlet</artifactId>
-                <version>${gwt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.gwt</groupId>
-                <artifactId>gwt-user</artifactId>
-                <version>${gwt.version}</version>
-            </dependency>
-            <!-- smart gwt -->
-            <dependency>
-                <groupId>com.smartgwt</groupId>
-                <artifactId>smartgwt</artifactId>
-                <version>${sg.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
 
 </project>

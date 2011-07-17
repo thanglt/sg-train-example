@@ -3,6 +3,16 @@
     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	version="2.4">
 
+    <!-- SpringGwt remote service servlet -->
+    <servlet>
+        <servlet-name>springGwtRemoteServiceServlet</servlet-name>
+        <servlet-class>com.mycompany.salesDomain.util.SpringGwtRemoteServiceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springGwtRemoteServiceServlet</servlet-name>
+        <url-pattern>/Sales/springGwtServices/*</url-pattern>
+    </servlet-mapping>
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
