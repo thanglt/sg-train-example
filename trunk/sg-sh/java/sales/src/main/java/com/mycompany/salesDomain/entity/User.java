@@ -1,4 +1,4 @@
-package com.mycompany.sales.entity;
+package com.mycompany.salesDomain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,6 +1,6 @@
-package com.mycompany.sales.dao;
+package com.mycompany.salesDomain.dao;
 
-import com.mycompany.sales.entity.User;
+import com.mycompany.salesDomain.entity.User;
 
 import java.util.List;
 

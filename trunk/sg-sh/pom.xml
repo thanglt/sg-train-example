@@ -10,8 +10,13 @@
     <description>a sample project use smartgwt spring hibernate</description>
 
     <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>3.0.5.RELEASE</spring.version>
+        <hibernate.version>3.6.0.Final</hibernate.version>
+        <gwt.version>2.2.0</gwt.version>
+        <sg.version>2.4</sg.version>
     </properties>
 
     <repositories>
@@ -55,15 +60,6 @@
         </repository>
     </repositories>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
     <modules>
         <module>java</module>
         <module>gwt</module>
@@ -72,6 +68,28 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--gwt-->
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-servlet</artifactId>
+                <version>${gwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-user</artifactId>
+                <version>${gwt.version}</version>
+            </dependency>
+            <!-- smart gwt -->
+            <dependency>
+                <groupId>com.smartgwt</groupId>
+                <artifactId>smartgwt</artifactId>
+                <version>${sg.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.smartgwt</groupId>
+                <artifactId>smartgwt-skins</artifactId>
+                <version>${sg.version}</version>
+            </dependency>
             <!-- spring framework -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -229,7 +247,6 @@
                 <version>${spring.version}</version>
                 <type>jar</type>
             </dependency>
-
             <!-- springframework.security family -->
             <dependency>
                 <groupId>org.springframework.security</groupId>
@@ -246,8 +263,22 @@
                 <artifactId>spring-security-web</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-
             <!--spring config required -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>1.6.3</version>
+            </dependency>
+            <dependency>
+                <groupId>antlr</groupId>
+                <artifactId>antlr</artifactId>
+                <version>2.7.6</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>3.2.1</version>
+            </dependency>
             <dependency>
                 <groupId>commons-dbcp</groupId>
                 <artifactId>commons-dbcp</artifactId>
@@ -273,7 +304,6 @@
                 <artifactId>commons-fileupload</artifactId>
                 <version>1.2.1</version>
             </dependency>
-
             <!-- hibernate 3 family -->
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -306,8 +336,8 @@
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate</artifactId>
-                <!-- <version>3.3.2.GA</version> -->
-                <version>3.2.7.GA</version>
+                <version>3.3.2.GA</version>
+                <!--<version>3.2.7.GA</version>-->
                 <type>pom</type>
                 <scope>compile</scope>
             </dependency>
@@ -328,23 +358,116 @@
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>1.6.1</version>
             </dependency>
-
             <!--mysql -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.16</version>
             </dependency>
-
             <!--log4j -->
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>1.2.16</version>
             </dependency>
-
+            <!--servlet-api-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
+            </dependency>
         </dependencies>
-
     </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.3.1</version>
+                </plugin>
+                <!--maven-deploy-plugin-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <!--maven-war-plugin-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.1.1</version>
+                </plugin>
+                <!--maven-site-plugin-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>2.1.1</version>
+                    <configuration>
+                        <outputEncoding>UTF-8</outputEncoding>
+                    </configuration>
+                </plugin>
+                <!--maven-compiler-plugin-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <!--maven-jetty-plugin-->
+                <plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>maven-jetty-plugin</artifactId>
+                    <version>6.1.26</version>
+                    <!--<version>8.0.0.M3</version>-->
+                    <configuration>
+                        <!--<webDefaultXml>${project.basedir}/webdefault.xml</webDefaultXml>-->
+                        <connectors>
+                            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                                <port>8888</port>
+                                <!-- 10 min idle-->
+                                <maxIdleTime>600000</maxIdleTime>
+                            </connector>
+                        </connectors>
+                        <!-- Configure the webapp run in ROOT-->
+                        <webAppConfig>
+                            <defaultsDescriptor>${project.basedir}/webdefault.xml</defaultsDescriptor>
+                            <contextPath>/</contextPath>
+                        </webAppConfig>
+                        <stopKey>foo</stopKey>
+                        <stopPort>9999</stopPort>
+                    </configuration>
+                </plugin>
+
+                <!--findbugs-maven-plugin-->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <executions>
+                        <execution>
+                            <!--<phase>compile</phase>-->
+                            <goals>
+                                <!--<goal>findbugs</goal>-->
+                                <!--<goal>gui</goal>-->
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <!--<includeFilterFile>${project.basedir}/findbugs-include.xml</includeFilterFile>-->
+                        <!--<excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>-->
+                        <effort>Max</effort>
+                        <xmlOutput>true</xmlOutput>
+                        <threshold>High</threshold>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
