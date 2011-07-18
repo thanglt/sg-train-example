@@ -1,0 +1,26 @@
+#copy all jar files to D:\dev\
+#isomorphic
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isc-jakarta-oro -Dversion=2.0.6  -Dpackaging=jar -Dfile=D:\dev\isc-jakarta-oro-2.0.6.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-assembly -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_assembly.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-compression -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_compression.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-core-rpc -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_core_rpc.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-hibernate -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_hibernate.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-jpa -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_jpa.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-spring -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_spring.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-sql -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_sql.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-struts -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_struts.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-tools -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_tools.jar
+
+mvn install:install-file -DgroupId=com.isomorphic -DartifactId=isomorphic-web-services -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\isomorphic_web_services.jar
+
+#smartgwtee
+mvn install:install-file -DgroupId=com.smartgwtee -DartifactId=smartgwtee -Dversion=2.4  -Dpackaging=jar -Dfile=D:\dev\smartgwtee.jar
