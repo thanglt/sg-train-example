@@ -1,0 +1,194 @@
+<html>
+<head>
+<link rel='stylesheet' href='../../../../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../../../../js/sh/shCore.js'></script>
+<script src='../../../../js/sh/shBrushJava.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='java:nogutter' rows='15' cols='120'>
+/*
+ * Isomorphic SmartGWT web presentation layer
+ * Copyright 2000 and beyond Isomorphic Software, Inc.
+ *
+ * OWNERSHIP NOTICE
+ * Isomorphic Software owns and reserves all rights not expressly granted in this source code,
+ * including all intellectual property rights to the structure, sequence, and format of this code
+ * and to all designs, interfaces, algorithms, schema, protocols, and inventions expressed herein.
+ *
+ *  If you have any questions, please email <sourcecode@isomorphic.com>.
+ *
+ *  This entire comment must accompany any portion of Isomorphic Software source code that is
+ *  copied or moved from this file.
+ */
+
+package com.smartgwt.sample.showcase.client.dataintegration.java.sql;
+
+import java.util.HashMap;
+import com.smartgwt.client.data.DataSource;
+import com.smartgwt.client.data.DSRequest;
+import com.smartgwt.client.types.SelectionType;
+import com.smartgwt.client.types.Visibility;
+import com.smartgwt.client.widgets.Canvas;
+import com.smartgwt.client.widgets.IButton;
+import com.smartgwt.client.types.TextMatchStyle;
+import com.smartgwt.client.widgets.events.ClickEvent;
+import com.smartgwt.client.widgets.events.ClickHandler;
+import com.smartgwt.client.widgets.form.DynamicForm;
+import com.smartgwt.client.widgets.form.fields.TextItem;
+import com.smartgwt.client.widgets.form.fields.ViewFileItem;
+import com.smartgwt.client.widgets.form.fields.ButtonItem;
+import com.smartgwt.client.widgets.form.fields.SubmitItem;
+import com.smartgwt.client.widgets.form.fields.UploadItem;
+import com.smartgwt.client.widgets.grid.ListGrid;
+import com.smartgwt.client.widgets.tile.TileGrid;
+import com.smartgwt.client.widgets.layout.HLayout;
+import com.smartgwt.client.widgets.layout.VLayout;
+import com.smartgwt.client.widgets.layout.LayoutSpacer;
+import com.smartgwt.sample.showcase.client.PanelFactory;
+import com.smartgwt.sample.showcase.client.ShowcasePanel;
+
+public class UploadSample implements EntryPoint {
+
+    public void onModuleLoad() {
+        DataSource dataSource = DataSource.get("mediaLibrary");
+
+        final DynamicForm uploadForm = new DynamicForm();
+        uploadForm.setDataSource(dataSource);
+        uploadForm.setWidth(300);
+        
+        TextItem uploadTitleItem = new TextItem("title");
+
+        UploadItem imageItem = new UploadItem("image");
+        imageItem.setHint("Maximum file-size is 50k");
+        
+        ButtonItem saveItem = new ButtonItem("save", "Save");
+        saveItem.addClickHandler(new com.smartgwt.client.widgets.form.fields.events.ClickHandler() {
+            public void onClick(com.smartgwt.client.widgets.form.fields.events.ClickEvent event) {
+                HashMap params = new HashMap();
+                params.put("singleUpload", true);
+                DSRequest req = new DSRequest();
+                req.setParams(params);
+                
+                uploadForm.saveData(null, req);
+                uploadForm.editNewRecord();
+            }
+        });
+
+        uploadForm.setFields(uploadTitleItem, imageItem, saveItem);
+
+        final TileGrid mediaTileGrid = new TileGrid();
+        final ListGrid mediaListGrid = new ListGrid();
+
+
+        final DynamicForm searchForm = new DynamicForm();
+        searchForm.setWidth("100%");
+        searchForm.setNumCols(3);
+        searchForm.setColWidths(60, 200, "*");
+        searchForm.setSaveOnEnter(true);
+        
+        TextItem searchTitleItem = new TextItem("title", "Title");
+        
+        ButtonItem searchSearchItem = new ButtonItem("search", "Search");
+        searchSearchItem.setStartRow(false);
+        searchSearchItem.setEndRow(false);
+        searchSearchItem.addClickHandler(new com.smartgwt.client.widgets.form.fields.events.ClickHandler() {
+            public void onClick(com.smartgwt.client.widgets.form.fields.events.ClickEvent event) {
+            	DSRequest req = new DSRequest();
+            	req.setTextMatchStyle(TextMatchStyle.SUBSTRING);
+                mediaTileGrid.fetchData(searchForm.getValuesAsCriteria(), null, req);
+            }
+        });
+        
+        searchForm.setFields(searchTitleItem, searchSearchItem);
+        
+
+        IButton viewAsTiles = new IButton("View as Tiles");
+        viewAsTiles.setAutoFit(true);
+        viewAsTiles.setIcon("silk/application_view_tile.png");
+        viewAsTiles.addToRadioGroup("views");
+        viewAsTiles.setSelected(true);
+        viewAsTiles.setActionType(SelectionType.CHECKBOX);
+        viewAsTiles.addClickHandler(new com.smartgwt.client.widgets.events.ClickHandler() {
+            public void onClick(com.smartgwt.client.widgets.events.ClickEvent event) {
+            	mediaTileGrid.show();
+            	mediaListGrid.hide();
+            }
+        });
+        
+        IButton viewAsList = new IButton("View as List");
+        viewAsList.setAutoFit(true);
+        viewAsList.setIcon("silk/application_view_detail.png");
+        viewAsList.addToRadioGroup("views");
+        viewAsList.setActionType(SelectionType.CHECKBOX);
+        
+        final UploadSample thisSample = this;
+        viewAsList.addClickHandler(new com.smartgwt.client.widgets.events.ClickHandler() {
+            public void onClick(com.smartgwt.client.widgets.events.ClickEvent event) {
+                if (thisSample.firstTimeViewingListGrid) {
+                	thisSample.firstTimeViewingListGrid = false;
+                    mediaListGrid.setData(mediaTileGrid.getResultSet());
+                }
+            	mediaTileGrid.hide();
+            	mediaListGrid.show();
+            }
+        });
+        
+        
+        HLayout buttons = new HLayout(5);
+        buttons.setWidth(300);
+        buttons.setPadding(5);
+        buttons.setMembers(viewAsTiles, viewAsList);
+        
+        mediaTileGrid.setWidth("100%");
+        mediaTileGrid.setHeight(224);
+        mediaTileGrid.setTileWidth(100);
+        mediaTileGrid.setTileHeight(150);
+        mediaTileGrid.setDataSource(dataSource);
+        mediaTileGrid.setAutoFetchData(true);
+        
+        mediaListGrid.setWidth("100%");
+        mediaListGrid.setHeight(224);
+        mediaListGrid.setAlternateRecordStyles(true);
+        mediaListGrid.setDataSource(dataSource);
+        mediaListGrid.setVisibility(Visibility.HIDDEN);
+        
+        VLayout resultsLayout = new VLayout();
+        resultsLayout.setLeft(350);
+        resultsLayout.setWidth(500);
+        resultsLayout.setHeight(250);
+        resultsLayout.setMembers(searchForm, buttons, mediaTileGrid, mediaListGrid);
+        
+        LayoutSpacer spacer = new LayoutSpacer();
+        spacer.setWidth(50);
+
+        HLayout topLayout = new HLayout();
+        topLayout.setMembers(uploadForm, spacer, resultsLayout);
+        
+        topLayout.draw();
+    }
+
+    
+    boolean firstTimeViewingListGrid = true;
+}
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>

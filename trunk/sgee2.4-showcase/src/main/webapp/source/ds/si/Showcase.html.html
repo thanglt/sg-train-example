@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="../../../js/sh/SyntaxHighlighter.css" type="text/css" />
+<script src="../../../js/sh/shCore.js"></script>
+<script src="../../../js/sh/shBrushXml.js"></script>
+<style>
+
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name="code" class="html:nogutter:nocontrols" rows="15" cols="120">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>SmartGWT Enterprise Edition(EE) Showcase</title>
+
+    <script type="text/javascript" language="javascript"
+            src="com.smartgwtee.sample.showcase.Showcase.nocache.js"></script>
+</head>
+
+<!--Host HTML file-->
+<body>
+
+<!--load datasources from server -->
+<script src='../supplyItem.ds.jsp'></script>
+
+<!-- history support -->
+<iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1'
+        style="position:absolute;width:0;height:0;border:0"></iframe>
+
+</body>
+</html>
+
+</textarea>
+<script class="javascript">
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

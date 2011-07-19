@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Introduction</title>
+</head>
+<body>
+
+<h3>Introduction to SmartGWT Enterprise Edition (EE)</h3>
+<p>
+SmartGWT Enterprise Edition (EE) is a set of GWT API's, Java server libraries, servlets and tools that provide the key server-side components
+needed to build a complete application in a modern web architecture.<p>
+
+<p>The SmartGWT Server framework can be integrated into any pre-existing Java application, and is
+designed to rapidly connect SmartGWT visual components to pre-existing Java business logic or
+persistence engines.  SmartGWT's Ajax request processing facilities can be easily integrated
+into Struts Actions, Spring controllers, or custom servlets and JSPs.
+<p>
+<p>Alternatively, the SmartGWT EE Server provides a complete SQL and Hibernate-based persistence engine for new applications,
+with out-of-the-box servlets for processing Ajax data requests.
+<p>    
+
+<p>SmartGWT EE is optional, and SmartGWT (LGPL)'s client-side Ajax engine can be integrated with any server that provides HTTP access,
+using XML, JSON, SOAP or proprietary data protocols. However any server in a modern web application will be required to provide most
+or all of the features of the SmartGWT EE Server (described below), and the SmartGWT EE Server represents a best-of-breed implementation
+of these facilities with a long history of high-volume production deployments.    
+<p>
+
+<p>
+SmartGWT EE provides pre-built data connectors for common persistence strategies, as well as
+the ability to add your own connectors.  In both cases, the SmartGWT server framework provides
+a set of powerful services that apply regardless of your persistence approach, and can make
+much of your business logic into simple declarations.
+<ul>
+    <li><b>SQL/Relational DataSource</b>: provides integration with common SQL engines,
+     including the four standard CRUD operations (create, retrieve, update, delete), without
+     the need to write any server-side code.  Wizards allow you to generate DataSources from
+     existing tables, or generate tables from DataSources you define in XML.
+     <P>
+     Velocity templates give you fine-grained control over SQL generation: specify only the
+     SQL clauses you want to override and leave the rest up to automatic SQL generation.
+     Add joins, aggregation and other operations in portable SQL, while still retaining
+     built-in support for advanced search, data paging and other difficult, non-portable SQL
+     you'd rather not write and maintain.  Or, specify entirely custom SQL - even call stored
+     procedures.
+     <P>
+     Use Java Beans to represent SQL data, or don't, on a case-by-case basis - it's up to you!
+     <P>
+     SmartGWT EE's SQL engine provides a better blend of object-oriented abstraction and raw
+     SQL power than JPA, Ibatis or other approaches can provide.
+    </li>
+    <li><b>Hibernate DataSource</b>: provides integration with Hibernate, including the four standard
+     CRUD operations (create, retrieve, update, delete), without the need to write any
+     server-side code.  Wizards allow you to generate DataSources from existing Hibernate
+     entities, or, work in "beanless" mode by generating Hibernate configuration and database
+     tables from a DataSource you write in XML.
+     <P>
+     Similar to the SQL DataSource, specific custom HQL (Hibernate Query Language) or custom
+     SQL queries right in your DataSource XML file.
+    </li>
+    <li><b>Custom DataSource</b>: build your own reusable DataSource connector with just a few dozen
+     lines of Java code.  Create instances of your DataSource by creating a DataSource XML file
+     for each entity, while reusing a single, generic Java class with persistence logic.
+     <P>
+     Wizards allow you to generate starter DataSource XML files from Java Beans, XML Schema
+     and other sources of object metadata.  A single attribute ("serverConstructor") specifies
+     that your custom connector should be used.  From there, you can add simple XML
+     declarations that control features common to all DataSources, such as declarative
+     server-side validation and access control.
+    </li>
+    <li><b>DMI DataSource</b>: create a DataSource by specifying a Java method to call for each of the
+     four CRUD operations.  Objects and methods to call can be looked up via Spring, via
+     servlet request attributes or the servlet session, via simple instantiation ("new
+     YourClass().yourMethod()") or via a factory pattern.
+     <P>
+     Your DataSource XML declaration specifies the fields that the client-side components will
+     be using, and can automatically extract just the relevant data from EJBs and other
+     server-side-only objects, without the need to write redundant DTOs ("Data Transfer
+     Objects").  Support for automatically populating complex Java structures from request
+     data makes it easy to persist data with any ORM system.
+     <P>
+     Or, use DMI with any other type of DataSource to call custom Java logic before or after
+     the default persistence logic runs.  Modify requests to enforce business rules, or take
+     additional actions after persistence.
+    </li>
+    <li><b>Groovy DataSource (coming soon!)</b>: create a DataSource by specifying a Groovy script for
+     each of the CRUD operations, right in your DataSource XML file.  Or, add Groovy business
+     logic to any other kind of DataSource.  Imagine adding server-side business logic and not
+     having to wait for a redeploy to test it out!<p>
+    </li>
+    <li><b>Servlet Front Controller</b>: irectly receive DSRequests (DataSource requests) in
+     a servlet and control the entirety of the processing from there, dispatching requests to
+     Java logic by whatever mechanism you choose.
+    </li>
+</ul>
+</p>
+<p>
+All of these approaches are demonstrated in examples in this showcase and all of them can be
+used in tandem.  For example:
+<ul>
+    <li>use a Custom DataSource to connect to pre-existing EJBs, but use the SQL DataSource for
+     new entities, for cases where highly custom SQL is required, or for "lightweight"
+     entities where building an EJB is overkill.
+    </li>
+    <li>use DMI DataSources to call existing business logic while building a reusable Custom
+     DataSource for all new entities
+    </li>
+    <li>use the Front Controller approach to add logic common to all of your DataSources, but
+     then allow the standard SmartGWT request processing chain to continue.
+    </li>
+    <li>create a custom DataSource that extends the built-in SQL or Hibernate DataSource, adding
+     additional features that can be configured in the DataSource XML file        
+    </li>
+</ul>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel='stylesheet' href='../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../js/sh/shCore.js'></script>
+<script src='../js/sh/shBrushXml.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='xml:nogutter' rows='15' cols='120'>
+<DataSource
+    ID="queuedAdd_orderItem"
+    serverType="sql"
+    tableName="queuedOrderItem"
+    testFileName="/ds/test_data/queuedOrderItem.data.xml"
+>
+    <fields>
+        <field name="pk" type="sequence" primaryKey="true" hidden="true" />
+        <field name="orderID" type="integer" />
+        <field name="itemID" type="text" foreignKey="supplyItem.itemID" />
+        <field name="quantity" type="integer" />
+    </fields>
+    
+<operationBindings>
+    
+    <operationBinding operationType="add">
+        <values fieldName="orderID" value="$responseData.last('queuedAdd_order','add').orderID" />
+    </operationBinding>
+
+</operationBindings>
+    
+</DataSource>
+ 
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>

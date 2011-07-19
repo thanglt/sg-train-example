@@ -1,0 +1,132 @@
+<html>
+<head>
+<link rel='stylesheet' href='../../../../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../../../../js/sh/shCore.js'></script>
+<script src='../../../../js/sh/shBrushJava.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='java:nogutter' rows='15' cols='120'>
+/*
+ * Isomorphic SmartGWT web presentation layer
+ * Copyright 2000 and beyond Isomorphic Software, Inc.
+ *
+ * OWNERSHIP NOTICE
+ * Isomorphic Software owns and reserves all rights not expressly granted in this source code,
+ * including all intellectual property rights to the structure, sequence, and format of this code
+ * and to all designs, interfaces, algorithms, schema, protocols, and inventions expressed herein.
+ *
+ *  If you have any questions, please email <sourcecode@isomorphic.com>.
+ *
+ *  This entire comment must accompany any portion of Isomorphic Software source code that is
+ *  copied or moved from this file.
+ */
+
+package com.smartgwt.sample.showcase.client.dataintegration.java.hibernate;
+
+import com.smartgwt.client.data.DataSource;
+import com.smartgwt.client.widgets.Canvas;
+import com.smartgwt.client.widgets.IButton;
+import com.smartgwt.client.widgets.layout.VLayout;
+import com.smartgwt.client.widgets.layout.HLayout;
+import com.smartgwt.client.widgets.events.ClickHandler;
+import com.smartgwt.client.widgets.events.ClickEvent;
+import com.smartgwt.client.widgets.form.DynamicForm;
+import com.smartgwt.client.widgets.form.fields.TextItem;
+import com.smartgwt.client.widgets.grid.ListGrid;
+import com.smartgwt.client.widgets.grid.ListGridField;
+import com.smartgwt.client.widgets.grid.events.SelectionChangedHandler;
+import com.smartgwt.client.widgets.grid.events.SelectionEvent;
+import com.smartgwt.sample.showcase.client.PanelFactory;
+import com.smartgwt.sample.showcase.client.ShowcasePanel;
+
+public class FlattenedDataModelSample implements EntryPoint {
+
+    public void onModuleLoad() {
+
+        DataSource flatUserDS = DataSource.get("flattenedBeans_flatUserHB");
+
+        final DynamicForm editorForm = new  DynamicForm();
+        editorForm.setWidth(280);
+        editorForm.setDataSource(flatUserDS);
+
+        TextItem firstNameItem = new TextItem("firstName", "First Name");
+        TextItem surnameItem = new TextItem("surname", "Surname");
+        TextItem emailItem = new TextItem("email", "Email address");
+        TextItem addressLineItem = new TextItem("addressLine1", "Address Line 1");
+        TextItem cityItem = new TextItem("city", "City");
+        TextItem stateItem = new TextItem("state", "State");
+
+        editorForm.setItems(firstNameItem, surnameItem, emailItem, addressLineItem, cityItem, stateItem);
+
+        ListGrid userListGrid = new ListGrid();
+        userListGrid.setWidth(600);
+        userListGrid.setHeight(164);
+        userListGrid.setDataSource(flatUserDS);
+        userListGrid.setAutoFetchData(true);
+
+        ListGridField firstName = new ListGridField("firstName");
+        ListGridField surname = new ListGridField("surname");
+        ListGridField email = new ListGridField("email");
+        ListGridField addressLine1 = new ListGridField("addressLine1");
+        ListGridField city = new ListGridField("city");
+        ListGridField state = new ListGridField("state");
+
+        userListGrid.setFields(firstName, surname, email, addressLine1, city, state);
+
+        userListGrid.addSelectionChangedHandler(new SelectionChangedHandler() {
+            public void onSelectionChanged(SelectionEvent event) {
+                editorForm.editRecord(event.getRecord());
+            }
+        });
+
+        IButton addUserButton = new IButton("Add User");
+        addUserButton.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                editorForm.editNewRecord();
+            }
+        });
+
+        IButton saveButton = new IButton("Save Changes");
+        saveButton.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                editorForm.saveData();
+            }
+        });
+
+        HLayout hLayout = new HLayout(15);
+        hLayout.addMember(editorForm);
+
+        VLayout buttonLayout = new VLayout(15);
+        buttonLayout.setMembers(addUserButton, saveButton);
+        hLayout.addMember(buttonLayout);
+
+        VLayout layout = new VLayout(15);
+        layout.addMember(userListGrid);
+        layout.addMember(hLayout);
+
+        layout.draw();        
+    }
+
+}
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>

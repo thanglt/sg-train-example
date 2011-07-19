@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel='stylesheet' href='../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../js/sh/shCore.js'></script>
+<script src='../js/sh/shBrushXml.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='xml:nogutter' rows='15' cols='120'>
+<DataSource
+    ID="flattenedBeans_flatUserHB"
+    serverType="hibernate"
+    beanClassName="com.smartgwt.sample.showcase.server.FlatUser"
+    testFileName="/ds/test_data/flattenedBeans_flatUserHB.data.xml"
+    dropExtraFields="true"
+>
+    <fields>
+        <field name="userId" type="sequence" primaryKey="true" canEdit="false" />
+        <field name="firstName" type="text" />
+        <field name="surname" type="text" />
+        <field name="email" type="text" />
+        <field name="addressLine1" type="text" valueXPath="address/line1" />
+        <field name="city" type="text" valueXPath="address/city" />
+        <field name="state" type="text" valueXPath="address/state" />
+        <field name="zip" type="text" valueXPath="address/zip" hidden="true" />
+        <field name="country" type="text" valueXPath="address/country" hidden="true" />
+    </fields>
+    
+</DataSource>
+ 
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>

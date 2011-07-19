@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel="stylesheet" href="../../../js/sh/SyntaxHighlighter.css" type="text/css" />
+<script src="../../../js/sh/shCore.js"></script>
+<script src="../../../js/sh/shBrushXml.js"></script>
+<style>
+
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name="code" class="xml:nogutter:nocontrols" rows="15" cols="120">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.smartgwt.sample.showcase.server.SupplyItem" table="supplyItem">
+        <id name="itemID">
+            <generator class="native"/>
+        </id>
+        <property name="itemName" />
+        <property name="SKU" />
+        <property name="description" />
+        <property name="category" />
+        <property name="units" />
+        <property name="unitCost" type="double" />
+        <property name="inStock" type="boolean" />
+        <property name="nextShipment" type="date" />
+    </class>
+</hibernate-mapping>
+</textarea>
+<script class="javascript">
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

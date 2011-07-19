@@ -1,0 +1,203 @@
+<html>
+<head>
+<link rel="stylesheet" href="../../../js/sh/SyntaxHighlighter.css" type="text/css" />
+<script src="../../../js/sh/shCore.js"></script>
+<script src="../../../js/sh/shBrushXml.js"></script>
+<style>
+
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name="code" class="xml:nogutter:nocontrols" rows="15" cols="120">
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+
+    <!-- standard spring configuration -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+
+
+    <!-- Note: The servlets/filters referenced here are documented in the SDK javadoc -->
+
+    <!-- //>FileLoader -->
+    <!-- Dynamic Compression -->
+    <filter>
+        <filter-name>CompressionFilter</filter-name>
+        <filter-class>com.isomorphic.servlet.CompressionFilter</filter-class>
+    </filter>
+    <!-- CompressionFilter for dynamic compression -->
+    <filter-mapping>
+        <filter-name>CompressionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- //<FileLoader -->
+
+    <servlet>
+        <servlet-name>context</servlet-name>
+        <servlet-class>org.springframework.web.context.ContextLoaderServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>showcase</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- The IDACall servlet handles all Built-in DataSource operations -->
+    <servlet>
+        <servlet-name>IDACall</servlet-name>
+        <servlet-class>com.isomorphic.servlet.IDACall</servlet-class>
+    </servlet>
+
+    <!-- The FileDownload servlet downloads static files, like a webserver -->
+    <servlet>
+        <servlet-name>FileDownload</servlet-name>
+        <servlet-class>com.isomorphic.servlet.FileDownload</servlet-class>
+    </servlet>
+
+    <!-- //>RealtimeMessaging -->
+    <!-- The MessagingServlet is used by realtime messaging -->
+    <servlet>
+        <servlet-name>MessagingServlet</servlet-name>
+        <servlet-class>com.isomorphic.messaging.MessagingServlet</servlet-class>
+    </servlet>
+    <!-- //<RealtimeMessaging -->
+
+
+    <!-- ISC init: initializes ISC framework -->
+    <servlet>
+        <servlet-name>Init</servlet-name>
+        <servlet-class>com.isomorphic.base.Init</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>HttpProxy</servlet-name>
+        <servlet-class>com.isomorphic.servlet.HttpProxyServlet</servlet-class>
+    </servlet>
+
+    <!-- The PreCache servlet initializes when the servlet engine starts up and pre-loads
+         data need for all client requests.  This is optional, and improves performance
+         of the first few page requests.  PreCache cannot be invoked by a browser, because
+         there is no "servlet-mapping" defined for it. -->
+    <servlet>
+        <servlet-name>PreCache</servlet-name>
+        <servlet-class>com.isomorphic.servlet.PreCache</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+
+
+    <servlet-mapping>
+         <servlet-name>showcase</servlet-name>
+         <url-pattern>*.do</url-pattern>
+     </servlet-mapping>
+
+    <!-- RPCManager uses this URL by default for Built-in DataSource operations -->
+    <servlet-mapping>
+        <servlet-name>IDACall</servlet-name>
+        <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/IDACall/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Built-in DataSource operations backcompat -->
+    <servlet-mapping>
+        <servlet-name>IDACall</servlet-name>
+        <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/IDACall.aspx/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HttpProxy</servlet-name>
+        <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/HttpProxy/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- //>RealtimeMessaging -->
+    <!-- Messaging uses this URL by default -->
+    <servlet-mapping>
+        <servlet-name>MessagingServlet</servlet-name>
+        <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/messaging/*</url-pattern>
+    </servlet-mapping>
+    <!-- //<RealtimeMessaging -->
+
+    <!-- Use FileDownload servlet to download all static content that's part of the skin, such as
+         image files, so we can set Expires headers and other cache control directives.  In a
+         production deployment, you'd want to use a webserver such as Apache to do this.
+    -->
+    <servlet-mapping>
+      <servlet-name>FileDownload</servlet-name>
+      <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/skins/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- serve ISC modules compressed, with expires headers -->
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/system/modules/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- serve ISC development modules compressed, with expires headers -->
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/system/development/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- server skin assets with expires headers -->
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/com.smartgwtee.sample.showcase.Showcase/sc/system/reference/skin/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- General config -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <jsp-config>
+        <!-- Isomorphic JSP tags -->
+        <taglib>
+            <taglib-uri>isomorphic</taglib-uri>
+            <taglib-location>/WEB-INF/iscTaglib.xml</taglib-location>
+        </taglib>
+        <!-- Serve *.isc files with iscHeader/iscFooter -->
+        <jsp-property-group>
+            <url-pattern>*.isc</url-pattern>
+            <include-prelude>/shared/jsp/iscHeader.jsp</include-prelude>
+            <include-coda>/shared/jsp/iscFooter.jsp</include-coda>
+        </jsp-property-group>
+
+        <!-- Process *.rpc files as RPC requests - puts you in an iterator over current RPC requests -->
+        <jsp-property-group>
+            <url-pattern>*.rpc</url-pattern>
+            <include-prelude>/shared/jsp/rpcHeader.jsp</include-prelude>
+            <include-coda>/shared/jsp/rpcFooter.jsp</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+
+
+</web-app>
+
+</textarea>
+<script class="javascript">
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
