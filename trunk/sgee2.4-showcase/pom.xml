@@ -10,7 +10,7 @@
     <version>2.4</version>
     <name>sgee-showcase</name>
     <description>this is a personal study project(sgee 2.4) with Maven Archetype,
-        all rights and serves a due to SmartGwt
+        all rights and serves due to SmartGwt
     </description>
 
     <properties>
