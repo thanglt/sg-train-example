@@ -68,7 +68,6 @@
                 <version>2.2.0</version>
                 <executions>
                     <execution>
-                        <phase>compile</phase>
                         <goals>
                             <goal>compile</goal>
                             <!--<goal>test</goal>-->
@@ -82,7 +81,7 @@
                 <configuration>
                     <!--used only before compile project-->
                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-                    <runTarget>myGwt.html</runTarget>
+                    <runTarget>index-sg.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <!--<i18nMessagesBundle>com.train.client.Messages</i18nMessagesBundle>-->
                 </configuration>
