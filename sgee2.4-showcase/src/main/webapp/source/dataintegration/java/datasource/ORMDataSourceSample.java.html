@@ -1,0 +1,88 @@
+<html>
+<head>
+<link rel='stylesheet' href='../../../../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../../../../js/sh/shCore.js'></script>
+<script src='../../../../js/sh/shBrushJava.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='java:nogutter' rows='15' cols='120'>
+/*
+ * Isomorphic SmartGWT web presentation layer
+ * Copyright 2000 and beyond Isomorphic Software, Inc.
+ *
+ * OWNERSHIP NOTICE
+ * Isomorphic Software owns and reserves all rights not expressly granted in this source code,
+ * including all intellectual property rights to the structure, sequence, and format of this code
+ * and to all designs, interfaces, algorithms, schema, protocols, and inventions expressed herein.
+ *
+ *  If you have any questions, please email <sourcecode@isomorphic.com>.
+ *
+ *  This entire comment must accompany any portion of Isomorphic Software source code that is
+ *  copied or moved from this file.
+ */
+
+package com.smartgwt.sample.showcase.client.dataintegration.java.datasource;
+
+import com.smartgwt.client.data.DataSource;
+import com.smartgwt.client.types.FetchMode;
+import com.smartgwt.client.widgets.Canvas;
+import com.smartgwt.client.widgets.IButton;
+import com.smartgwt.client.widgets.layout.VLayout;
+import com.smartgwt.client.widgets.events.ClickHandler;
+import com.smartgwt.client.widgets.events.ClickEvent;
+import com.smartgwt.client.widgets.grid.ListGrid;
+import com.smartgwt.sample.showcase.client.PanelFactory;
+import com.smartgwt.sample.showcase.client.ShowcasePanel;
+
+public class ORMDataSourceSample implements EntryPoint {
+
+    public void onModuleLoad() {
+        final ListGrid listGrid = new ListGrid();
+        listGrid.setWidth(700);
+        listGrid.setHeight(224);
+        listGrid.setAlternateRecordStyles(true);
+        listGrid.setDataSource(DataSource.get("ormDataSource_country"));
+        listGrid.setCanEdit(true);
+        listGrid.setCanRemoveRecords(true);
+        listGrid.setDataFetchMode(FetchMode.LOCAL);
+        listGrid.setAutoFetchData(true);
+        listGrid.setUseAllDataSourceFields(true);
+
+        IButton newButton = new IButton("Add New");
+        newButton.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                listGrid.startEditingNew();
+            }
+        });
+
+
+        VLayout layout = new VLayout(15);
+        layout.addMember(listGrid);
+        layout.addMember(newButton);
+
+        layout.draw();
+    }
+
+}
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>

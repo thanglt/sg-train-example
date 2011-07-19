@@ -1,0 +1,137 @@
+<html>
+<head>
+<link rel='stylesheet' href='../../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../../js/sh/shCore.js'></script>
+<script src='../../js/sh/shBrushJava.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='java:nogutter' rows='15' cols='120'>
+package com.smartgwt.sample.showcase.client.draganddrop;
+
+import com.google.gwt.core.client.EntryPoint;
+import com.smartgwt.client.core.KeyIdentifier;
+import com.smartgwt.client.data.Criteria;
+import com.smartgwt.client.data.DataSource;
+import com.smartgwt.client.util.KeyCallback;
+import com.smartgwt.client.widgets.form.events.ItemChangedEvent;
+import com.smartgwt.client.widgets.form.events.ItemChangedHandler;
+import com.smartgwt.client.widgets.viewer.DetailViewerField;
+import com.smartgwt.client.widgets.Canvas;
+import com.smartgwt.client.util.Page;
+import com.smartgwt.client.util.SC;
+import com.smartgwt.client.widgets.layout.HLayout;
+import com.smartgwt.client.widgets.layout.VLayout;
+import com.smartgwt.client.widgets.form.DynamicForm;
+import com.smartgwt.client.widgets.form.fields.*; 
+import com.smartgwt.client.widgets.tile.TileGrid;
+import com.smartgwt.client.types.TextMatchStyle;
+import com.smartgwt.sample.showcase.client.PanelFactory;
+import com.smartgwt.sample.showcase.client.ShowcasePanel;
+
+public class RecategorizeTile implements EntryPoint {
+
+    public void onModuleLoad() {
+        final DataSource ds = DataSource.get("animals");
+        final String[] statusValueMap = {
+            "Threatened",
+            "Endangered",
+            "Not Endangered",
+            "Not currently listed",
+            "May become threatened",
+            "Protected"
+        };
+        final String leftDefaultStatus = statusValueMap[1];
+        final String rightDefaultStatus = statusValueMap[0];
+        
+        final TileGrid leftGrid = new TileGrid();
+        leftGrid.setTileWidth(150);
+        leftGrid.setTileHeight(185);
+        leftGrid.setShowAllRecords(true);
+        leftGrid.setDataSource(ds);
+        leftGrid.setAutoFetchData(true);
+        leftGrid.setInitialCriteria(new Criteria("status", leftDefaultStatus));
+        leftGrid.setAutoFetchTextMatchStyle(TextMatchStyle.EXACT);
+        leftGrid.setAnimateTileChange(true);
+        leftGrid.setCanAcceptDrop(true);
+        leftGrid.setCanDrag(true);
+        leftGrid.setFields(new DetailViewerField("picture"), 
+                             new DetailViewerField("commonName"), 
+                             new DetailViewerField("status"));
+          
+        final DynamicForm leftForm = new DynamicForm();
+        leftForm.addItemChangedHandler(new ItemChangedHandler() {
+        	public void onItemChanged(ItemChangedEvent event) {
+        		leftGrid.fetchData(leftForm.getValuesAsCriteria());
+        	}
+        });
+        SelectItem leftSelectItem = new SelectItem("status", "<b>Status</b>");
+        leftSelectItem.setType("select");
+        leftSelectItem.setValueMap(statusValueMap);
+        leftSelectItem.setDefaultValue(leftDefaultStatus);
+        leftForm.setFields(leftSelectItem);
+        
+        final TileGrid rightGrid = new TileGrid();
+        rightGrid.setTileWidth(150);
+        rightGrid.setTileHeight(185);
+        rightGrid.setShowAllRecords(true);
+        rightGrid.setDataSource(ds);
+        rightGrid.setAutoFetchData(true);
+        rightGrid.setInitialCriteria(new Criteria("status", rightDefaultStatus));
+        rightGrid.setAutoFetchTextMatchStyle(TextMatchStyle.EXACT);
+        rightGrid.setAnimateTileChange(true);
+        rightGrid.setCanAcceptDrop(true);
+        rightGrid.setCanDrag(true);
+        rightGrid.setFields(new DetailViewerField("picture"), 
+                             new DetailViewerField("commonName"), 
+                             new DetailViewerField("status"));
+        
+        final DynamicForm rightForm = new DynamicForm();
+        rightForm.addItemChangedHandler(new ItemChangedHandler() {
+        	public void onItemChanged(ItemChangedEvent event) {
+        		rightGrid.fetchData(rightForm.getValuesAsCriteria());
+        	}
+        });
+        SelectItem rightSelectItem = new SelectItem("status", "<b>Status</b>");
+        rightSelectItem.setType("select");
+        rightSelectItem.setDefaultValue(rightDefaultStatus);
+        rightSelectItem.setValueMap(statusValueMap);
+        rightForm.setFields(rightSelectItem);
+        
+        VLayout leftLayout = new VLayout();
+        leftLayout.addMember(leftForm);
+        leftLayout.addMember(leftGrid);
+        
+        VLayout rightLayout = new VLayout();
+        rightLayout.addMember(rightForm);
+        rightLayout.addMember(rightGrid);
+        
+        HLayout mainLayout = new HLayout();
+        mainLayout.addMember(leftLayout);
+        mainLayout.addMember(rightLayout);
+        mainLayout.draw();
+    }
+
+}
+
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>

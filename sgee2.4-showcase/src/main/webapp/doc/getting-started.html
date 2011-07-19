@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Getting Started with SmartGWT Server DataSource Integration</title>
+</head>
+<body>
+<h3>Creating a DataSource</h3>
+<p>In SmartGWT EE, your DataSource definition provides visual components with a description of the
+business object you want to manipulate in the UI, <b>and</b> provides information to the
+server-side framework on how your objects will be fetched and persisted.  In some cases, a single
+declaration drives both client- and server-side behavior (such as validators).</p>
+
+<p>
+The DataSource Wizard in Visual Builder (launched via the "New" button in the DataSources
+pane) can be used to generate a DataSource descriptor file (.ds.xml) for a DataSource.  Which
+Wizard to use depends on your persistence strategy (see below).
+<ul>
+    <li>If using the built-in SQL Connector, use the Admin Console to configure the database
+     connection.  To derive DataSources from existing tables, pick the "Existing SQL Table" Wizard
+     and select the table to use.  To generate SQL tables from a DataSource you create in the
+     wizard, pick the "New SQL Table" Wizard instead.        
+    </li>
+    <li>If using the built-in Hibernate Connector, add your database settings to the included
+     hibernate.cfg.xml, or just replace this file with your existing file.  Use the "Hibernate
+     Bean" Wizard to derive DataSources from existing beans, or use the "New SQL Table (via
+     Hibernate)" Wizard to generate Hibernate mappings and tables from a DataSource you create in
+     the wizard.        
+    </li>
+    <li>If using any other persistence strategy, you can use the "Java Bean" wizard to create a
+     starter DataSource file from any Java Bean, then add declarations to use a Custom DataSource
+     or to call Java methods via DMI.        
+    </li>
+</ul>
+</p>
+
+<p>Load the DataSource definition client-side by including the following line in the body of your
+GWT host html file.
+<pre>
+            &lt;script src='sc/DataSourceLoader?dataSource=employees,supplyItem'>&lt;/script&gt;</pre>
+Specify a comma separated list of DataSource ID's for the <code>dataSource</code> parameter. The above line would load the employees and supplyItem
+datasources from the server.
+</p>
+
+<p><b>Launching Visual Builder</b> : Inherit the <code>com.smartgwtee.tools.Tools</code> module and call <code>com.smartgwtee.tools.client.SCEE.openVisualBuilder()</code></p>
+<p><b>Launching Admin Console</b> : Inherit the <code>com.smartgwtee.tools.Tools</code> module and call <code>com.smartgwtee.tools.client.SCEE.openDataSourceConsole()</code></p>
+<p><b>Launching Batch DataSource Generator</b> : Inherit the <code>com.smartgwtee.tools.Tools</code> module and call <code>com.smartgwtee.tools.client.SCEE.openDataSourceGenerator()</code></p>
+
+<h3>New Project vs Existing project</h3>
+<ul>
+    <li>If you're starting a new project, pick the sample project that most closely reflects the
+   persistence strategy you want to use.  See the README.txt file in each project for
+   instructions; each sample includes Eclipse project files that you can simply import to get
+   started.        
+    </li>
+    <li>If you're adding SmartGWT EE to an existing Java project, copy the resources from one of
+   the sample projects, and merge web.xml to include the servlets provided by SmartGWT EE.
+   Note that it's possible to use SmartGWT EE without the built-in servlets (see the Front
+   Controller sample) but in this case you still need to include the special "Init" servlet
+   to prime the framework.        
+    </li>
+</ul>
+</body>
+</html>

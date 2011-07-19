@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel='stylesheet' href='../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../js/sh/shCore.js'></script>
+<script src='../js/sh/shBrushXml.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='xml:nogutter' rows='15' cols='120'>
+<!-- DataSource to support the BatchUploader component
+     NOTE: This is not the DataSource resposible for performing the batch update of verified
+           records, it is an internal resource used to handle the initial upload of the client-
+           side file. The only time you would ever want to change this DataSource is if you wanted 
+           a hook into the upload process (for security reasons, for example).  See the 
+           BatchUploader documentation in the SmartClient reference.
+-->
+
+<DataSource ID="batchUpload">
+    <operationBindings>
+        <operationBinding 
+            operationType="update" 
+            operationId="upload" 
+            serverMethod="batchUpload">
+            <serverObject 
+                ID="batchUpload" 
+                className="com.isomorphic.tools.BatchUpload" 
+                dropExtraFields="false">
+                <visibleMethods>
+                    <method name="batchUpload"/>
+                </visibleMethods>
+            </serverObject>
+        </operationBinding>
+    </operationBindings>
+</DataSource>
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>

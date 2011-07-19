@@ -1,0 +1,198 @@
+<html>
+<head>
+<link rel='stylesheet' href='../../../../js/sh/SyntaxHighlighter.css' type='text/css' />
+<script src='../../../../js/sh/shCore.js'></script>
+<script src='../../../../js/sh/shBrushJava.js'></script>
+<style>
+* {
+font-family:Courier New,monospace;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.dp-highlighter {
+  white-space: nowrap;
+  overflow: visible;
+  width: 600px;
+  font-size: 11px;
+  font-family:Courier New,monospace;
+}
+</style>
+</head>
+<body>
+<textarea name='code' class='java:nogutter' rows='15' cols='120'>
+/*
+ * Isomorphic SmartGWT web presentation layer
+ * Copyright 2000 and beyond Isomorphic Software, Inc.
+ *
+ * OWNERSHIP NOTICE
+ * Isomorphic Software owns and reserves all rights not expressly granted in this source code,
+ * including all intellectual property rights to the structure, sequence, and format of this code
+ * and to all designs, interfaces, algorithms, schema, protocols, and inventions expressed herein.
+ *
+ *  If you have any questions, please email <sourcecode@isomorphic.com>.
+ *
+ *  This entire comment must accompany any portion of Isomorphic Software source code that is
+ *  copied or moved from this file.
+ */
+
+package com.smartgwt.sample.showcase.client.dataintegration.java.hibernate;
+
+import com.smartgwt.client.data.DataSource;
+import com.smartgwt.client.data.Record;
+import com.smartgwt.client.widgets.Canvas;
+import com.smartgwt.client.widgets.Label;
+import com.smartgwt.client.widgets.IButton;
+import com.smartgwt.client.widgets.events.ClickHandler;
+import com.smartgwt.client.widgets.events.ClickEvent;
+import com.smartgwt.client.widgets.form.DynamicForm;
+import com.smartgwt.client.widgets.form.fields.TextItem;
+import com.smartgwt.client.widgets.form.fields.DateItem;
+import com.smartgwt.client.widgets.layout.VLayout;
+import com.smartgwt.client.widgets.grid.ListGrid;
+import com.smartgwt.client.widgets.grid.ListGridField;
+import com.smartgwt.client.widgets.grid.events.SelectionChangedHandler;
+import com.smartgwt.client.widgets.grid.events.SelectionEvent;
+import com.smartgwt.client.rpc.RPCRequest;
+import com.smartgwt.client.rpc.RPCManager;
+import com.smartgwt.client.rpc.QueueSentCallback;
+import com.smartgwt.sample.showcase.client.PanelFactory;
+import com.smartgwt.sample.showcase.client.ShowcasePanel;
+import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.user.client.Timer;
+
+public class MasterDetailHibernateSample implements EntryPoint {
+
+    public void onModuleLoad() {
+        Label ordersLabel = new Label("Order");
+        ordersLabel.setWidth("90%");
+        ordersLabel.setHeight(25);
+        ordersLabel.setBaseStyle("exampleSeparator");
+
+        DataSource dataSource = DataSource.get("masterDetail_orderHB");
+        DataSource orderItemDS = DataSource.get("masterDetail_orderItemHB");
+
+        //create the order form
+        final DynamicForm orderForm = new DynamicForm();
+        orderForm.setDataSource(dataSource);
+
+        TextItem orderIdItem = new TextItem("orderID");
+        orderIdItem.setTitle("Order ID");
+        orderIdItem.setDisabled(true);
+
+        TextItem customerNameItem = new TextItem("customerName");
+        customerNameItem.setTitle("Customer Name");
+
+        DateItem orderDateItem = new DateItem();
+        orderDateItem.setName("orderDate");
+        orderDateItem.setTitle("Order Date");
+
+        orderForm.setFields(orderIdItem, customerNameItem, orderDateItem);
+
+        //the order items list grid
+        final ListGrid orderItemsList = new ListGrid();
+
+        //the order list grid
+        ListGrid ordersList = new ListGrid();
+        ordersList.setHeight(170);
+        ordersList.setWidth(500);
+        ordersList.setDataSource(dataSource);
+        ordersList.setAutoFetchData(true);
+
+        ListGridField orderIdField = new ListGridField("orderID");
+        orderIdField.setWidth("25%");
+
+        ListGridField customerNameField = new ListGridField("customerName");
+
+        ListGridField orderDateField = new ListGridField("orderDate");
+        orderDateField.setWidth("25%");
+
+        ordersList.setFields(orderIdField, customerNameField, orderDateField);
+        ordersList.addSelectionChangedHandler(new SelectionChangedHandler() {
+            public void onSelectionChanged(SelectionEvent event) {
+                Record record = event.getRecord();
+                orderForm.editRecord(record);
+                orderItemsList.setData(record.getAttributeAsRecordArray("items"));
+            }
+        });
+
+        Label orderDetailsLabel = new Label("Order Details");
+        orderDetailsLabel.setWidth("90%");
+        orderDetailsLabel.setBaseStyle("exampleSeparator");
+
+        orderItemsList.setHeight(130);
+        orderItemsList.setDataSource(orderItemDS);
+        orderItemsList.setCanEdit(true);
+        orderItemsList.setSaveLocally(true);
+        orderItemsList.setSaveByCell(true);
+
+        ListGridField itemDescriptionField = new ListGridField("itemDescription");
+        ListGridField quantityField = new ListGridField("quantity");
+        ListGridField unitPriceField = new ListGridField("unitPrice");
+
+        orderItemsList.setFields(itemDescriptionField, quantityField, unitPriceField);
+
+        IButton saveButton = new IButton("Save");
+        saveButton.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                orderForm.setValue("items", orderItemsList.getRecords());
+                orderForm.saveData();
+            }
+        });
+
+        VLayout layout = new VLayout(5);
+        layout.setWidth(500);
+        layout.addMember(ordersLabel);
+        layout.addMember(ordersList);
+        layout.addMember(orderDetailsLabel);
+        layout.addMember(orderForm);
+        layout.addMember(orderItemsList);
+        layout.addMember(saveButton);
+
+        final ServerCountLabel serverCountLabel = new ServerCountLabel();
+
+        layout.addMember(serverCountLabel);
+
+        RPCManager.setQueueSentCallback(new QueueSentCallback() {
+            public void queueSent(RPCRequest[] requests) {
+                serverCountLabel.incrementAndUpdate(requests);
+                //flash the label
+                serverCountLabel.setBackgroundColor("ffff77");
+                new Timer() {
+                    public void run() {
+                        serverCountLabel.setBackgroundColor("ffffff");
+                    }
+                }.schedule(500);
+            }
+        });
+        
+
+        layout.draw();
+    }
+
+    class ServerCountLabel extends Label {
+        private int count = 0;
+
+        ServerCountLabel() {
+            setPadding(10);
+            setWidth(300);
+            setHeight(40);
+            setBorder("1px solid grey");
+            setContents("<b>Number of server trips: 0<br>No queues sent</b>");
+        }
+
+        public void incrementAndUpdate(RPCRequest[] requests) {
+            count++;
+            setContents("<b>Number of server trips: " + count +
+                    "<br/>Last queue contained: " + requests.length + " request(s)</b>");
+        }
+    }
+
+}
+</textarea>
+<script class='javascript'>
+dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+</body>
+</html>
