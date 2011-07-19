@@ -7,9 +7,11 @@
     <groupId>train</groupId>
     <artifactId>sg-showcase</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.4</version>
     <name>GWT Maven Archetype</name>
-    <description>a simple SmartGwt project made by gwt maven plugin</description>
+    <description>this is a personal study project(sgee 2.4) with Maven Archetype,
+        all rights and serves due to SmartGwt
+    </description>
 
     <properties>
         <!-- GWT version -->
@@ -63,7 +65,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>2.1.0-1</version>
+                <version>2.2.0</version>
                 <executions>
                     <execution>
                         <phase>compile</phase>
