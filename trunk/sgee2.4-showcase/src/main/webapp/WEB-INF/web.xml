@@ -160,4 +160,9 @@
         <mime-type>text/cache-manifest</mime-type>
     </mime-mapping>
     
+	    <!-- Default page to serve -->
+	  <welcome-file-list>
+	    <welcome-file>index-sgee.html</welcome-file>
+	  </welcome-file-list>
+    
 </web-app>
