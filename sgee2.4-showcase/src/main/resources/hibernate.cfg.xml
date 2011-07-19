@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.url">jdbc:hsqldb:hsql://localhost/isomorphic</property>
+
+
+        <!-- disable native hibernate connection pooling: it's not recommended for production
+             use and can't handle connection re-establishment.  The recommended approach is
+             to obtain database connections from the container and have the container manage
+             the pool
+        -->        
+        <property name="connection.pool_size">0</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        
+        <!-- Release database connections when session are closed.  Otherwise, if the DB
+             agressively cuts connections, we could end up trying to use a broken connection.
+        -->
+        <property name="hibernate.connection.release_mode">on_close</property>
+
+        <!-- don't use a data cache -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Pretty-print logged sql -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+
+        <mapping resource="com/smartgwt/sample/showcase/server/SupplyItem.hbm.xml"/>
+        <mapping resource="com/smartgwt/sample/showcase/server/Order.hbm.xml"/>
+        <mapping resource="com/smartgwt/sample/showcase/server/OrderItem.hbm.xml"/>
+        <mapping resource="com/smartgwt/sample/showcase/server/FlatUser.hbm.xml"/>
+        <mapping resource="com/smartgwt/sample/showcase/server/Address.hbm.xml"/>
+        <mapping resource="com/smartgwt/sample/showcase/server/customDataSource/Country.hbm.xml"/>
+
+    </session-factory>
+
+</hibernate-configuration>
