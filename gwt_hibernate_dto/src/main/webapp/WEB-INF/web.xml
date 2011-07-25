@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>MusicStore.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>musicService</servlet-name>
+    <servlet-class>com.google.musicstore.server.MusicStoreServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>musicService</servlet-name>
+    <url-pattern>/musicstore/musicservice</url-pattern>
+  </servlet-mapping>
+
+</web-app>
