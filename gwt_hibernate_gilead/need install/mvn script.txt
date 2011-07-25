@@ -1,0 +1,7 @@
+#copy all jar files to D:\dev\ and run command listed below:
+
+#version : 1.3.2.1839	
+
+mvn install:install-file -DgroupId=com.hibernate4gwt -DartifactId=gilead4gwt -Dversion=1.3.2.1839	 -Dpackaging=jar -Dfile=D:\dev\gilead4gwt-1.3.2.1839.jar
+mvn install:install-file -DgroupId=com.hibernate4gwt -DartifactId=gilead-core -Dversion=1.3.2.1839	 -Dpackaging=jar -Dfile=D:\dev\gilead-core-1.3.2.1839.jar
+mvn install:install-file -DgroupId=com.hibernate4gwt -DartifactId=gilead-hibernate -Dversion=1.3.2.1839	 -Dpackaging=jar -Dfile=D:\dev\gilead-hibernate-1.3.2.1839.jar
