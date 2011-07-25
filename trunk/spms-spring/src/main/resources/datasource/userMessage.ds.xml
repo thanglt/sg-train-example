@@ -1,0 +1,12 @@
+<DataSource    ID="userMessage"  serverType="generic"  >
+    <fields>
+        <field name="id"      type="sequence"  hidden="true"       primaryKey="true"/>
+        <field name="createBy"    type="text"      topic="userMessage.createBy"        />
+        <field name="createDate"         type="date"    topic="userMessage.createDate"   />
+        <field name="m_MessageEntity.message"       type="text"   topic="userMessage.message"    />
+        <field name="readed" type="boolean" hidden="true" />
+    </fields>
+    
+     <serverObject lookupStyle="spring" bean="simpleDataSourceService"/>
+       
+</DataSource>
