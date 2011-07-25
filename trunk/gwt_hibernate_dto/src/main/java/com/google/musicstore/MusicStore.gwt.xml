@@ -1,0 +1,12 @@
+<module rename-to='musicstore'>
+    <inherits name='com.google.gwt.user.User'/>
+
+    <!--<inherits name='com.google.gwt.user.theme.standard.Standard'/>-->
+    <inherits name='com.google.gwt.user.theme.chrome.Chrome'/>
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+    <entry-point class='com.google.musicstore.client.MusicStore'/>
+
+    <!-- Specify the paths to find translatable source -->
+    <source path="client"/>
+</module>

@@ -1,0 +1,1 @@
+http://code.google.com/intl/zh-CN/webtoolkit/articles/using_gwt_with_hibernate.html
