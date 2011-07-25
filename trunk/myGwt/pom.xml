@@ -81,6 +81,7 @@
                     <runTarget>myGwt.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <!--<i18nMessagesBundle>com.train.client.Messages</i18nMessagesBundle>-->
+                    <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
                 </configuration>
             </plugin>
 
