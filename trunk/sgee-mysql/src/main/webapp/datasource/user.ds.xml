@@ -1,0 +1,19 @@
+<!--dbName与server.properties中sql.defaultDatabase一致,大小写匹配；
+	tableName与本地数据库中的表名一直，大小写匹配;
+	ID与程序代码中的 DataSource.get("{ID}")保持一致，大小写匹配
+	serverType 演示使用默认值:sql
+  -->
+
+<DataSource 
+	dbName="mysql5" 
+	tableName="tbl_user"
+	ID="user"
+	serverType="sql"
+>
+	<!-- field name 必须与数据库中表的字段名称 大小写匹配 -->
+	<fields>
+		<field primaryKey="true" type="sequence" name="id"></field>
+		<field type="text" length="20" name="name"></field>
+		<field type="number" name="age"></field>
+	</fields>
+</DataSource>
