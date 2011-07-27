@@ -17,7 +17,6 @@ public class FirstGwt implements EntryPoint {
 	
     private Logger logger = Logger.getLogger("com.m3958.firstgwt");
 	
-	@Override
 	public void onModuleLoad() {
 	    try {
 	    	App app = ginjector.getApp();

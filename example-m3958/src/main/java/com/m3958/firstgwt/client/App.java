@@ -67,11 +67,9 @@ public class App {
 	    History.addValueChangeHandler(historyHandler);
 	    
 		gwtRPCService.loginStatus(new AsyncCallback<Boolean>(){
-			@Override
 			public void onFailure(Throwable caught) {
 				SC.warn("应用程序出错！");
 			}
-			@Override
 			public void onSuccess(Boolean result) {
 				if(result){
 					aservice.start();
