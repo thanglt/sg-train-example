@@ -90,7 +90,7 @@
                 </executions>
                 <configuration>
                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-                    <runTarget>higherlower/HigherLower.html</runTarget>
+                    <runTarget>HigherLower.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
                 </configuration>
