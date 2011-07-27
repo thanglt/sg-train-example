@@ -127,7 +127,6 @@ public class XinJianEditLayout extends HasMMRelationEditLayout implements Iview,
 	    TextItem baomimaItem = new TextItem(XinJianField.BAOMIMA.getEname(),XinJianField.BAOMIMA.getCname());
 	    CheckboxItem gongkaiItem = new CheckboxItem(XinJianField.GONGKAI.getEname(),XinJianField.GONGKAI.getCname());
 	    
-	    
 	    HiddenItem attachmentIdsItem = new HiddenItem(SmartParameterName.ATTACHMENTIDS);
 	    
 	    HiddenItem attachmentJsonItem = new HiddenItem(SmartParameterName.ATTACHMENT_JSON);

@@ -1,0 +1,9 @@
+RewriteLogLevel 5
+RewriteLog SYSOUT
+
+#RewriteCond  %{HTTP_HOST} ^localhost$
+#RewriteRule  ^/(.*)$ /webFront/$1  [L]
+
+# redirect mozilla to another area
+RewriteCond  %{HTTP_USER_AGENT}  ^Mozilla.*
+RewriteRule  ^/no-moz-here$                 /homepage.max.html  [L]
