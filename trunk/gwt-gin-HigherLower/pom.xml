@@ -9,6 +9,7 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>gwt gin HigherLower</name>
+    <description>http://code.google.com/p/google-gin</description>
 
     <properties>
         <!-- GWT version -->
