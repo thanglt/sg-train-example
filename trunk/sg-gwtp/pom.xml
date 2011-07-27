@@ -13,7 +13,8 @@
 
     <properties>
         <!-- GWT version -->
-        <gwtVersion>2.1.1</gwtVersion>
+        <gwt.version>2.2.0</gwt.version>
+        <sg.version>2.4</sg.version>
         <!--compiler level-->
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
@@ -26,18 +27,18 @@
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
-            <version>${gwtVersion}</version>
+            <version>${gwt.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.google.code.gwt-log</groupId>
             <artifactId>gwt-log</artifactId>
             <version>2.6.2</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
-            <version>${gwtVersion}</version>
+            <version>${gwt.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -51,15 +52,15 @@
         <dependency>
             <groupId>com.smartgwt</groupId>
             <artifactId>smartgwt</artifactId>
-            <version>2.3</version>
+            <version>${sg.version}</version>
         </dependency>
 
         <!--gwtmultipage-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.gwtmultipage</groupId>
             <artifactId>gwtmultipage-core</artifactId>
             <version>1.0.0.Beta5</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 
@@ -73,7 +74,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>2.1.0-1</version>
+                <version>${gwt.version}</version>
                 <executions>
                     <execution>
                         <goals>

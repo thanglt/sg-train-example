@@ -21,19 +21,7 @@ import com.train.client.data.SettingsNavigationPaneSectionData;
 import com.train.client.welcome.Masthead;
 import com.train.client.welcome.NavigationPane;
 import com.train.client.welcome.NavigationPaneSection;
-import org.gwtmultipage.client.MultipageEntryPoint;
-import org.gwtmultipage.client.UrlPatternEntryPoint;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Hu Jing Ling
- * Date: 3/2/11
- * Time: 11:43 AM
- * To change this template use File | Settings | File Templates.
- */
-//@MultipageEntryPoint(urlPattern = "account.html")
-@UrlPatternEntryPoint(value = "account.html")
-//@UrlPatternEntryPoint(value = "account.html?gwt.codesvr=127.0.0.1:9997")
 public class AccountEntryPoint implements EntryPoint {
     private static final int NORTH_HEIGHT = 73; // TOOLBAR_HEIGHT + MASTHEAD_HEIGHT
 
