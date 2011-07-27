@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!--begin custom header content for this example--> 
+<!-- Source File -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-context-min.css">
+ 
+<style type="text/css">
+
+/*四边都有边框*/
+#infow .yui3-overlay-content .yui3-widget-hd {
+	background: #406ed9;
+    border:1px solid #243356;
+    zoom:1;
+    padding:0.5em 1em;
+    color:#FFFFFF;
+    overflow: hidden;
+}
+
+
+#infow .yui3-overlay-content .yui3-widget-hd h4 {
+	border:0 none;
+	color:#FFFFFF;
+	margin:0;
+}
+
+#infow .yui3-overlay-content .yui3-widget-hd a{
+	background:url("sprite.png") no-repeat scroll 0 0 transparent;
+	color:#ABCEFF;
+	cursor:pointer;
+	display:inline;
+	float:right;
+	height:16px;
+	margin-top:-18px;
+	overflow:hidden;
+	text-align:right;
+	text-decoration:none;
+	text-indent:9999px;
+	width:26px;
+	background-position:0 -300px;
+}
+
+/*左右下有边框*/ 
+#infow .yui3-overlay-content .yui3-widget-bd {
+    background:#abceff;
+    border:solid #7a97bb;
+    border-width:0 1px 1px 1px;
+    clear: both;
+    overflow:hidden;
+    zoom:1;
+    padding: 8px;
+}
+
+#infow{
+	overflow: hidden;
+}
+
+#infow-outer{position: absolute;top: 300px;z-index: 9999;}
+
+#infow-inner{}
+
+
+
+
+</style>
+</head>
+<body>
+<button style="float: right;">abc</button>
+<div id="ttt" style="display:none;position: relative;width: 300px;height: 200px;border: 1px solid #634819;background: none repeat scroll 0 0 #D9C5AB;color: #634819;padding: 8px;overflow: hidden;">{content}</div>
+
+<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== --> 
+
+		<!-- YUI Seed -->
+		<script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui.js"></script>
+<script type="text/javascript">
+	//widget-anim是一个modulename
+	
+	
+	YUI({ filter: 'raw' }).use("overlay","dump",'transition','anim','widget-anim','align-plugin', function(Y) {
+	    /* Create Overlay from script, this time. No footer */
+	    
+	    var m3958uins = Y.namespace('com.m3958.html.ui');
+	    var overlay = new Y.Overlay({
+	        width:"22em",
+	        height:"10em",
+	        headerContent: '<h4>Aligned Overlay</h4><a class="yui3-remove" title="remove module" href="#"><em>remove</em></a>',
+	        bodyContent: "<p>Click the 'Align Next' button to try a new alignment</p>",
+	        zIndex:2,
+	        id:'infow',
+	        x:'800px',
+	        y:'900px'
+	    });
+	 
+	    /* Render it to #overlay-align element */
+	    overlay.render();
+	    
+
+	    
+	    overlay.plug(Y.Plugin.WidgetAnim, {duration:2});
+	    
+	    Y.one('#infow').addClass("yui3-cssreset");
+	    
+	    Y.on('click',function(){
+	    	if((overlay.get('visible'))){
+	    		overlay.hide();
+	    	}else{
+	    		overlay.show();
+	    		
+	    	}
+	    },document);
+	    
+
+	    function Infow(content,alignto,innernode){
+	    	var removex = '<a href="#close" class="infow-remove" style="width: 20px;height: 20px;position: absolute;top:1px;right: 1px;text-decoration: none;color: black;border: 1px solid white;text-align: center;">x</a>';
+	    	this.c = content;
+	    	var al = alignto,n=innernode;
+	    	var tthis = this;
+	    	if(!n){
+	    		var innerstr = '<div style="position: relative;border: 1px solid #634819;background: none repeat scroll 0 0 #D9C5AB;color: #634819;padding: 8px;overflow: hidden;">{content}</div>';
+	    		var s = Y.Lang.sub(innerstr,{content:this.c});
+	    		this.inner = Y.Node.create(s); 
+	    	}else{
+	    		if(Y.Lang.isString(n)){
+		    		if(n.indexOf('<') == -1){
+						this.inner = Y.one(n);		    			
+		    		}else{
+		    			var innerstr = Y.Lang.sub(n,{content:this.c});
+		    			this.inner = Y.Node.create(innerstr);
+		    		}
+	    		}else{
+	    			var t = Y.Node.create('<div></div>');
+	    			t.append(n);
+	    			var s = Y.Lang.sub(t.getContent(),{content:this.c});
+	    			this.inner = Y.Node.create(s);
+	    		}
+	    	}
+	    	
+				    	
+	    	this.outer = Y.Node.create('<div style="position: absolute;top: 300px;z-index: 9999;top:-1000px;left:-1000px;"></div>');
+	    	this.outer.append(this.inner);
+	    	this.inner.show();
+	    	
+	    	var removea = this.outer.one('.infow-remove');
+	    	if(removea){
+		    	removea.on('click',function(){
+			    	this.hide();
+			    	tthis.trans();
+			    });
+	    	}
+	    	
+	    	Y.one('body').append(this.outer);
+	    	
+		    this.outer.plug(Y.Plugin.Align);
+		    if(al){
+	    		if(Y.Lang.isString(al)){
+		    		if(al.indexOf('#') == -1){
+						al = Y.one('#' + al);		    			
+		    		}else{
+		    			al = Y.one(al);
+		    		}
+	    		}
+		    	this.outer.align.center(al.get('region'));
+		    }else{
+		    	this.outer.align.center(this.outer.get('viewportRegion'));
+		    }
+		    
+		    
+		    var rg = this.inner.get('region');
+		    
+		    this.trans = function(){
+			    this.inner.transition({
+			        duration: 1, // seconds
+			        easing: 'ease-out', // CSS syntax
+			        height: 0,
+			        top:rg.height/2,
+			        width: {
+			            delay: 1,
+			            duration: 0.5,
+			            easing: 'ease-in',
+			            value: 0
+			        },
+			     
+			        left: {
+			            delay: 1,
+			            duration: 0.5,
+			            easing: 'ease-in',
+			            value: rg.width/2
+			        },
+			     
+			        opacity: {
+			            delay: 1.5,
+			            duration: 0.25,
+			            value: 0
+			        }
+			    }, function() {
+			        tthis.outer.remove();
+			    });
+		    }
+	    }
+//	    var iw = new Infow(/*Y.one('#ttt'),*/"abc");
+//  		iw.trans();
+  		
+  		Y.one('button').on('click',function(){
+  		    var iw = new Infow("abc");
+  	  		iw.trans();
+  		});
+  		
+  		
+//	    wouter.plug(Y.Plugin.Align);
+//	    wouter.align.center(Y.one('#infow'));
+/*	    
+
+*/	    
+/*	    
+	    var anim = new Y.Anim({
+	        node: '#infow',
+	        from:{width:0},
+	        to: { height: 0 },
+	        duration:2,
+	        easing: Y.Easing.backIn
+	    });
+	    
+	    anim.run();
+*/	    
+//	    overlay.set('xy',[200,200]);
+	    
+	    var node = overlay.get('srcNode');
+//	    node.setStyles({'top':'100px','left':'200px'});
+//	    alert(node.getStyle('top'));
+/*	    
+	    var t = (node.getXY()[1] + node.get('winHeight')/2) + 'px';
+	    var l = (node.getXY()[0] + node.get('winWidth')/2) + 'px';
+	    alert(t);
+	    node.transition({
+            duration: 1,
+            easing: 'ease-out', 
+            height: 0,
+			width:0, 
+
+            
+            opacity: {
+                delay: 1.5,
+                duration: 0.75,
+                value: 0
+            }
+        }, function() {
+            ;
+        });
+*/    
+/*	    
+	    var alignment = Y.one("#alignment");
+	    var stepNumber = Y.one("#step");
+
+
+	    var WidgetPositionAlign = Y.WidgetPositionAlign;
+	 
+	    var steps = [
+	        function() {
+	            overlay.set("align", {node:"#overlay-align", points:[WidgetPositionAlign.CC, WidgetPositionAlign.CC]});
+	            alignment.set("innerHTML", 'align: {node:"#overlay-align", points:["cc", "cc"]}');
+	        },
+	        function() {
+	            overlay.set("align", {node:"#align1", points:[WidgetPositionAlign.TL, WidgetPositionAlign.TR]});
+	            alignment.set("innerHTML", 'align: {node:"#align1", points:["tl", "tr"]}');
+	        },
+	        function() {
+	            overlay.set("centered", "#align2");
+	            alignment.set("innerHTML", 'centered: "#align2"');
+	        },
+	        function() {
+	            overlay.set("align", {points:[WidgetPositionAlign.RC, WidgetPositionAlign.RC]});
+	            alignment.set("innerHTML", 'align: {points:["rc", "rc"]} (viewport)');
+	        },
+	        function() {
+	            overlay.set("centered", true);
+	            alignment.set("innerHTML", "centered: true (viewport)");
+	        },
+	        function() {
+	            overlay.set("align", {node:"#align3", points:[WidgetPositionAlign.TC, WidgetPositionAlign.BC]});
+	            alignment.set("innerHTML", 'align: {node:"#align3", points:["tc", "bc"]}');
+	        }
+	    ];
+	 
+	    var step = 0;
+	    var totalSteps = steps.length;
+	 
+	    function alignNext() {
+	        stepNumber.set("innerHTML", "Alignment " + (step+1) + " of " + totalSteps);
+	        steps[step]();
+	        step = (++step)%(totalSteps);
+	    }
+	 
+	    alignNext();
+	 
+	    Y.on("click", alignNext, "#align");
+	    alert(Y.dump(YUI.com));
+*/	    
+	});
+	
+</script> 
+</body>
+</html>

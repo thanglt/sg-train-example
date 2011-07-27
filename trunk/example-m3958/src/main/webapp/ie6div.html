@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.m3958-vote-display-b0 {
+		border: 1px solid #C4D6EC;
+    	clear: both;
+    	text-align: left;
+    	overflow: hidden;
+    	overflow: visible;
+	}
+	
+	.m3958-vote-display-b0 .m3958-vote-display-b1 {
+	    background: url("/aaayjcsxdl/images/vote/voteicon.gif") no-repeat scroll 9px center #E5EEF8;
+	    font-size: 14px;
+	    font-weight: bold;
+	    height: 34px;
+	    line-height: 34px;
+	    margin-bottom: 10px;
+	    padding-left: 30px;
+	}
+	
+	.m3958-vote-display-b0 .m3958-vote-display-b2,.m3958-vote-display-b0 .m3958-vote-display-b3 {
+	    clear: both;
+	    font-size: 12px;
+	    line-height: 21px;
+	    overflow: hidden;
+	    text-align: left;
+	}
+	
+	.m3958-vote-display-b0 .m3958-vote-display-b2 {
+	    margin-left: 30px;
+	    margin-right: 30px;
+	}
+
+	.m3958-vote-display-b0 .m3958-vote-display-b3 {
+    	margin-left: 30px;
+    	margin-right: 30px;
+    }
+    
+	.m3958-vote-display-b2, .m3958-vote-display-b3{
+	    margin-bottom: 10px;
+	}
+	
+	.m3958-vote-display-b3{
+		height: 100px;
+	}
+	
+	.m3958_vote_list dt {
+	    line-height: 25px;
+	}
+	
+	.m3958_vote_list dd {
+	    margin: 0;
+	}
+	
+	.m3958_vote_list input {
+	    height: 19px;
+	    margin: 0 1px;
+	    vertical-align: top;
+	    width: 19px;
+	}
+	
+	.m3958_vote_submit {
+	    height: 23px;
+	    width: 60px;
+	}
+	
+	.m3958_vote_clock {
+	    background: url("/aaayjcsxdl/images/vote/vote24.gif") no-repeat scroll left center transparent;
+	    padding-left: 16px;
+	}
+
+	.m3958-vote-display-b0 .m3958-vote-display-b4 {
+    }
+
+	
+	.m3958_vote_icon_success {
+	    background: url("/aaayjcsxdl/images/vote/bg20.png") no-repeat scroll 0 center transparent;
+	    padding-left: 18px;
+	}
+	.m3958_vote_icon_error {
+	    background: url("/aaayjcsxdl/images/vote/bg21.png") no-repeat scroll 0 center transparent;
+	    padding-left: 18px;
+	}
+	
+	.m3958_vote_clock_container{
+		float:right;
+	}
+	#fl{
+		float:right;
+		border: 1px solid red;
+		display: inline;
+	}
+	.m3958_vote_bt_prompt{
+		float:left;
+		display: inline;
+	}
+	
+</style>
+</head>
+<body>
+<div id="vote">
+<div>
+	<form id="m3958_vote_form" action="/voteresult.html" method="get" target="_blank">
+		<input type="hidden" name="_modelName" value="com.m3958.firstgwt.model.VoteHit">
+		<input type="hidden" name="_relationModelName" value="com.m3958.firstgwt.model.Vote">
+		<input type="hidden" value="vote" name="obname">
+		<input type="hidden" value="15201" name="obid">
+		<input type="hidden" value="add" name="_operationType">
+<div class="m3958-vote-display-b0" id="yui_3_3_0_1_130966910775139">
+	<div>
+
+	
+		<div class="m3958-vote-display-b1">可以吗</div>
+		<div class="m3958-vote-display-b2" id="yui_3_3_0_1_130966910775134">
+			<dl class="m3958_vote_list">
+				<dt><span><b>你喜欢什么</b></span></dt>
+					<dd><label><input type="checkbox" value="15202" name="_relationModelId">黑人</label></dd>
+					<dd><label><input type="checkbox" value="15203" name="_relationModelId">白人</label></dd>
+					<dd><label><input type="checkbox" value="15204" name="_relationModelId">黄人</label></dd>
+					<dd><label><input type="checkbox" value="19362" name="_relationModelId">不知道</label></dd>
+					<dd><label><input type="checkbox" value="19361" name="_relationModelId">混血</label></dd>
+			</dl>
+		</div>
+		<div class="m3958-vote-display-b3">
+			<div class="m3958_vote_bt_prompt">
+				<div>
+					<span style="display: none;" class="m3958_vote_icon_success">投票成功</span>
+					<span style="display: none;" class="m3958_vote_icon_error">请选择选项</span>
+				</div>
+				<input type="submit" value="投票" class="m3958_vote_submit">
+					<a href="/voteresult.html" class="m3958_vote_view" target="_blank">查看结果</a>
+			</div>
+			<div id="fl">abc</div>
+		</div>
+		<div class="m3958-vote-display-b4">
+		</div>
+ 
+ 	</div>
+</div>
+ 	</form>
+ 	</div>
+
+</div>
+</body>
+</html>

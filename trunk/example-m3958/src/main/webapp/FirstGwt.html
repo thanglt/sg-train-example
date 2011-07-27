@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="gwt:property" content="locale=zh_CN">
+<title>奉化市诗篇网络科技有限公司--诗篇内容管理系统</title>
+<script> var isomorphicDir = "firstgwt/sc/"; </script> 
+<script type="text/javascript" language="javascript" src="/aaayjcsxdl/detect_timezone.js"></script>
+
+<script type="text/javascript" language="javascript" src="firstgwt/firstgwt.nocache.js"></script>
+
+<script type="text/javascript" src="/yui/3.3.0/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+YUI().use('node','event-delegate','io-base','json','event',function(Y){
+    	
+		Y.delegate('click',function(e){
+			e.preventDefault();
+			var uuid = this.get('id');
+			(function(){
+				function changeLoginStatus(){
+					if(ns.logined){
+						loginBar.setContent('<span>' + ns.user.loginName +  '</span> <a href="/openid.html#tab=3">修改</a> | <a href="/notrpclogin?logout=true">登出</a>');
+					}
+				}
+				var tH = {
+						success: function(id, o, args) {
+								   var res = Y.JSON.parse(o.responseText);
+								   if(res.response.status == 0){
+									   alert("您已经加入群：" + res.response.data[0].name);
+								   }else{
+									   alert('发生错误，没有加入该群！');
+								   }
+								 },
+						failure: function(id, o, args) {
+									alert("发生未知故障！");
+								 }
+
+					};
+				var cfg = {
+						method:'POST',
+						data:'uuid=' + uuid,
+						on: {
+							success: tH.success,
+							failure: tH.failure
+						},
+						context: tH
+					};
+				
+				Y.io('/tokenconsume', cfg);		
+			})();
+		},'body','a.m3958-confirm-token');	
+});
+</script>
+<style type="text/css">
+.m3958-confirm-token{}
+</style>
+<script type="text/javascript">
+var openwindow = function(url,name,w,h){
+	w += 32;
+	h += 96;
+	wleft = (screen.width - w) / 2;
+	wtop = (screen.height - h) / 2;
+	if (wleft < 0) {
+		w = screen.width;
+		wleft = 0;
+	}
+	if (wtop < 0) {
+		h = screen.height;
+		wtop = 0;
+	}
+	 var win = window.open(url,
+				name,
+				'width=' + w + ', height=' + h + ', ' +
+				'left=' + wleft + ', top=' + wtop + ', ' +
+				'location=no, menubar=no, ' +
+				'status=no, toolbar=no, scrollbars=yes, resizable=yes');
+			  // Just in case width and height are ignored
+	  win.resizeTo(w, h);
+	  // Just in case left and top are ignored
+	  win.moveTo(wleft, wtop);
+	  win.focus();
+};
+</script>
+<!-- Load the Google AJAX API Loader 
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	-->
+
+<!-- Load the Google Friend Connect javascript library. 
+	<script type="text/javascript">
+	google.load('friendconnect', '0.8');
+	</script>
+	-->
+
+<!-- Initialize the Google Friend Connect OpenSocial API.
+<script type="text/javascript">
+	
+	function initfc(times) { };
+
+      function onFriendConnectInitialized(st) {
+        if (!window.friendconnect_times_loaded) {
+          window.friendconnect_times_loaded = 1;
+        } else {
+          window.friendconnect_times_loaded++;
+        }
+        initfc(window.friendconnect_times_loaded);
+      };
+          
+      function onAjaxLoaded() {
+        google.friendconnect.container.setParentUrl('/');
+        google.friendconnect.container.loadOpenSocialApi({
+          site: '15387073527982291758',
+          onload: onFriendConnectInitialized
+        });
+      };
+
+	google.setOnLoadCallback(onAjaxLoaded);
+
+</script>
+   
+     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+  -->
+</head>
+
+<body>
+<!-- 
+    <div id="login-fcbutton"></div>
+	<img src="images/loading1.gif" alt="Loading..." id="loading"/>
+   -->
+<iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1'
+	style="position: absolute; width: 0; height: 0; border: 0"></iframe>
+<!-- 	
+	<script type="text/javascript">
+		window.renderFcButton = function(id,text){
+	          google.friendconnect.renderSignInButton({
+	            "id" : "login-fcbutton",
+	            "text" : "Sign in with Google Friend Connect",
+	            "style" : "long"
+	          });
+		};
+          window.initfc = function(times) {
+            if (times > 1) {
+              window.top.location.href = "/";
+            }
+          };
+     </script>
+ -->
+
+<!--     
+      <div align="center" style="margin-top: 350px;" id="psalmsLogos">
+    	<div><table style="border: none;"><tr><td><img src="images/logo/55.jpg" alt="psalmscn" border="0"></td><td><span style="color:gray;"><a href="http://www.psalmscn.com" target="_blank">奉化市诗篇网络科技有限公司</a> &copy; 2010</span></td></tr></table></div>
+    	<div align="center" style="font-family: 'Tangerine', serif;font-size: 20px;text-shadow: 4px 4px 4px #aaa;">Making the Web Useful!</div>
+
+    <p align="center"> 
+<a href="http://www.google.com.hk/search?q=ie" target="_blank"><img border="0" src="images/compatible_ie.gif" width="18" height="17" alt="Internet Explorer" title="Internet Explorer" /></a> 
+<a href="http://www.google.com.hk/search?q=firefox" target="_blank"><img border="0" src="images/compatible_firefox.gif" width="18" height="17" alt="Firefox" title="Firefox" /> </a>
+<a href="http://www.google.com.hk/search?q=opera" target="_blank"><img border="0" src="images/compatible_opera.gif" width="18" height="17" alt="Opera" title="Opera" /> </a>
+<a href="http://www.google.com.hk/search?q=chrome" target="_blank"><img border="0" src="images/compatible_chrome.gif" width="18" height="17" alt="Google Chrome" title="Google Chrome" /></a> 
+<a href="http://www.google.com.hk/search?q=safari" target="_blank"><img border="0" src="images/compatible_safari.gif" width="18" height="17" alt="Safari" title="Safari" /></a></p> 
+    </div>
+
+   	<iframe name="inWindowIframe0" width="0" height="0" frameborder="0" id="inWindowIframe0"></iframe>
+   	<iframe name="inWindowIframe1" width="0" height="0" frameborder="0" id="inWindowIframe1"></iframe>
+   	<iframe name="inWindowIframe2" width="0" height="0" frameborder="0" id="inWindowIframe2"></iframe>
+   	<iframe name="inWindowIframe3" width="0" height="0" frameborder="0" id="inWindowIframe3"></iframe>
+   	<iframe name="inWindowIframe4" width="0" height="0" frameborder="0" id="inWindowIframe4"></iframe>
+   	<iframe name="inWindowIframe5" width="0" height="0" frameborder="0" id="inWindowIframe5"></iframe>
+   	<iframe name="inWindowIframe6" width="0" height="0" frameborder="0" id="inWindowIframe6"></iframe>
+   	<iframe name="inWindowIframe7" width="0" height="0" frameborder="0" id="inWindowIframe7"></iframe>
+   	<iframe name="inWindowIframe8" width="0" height="0" frameborder="0" id="inWindowIframe8"></iframe>
+   	<iframe name="inWindowIframe9" width="0" height="0" frameborder="0" id="inWindowIframe9"></iframe>
+   	<iframe name="inWindowIframe10" width="0" height="0" frameborder="0" id="inWindowIframe10"></iframe>
+   	<iframe name="inWindowIframe11" width="0" height="0" frameborder="0" id="inWindowIframe11"></iframe>
+   	<iframe name="inWindowIframe12" width="0" height="0" frameborder="0" id="inWindowIframe12"></iframe>
+   	
+   	 -->
+   	 <iframe name="fordownloadfile" width="0" height="0" frameborder="0" id="fordownloadfile"></iframe>
+
+</body>
+</html>

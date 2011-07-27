@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 最开始是一个自定义html模块，模块的内容就是一个div -->
+<div id="showMain"></div>
+
+<!-- 然后是主代码 -->
+<div>
+<p>hello</p>
+
+<!-- 这块main只在首页上显示 -->
+<div id="main" style="display: none;">
+<p>哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,</p>
+<p>哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,</p>
+<p>哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,</p>
+<p>哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,哈哈哈哈哈,</p>
+</div>
+
+<p>world!</p>
+</div>
+
+<!-- 最后一段javascript代码 -->
+
+<script type="text/javascript">
+(function(){
+	var flag = document.getElementById("showMain");
+	if(flag != null){
+	   var m = document.getElementById("main");
+	   m.style.display = "block";
+	}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	
+
+</head>
+<body>
+
+<div>
+
+</div>
+<!-- start of comment -->
+<script type="text/javascript" src="/aaayjcsxdl/jquery.form.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#comment-form').submit(function(){
+		 if($('#comment-nickname').val().length < 2 || $('#comment-message').val().length < 10){
+			 alert("請輸入用戶名和評論內容！");
+			 return false;
+		 }
+		 $(this).ajaxSubmit({type:"GET",dataType:"json",success:function(responseText, statusText, xhr, $form){
+				var status = responseText.response.status;
+				var data = responseText.response.data;
+				if(status != 0){
+					alert(data[0].message);
+				}else{
+					alert("评论成功!");
+				}
+		 }}); 
+		return false;
+	});
+	
+//	<li id="comment-2761" class="comment">
+//	<div class="narrow">
+//		<span class="author">live</span>
+//		<span class="date">2010 年 10 月 1 日,&nbsp;下午 9:34</span>
+//		<span class="permlink"><a href="#comment-2761" title="该评论的永久链接">#</a></span>
+//	</div>
+//	<div class="wide">
+//		<p>沙发，第一个下载玩玩！</p> 
+//	</div>
+//	</li>
+	var c = '<li id="comment-substitution1" class="comment">' + 
+				'<div class="narrow">' +
+					'<span class="author">substitution2</span>' +
+					'<span class="date">substitution3</span>' +
+					'<span class="permlink"><a href="#comment-substitution4" title="该评论的永久链接">#</a></span>' +
+				'</div>' +
+				'<div class="wide">' +
+					'substitution5' +  
+				'</div>' + 
+			'</li>';
+	function getDate(dateStr){
+		//2011-05-12T10:24:33
+		var s = dateStr.split("T");
+		var ss = s[0].split("-");
+		var y = ss[0],M = ss[1],d = ss[2];
+		var sss = s[1].split(":");
+		var h = sss[0],m = sss[1],sec = sss[2];
+		var d = new Date(y,M,d,h,m,sec,0);
+		return d;
+	}
+			
+	function afterReplace(commentObj){
+		var cc = c.replace("substitution1",commentObj.id);
+		cc = cc.replace("substitution2",commentObj.nickName);
+		cc = cc.replace("substitution3",getDate(commentObj.createdAt));
+		cc = cc.replace("substitution4",commentObj.id);
+		cc = cc.replace("substitution5",commentObj.message);
+		return cc;
+	}
+	
+	$.ajax({
+		url:'/jsonp',
+		dataType:'json',
+		type:'GET',
+		data:{_modelName:'com.m3958.firstgwt.model.Comment',obid:'${requestParameters.obid!uri}',siteId:${site.id?c}},
+		success:function(serverResponse, textStatus, jqXHR){
+			var status = serverResponse.response.status;
+			var data = serverResponse.response.data;
+			if(status != 0){
+				alert(data[0].message);
+			}else{
+				$.each(data,function(index,value){
+					$(afterReplace(value)).appendTo($('#comments'));
+				});
+			}
+		}
+	});
+});
+</script>
+
+<h2 id="commentheader" class="fancy">评论</h2>
+<ol id="comments" class="commentlist">
+</ol>
+
+<form action="/jqfprocessor" id="comment-form">
+<h3>发表评论</h3>
+<div class="narrow">
+<input type="hidden" name="obname" value="${requestParameters.obname!"page"}"/>
+<input type="hidden" name="obid" value="${requestParameters.obid!uri}">
+<input type="hidden" name="siteId" value="${site.id?c}">
+<input type="hidden" value="com.m3958.firstgwt.model.Comment" name="_modelName"/> 
+<input type="hidden" name="_operationType" value="add"/> 
+<label for="comment-nickname">昵称：</label><input type="text" name="nickName" id="comment-nickname"/>
+<label for="comment-email">电子邮件：</label><input type="text" name="email" id="comment-email"/>
+</div>
+<div class="wide">
+<textarea rows="5" cols="45" name="message" id="comment-message"></textarea><br/>
+<input type="submit">
+</div>
+</form>
+<!-- end of comment -->
+
+</body>
+</html>

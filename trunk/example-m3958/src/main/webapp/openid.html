@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>奉化市诗篇网络科技有限公司-登录注册入口</title>
+
+<script type="text/javascript">
+	document.documentElement.className = "yui3-loading";
+</script>
+
+<script type="text/javascript" src="/yui/3.3.0/build/yui/yui-min.js"></script>
+
+<script type="text/javascript" src="/aaayjcsxdl/js/openid.js"></script>
+
+<style type="text/css">
+.yui3-loading #openid-tabview {
+	display: none;
+}
+
+#openid_identifier {
+  background: transparent url('/aaayjcsxdl/images/login-bg.gif') no-repeat scroll 0pt 50%;
+  padding-left: 18px;
+  margin:3px 0 5px 0;
+}
+
+/*
+#openid-wrap,#sitelogin-wrap,#signup-wrap{
+	margin-bottom:15px;
+	border-top: 1px solid gray;
+	border-left: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+	margin-left: 30px;
+	padding-left: 30px;
+	width: 800px;
+}
+*/
+
+.greenbox {
+    background-color: #FFFFFF;
+    border: 1px solid #89B31F;
+    color: #004C6D;
+    display: block;
+    font-size: 93%;
+    line-height: 2em;
+    margin: 10px;
+    padding: 0 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.captchaImg{
+	cursor:pointer;
+	width:100px;
+	height:30px;
+	padding: 10px;
+}
+
+.captch-box{
+	border: 1px solid gray;
+	width: 120px;
+}
+
+#openid-discs a{
+	margin-top: 10px;
+	line-height: 150%;
+}
+
+#openid-discs a:LINK{
+	text-decoration: none;
+}
+
+#openid-discs a:VISITED{
+	text-decoration: none;
+}
+
+#openid-discs a:ACTIVE{
+	text-decoration: none;
+}
+
+#openid-discs a:HOVER{
+	text-decoration: underline;
+	color: red;
+}
+
+
+</style>
+</head>
+<body>
+	<div class="greenbox" id="login-status" style="display: none;">
+		您已经登录:{nickname}, <a href="/notrpclogin?logout=true">登出</a>
+	</div>
+	<div id="ajaxloading" style="display: none;"><img src="/aaayjcsxdl/images/ajax-loader.gif" /></div>
+	<div id="openid-tabview">
+	<ul>
+		<li><a href="#sitelogin-wrap">本站登录</a></li>
+		<li><a href="#openid-wrap">OpenId|QQ登录</a></li>
+		<li><a href="#signup-wrap">注册新用户</a></li>
+		<li><a href="#editlogin-wrap">修改用户资料</a></li>
+		<li><a href="#applist-wrap">应用列表</a></li>
+	</ul>
+	<div>
+		<div id="sitelogin-wrap">
+			<h2>本站登录</h2>
+			<form method="POST" action="#" id="site-login-form">
+				<input type="hidden" name="want" value="json">
+				<input type="text" name="username" id="username" size="35"/><label for="username">用户名，电子邮件，手机号码</label><br>
+				<input type="password" name="password" id="passwordl" size="35"/><label for="passwordl">密码</label><br>
+				<input type="text" name="answer" id="answerl"><label for="answerl">验证码</label> <br/>
+				<div class="captch-box"><img src="/simpleImg" class="captchaImg" title="如果看不清，请点我"/></div>
+				<input type="submit" value="开始登陆"/>
+			</form>
+		</div>
+		
+		<div id="openid-wrap">
+			<h2>OpenId|QQ登录</h2>
+			<form method="POST" action="/openid" id="openid-form">
+			<input type="text" name="openid_identifier" id="openid_identifier" size="35"/><br>
+			<input type="hidden" name="wheretogo" id="openid-wheretogo"/>
+			<input type="submit" value="开始登陆"/>
+			</form>
+			
+			<div id="openid-discs">
+				<ul>
+					<li><a href="/qqauthlogin" id="qq-disc">QQ登录</a></li>
+					<li><a href="http://www.google.com/accounts/o8/id" id="google-disc">谷歌登录-Google</a></li>
+					<li><a href="http://yahoo.com" id="yahoo-disc">雅虎登录-Yahoo</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="signup-wrap">
+			<h2>注册</h2>
+			<form method="POST" action="/jqfprocessor" id="site-signup-form">
+				<input type="hidden" value="com.m3958.firstgwt.model.User" name="_modelName"/> 
+				<input type="hidden" name="_operationType" value="add"/>
+				<input type="text" name="loginName" id="loginName" size="35"/><label for="loginName">登录名</label><br>
+				<input type="text" name="nickname" id="nickname" size="35"/><label for="nickname">昵称</label><br>
+				<input type="text" name="email" id="email" size="35"/><label for="email">电子邮件</label><br>
+				<input type="text" name="mobile" id="mobile" size="35"/><label for="mobile">手机号码</label><br>
+				<input type="password" name="password" id="password" size="35"/><label for="password">密码</label><br>
+				<input type="password" name="confirmPassword" id="confirmPassword" size="35"/><label for="confirmPassword">再次密码</label><br>
+				<input type="text" name="answer" id="answer"><label for="answer">验证码</label> <br/>
+				<div class="captch-box"><img src="/simpleImg" class="captchaImg" title="如果看不清，请点我"/></div>
+				<input type="submit" value="开始注册"/>
+			</form>
+		</div>
+		
+		<div id="editlogin-wrap">
+			<h2>修改用户资料</h2>
+			<form method="POST" action="/jqfprocessor" id="edit-login-form">
+				<input type="hidden" value="com.m3958.firstgwt.model.User" name="_modelName"/> 
+				<input type="hidden" name="_operationType" value="update"/>
+				<input type="text" name="loginName" id="loginNamee" size="35"/><label for="loginNamee">登录名</label><br>
+				<input type="text" name="nickname" id="nicknamee" size="35"/><label for="nicknamee">昵称</label><br>
+				<input type="text" name="email" id="emaile" size="35"/><label for="emaile">电子邮件</label><br>
+				<input type="text" name="mobile" id="mobilee" size="35"/><label for="mobilee">手机号码</label><br>
+				<input type="password" name="prePassword" id="prePassword" size="35"/><label for="prePassword">原来密码</label><br>
+				<input type="password" name="password" id="passworde" size="35"/><label for="passworde">新密码(不修改就空着)</label><br>
+				<input type="password" name="confirmPassword" id="confirmPassworde" size="35"/><label for="confirmPassworde">再次新密码(不修改就空着)</label><br>
+				<input type="text" name="answer" id="answere"><label for="answere">验证码</label> <br/>
+				<div class="captch-box"><img src="/simpleImg" class="captchaImg" title="如果看不清，请点我"/></div>
+				<input type="submit" value="确认修改"/>
+			</form>
+		</div>
+		
+		<div id="applist-wrap">
+			<h2>应用列表</h2>
+			<ul>
+				<li><a href="/webmastertool.html">站长工具</a></li>
+				<li><a href="/FirstGwt.html">建站系统</a></li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+</body>
+</html>
