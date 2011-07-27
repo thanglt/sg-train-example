@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>投票测试站</title>
+</head>
+<body>
+<h2>投票代码测试</h2>
+<form action="#">
+<p>这里是你网站页面中的html片段(<a href="http://www.m3958.com/article/31116">帮助</a>)：</p>
+<p style="font-size: 85%;border: 0.5px solid green;padding: 5px;">这个模板是你网站上的任意html代码，你可以用talbe或者ul或者你习惯的任何方式布局。</p>
+<textarea rows="10" cols="100" id="votetpl"></textarea>
+
+<p>将下面的javascript代码加到你的网站的页面的最后：</p>
+<p style="font-size: 85%;border: 0.5px solid green;padding: 5px;">如果你已经在页面上加载了yui-min.js，则可以不用再次加载！</p>
+<textarea rows="10" cols="100" id="votejs"></textarea>
+
+</form>
+
+<div style="margin-top: 15px;"><a href="votetestpreview.html" target="_blank">预览</a></div>
+<script type="text/javascript" src="/yui/3.3.0/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+
+var tplstr,jsstr;
+
+
+YUI().use('node',function(Y){
+
+	var url = window.location.href + "";
+	var pattern = new RegExp( "vote_id=(\\d+)", "i" );
+	var matches;
+	var vote_id;
+	if (matches = pattern.exec( url )){
+		vote_id = matches[1];
+	}else{
+		alert("url没有指定vote_id!");
+	}
+
+	var viewresulturl,resultjs,yuiseed;
+	if(window.location.href.indexOf('8888') == -1){
+		viewresulturl = '<a href="http://www.m3958.com/voteresult.html?vote_id='+ vote_id +'">查看结果</a>';
+		resultjs = "vs.src = 'http://www.m3958.com/votedisplay.js';";
+		yuiseed = '<scr' + 'ipt type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></sc' + 'ript>';
+	}else{
+		viewresulturl = '<a href="/voteresult.html?vote_id='+ vote_id +'">查看结果</a>';
+		resultjs = "vs.src = '/votedisplay.js';";
+		yuiseed = '<scr' + 'ipt type="text/javascript" src="/yui/3.3.0/build/yui/yui-min.js"></sc' + 'ript>';
+	}
+	
+	var tplstrary = ['<div  style="border:1px solid blue;width:400px;">',
+							'<form id="myvote-form" style="display:none;">',
+							'<p style="text-align: center;"><strong>{vname}</strong></p>',
+							'<div>',
+							'<ul class="wp-polls-ul">',
+									'<li id="m3958-vote-loop-block">{radio_or_checkbox} <label>{label}</label></li>',
+							'</ul>',
+								'<input type="submit" name="vote" value="投票"/>',
+								viewresulturl,
+							'</div>',
+						'</form>',
+						'</div>'
+	                 ];
+	
+	var jsstrary = [yuiseed,
+	                '<scr' + 'ipt type="text/javascript">',
+	                "var com_m3958_vote_cfgs = [",
+                 		"{",
+                 			"vote_type:'html',",
+                 			"vote_form_id:'myvote-form',",
+                 			"vote_loop_id:'m3958-vote-loop-block',",
+                 			"vote_id:" + vote_id,
+                 		"}];",
+                 		
+                 			"(function() {",
+                 				"var vs = document.createElement('script'); vs.type = 'text/javascript'; vs.async = true;",
+                 				resultjs,
+                 				"var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vs, s);",
+                 			"})();",
+                 		'</scr' + 'ipt>'
+	                ];
+	
+	tplstr = tplstrary.join('\n');
+	jsstr = jsstrary.join('\n');
+	Y.one('#votetpl').set('value',tplstr);
+	Y.one('#votejs').set('value',jsstr);
+	
+
+});
+
+</script>
+</body>
+</html>

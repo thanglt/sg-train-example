@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="/yui/3.3.0/build/yui/yui-min.js"></script>
+<title>serialize form</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+YUI().use('node','stylesheet','dump','selector-css3','array-extras','querystring-stringify',function(Y){
+	
+var serializeForm = (function(){
+	var namevalues = {};
+	function add(name,value){
+		if(namevalues[name]){
+			 if(Y.Lang.isArray(namevalues[name])){
+				 namevalues[name].push(value);
+			 }else{
+				 namevalues[name] = [namevalues[name]];
+				 namevalues[name].push(value);
+			 }
+		}else{
+			namevalues[name] = value;
+		}
+	}
+	return function(form){
+		namevalues = {};
+		var formNode;
+		if(Y.Lang.isString(form)){
+			formNode = Y.one(form);
+		}else{
+			formNode = voteNodes().form;
+		}
+		var items = formNode.all('input[name][type=text],input[name][type=hidden],input[name][type=radio]:checked,input[name][type=check]:checked,select[name],textarea[name]');
+		
+		items.each(function(nel){
+			if(nel.get('tagName').toUpperCase() == "SELECT"){
+				nel.get('options').each(function(op){
+					if(op.get('selected')){
+						add(nel.get('name'),op.get('value'));
+					}
+				});
+			}else{
+				add(nel.get('name'),nel.get('value'));
+			}
+		});
+		return namevalues;
+	};
+})();
+
+
+Y.on('click',function(e){
+	alert(Y.dump(serializeForm('#myform')));
+},'#b');
+});
+</script>
+<button id="b">yes</button>
+<form action="#" id="myform">
+
+<select name="uuu" multiple="multiple">
+<option>aaa</option>
+<option>bbb</option>
+<option>ccc</option>
+<option>ddd</option>
+</select>
+
+</form>
+</body>
+</html>

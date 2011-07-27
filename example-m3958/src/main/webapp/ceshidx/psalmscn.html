@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- 
+
+absolute	自下而上，碰到第一个不是static的祖先，就以他为基准。
+fixed		相对浏览器
+relative	和自己正常的位置相对偏移
+static	Default. No position, the element occurs in the normal flow (ignores any top, bottom, left, right, or z-index declarations)
+inherit	Specifies that the value of the position property should be inherited from the parent element
+
+ -->
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>奉化市诗篇网络科技有限公司</title>
+<link rel="stylesheet" href="960/css/reset.css" />
+<link rel="stylesheet" href="960/css/960.css" />
+<link rel="stylesheet" href="psalmscn.css" />
+<!-- 960 的 div 没有嵌套 -->
+<style type="text/css">
+div.dotted {
+	border: thin dotted;
+}
+
+/*
+顺序：top right bottom right
+如果3个的话，top （right，left） bottom
+margin:0 0 22px;
+*/
+/*这个center应用于对象本身，而不是容器，这样做的好处是只让自己居中，缺点是必须知道自己的尺寸，不然如果这个div里面的内容小于div宽度的时候看起来就没有正真居中。
+也可以在容器级别设置align="center".
+*/
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<body>
+<div class="container_12">
+<div class="grid_3">
+<div style="height: 55px;" class="dotted"><img
+	src="images/logo/55.jpg" style="float: left;" /><span
+	style="padding-top: 35px; float: left;">奉化市诗篇网络科技有限公司</span></div>
+</div>
+<div class="grid_9">
+<div style="height: 55px;"></div>
+</div>
+
+<div class="clear"></div>
+<div style="padding: 5px 0;"></div>
+<div class="grid_2">
+<p>6宽</p>
+</div>
+<div class="grid_2">
+<p>6宽</p>
+</div>
+<div class="grid_2">
+<p>6宽</p>
+</div>
+<div class="grid_2">
+<p>6宽</p>
+</div>
+<div class="grid_2">
+<p>6宽</p>
+</div>
+<div class="grid_2">
+<p>6宽</p>
+</div>
+
+<div class="clear"></div>
+
+<div style="padding: 5px 0;"></div>
+
+<div class="grid_12">
+<p style="padding: 200px 0;">hello content</p>
+</div>
+<div class="clear"></div>
+<div style="padding: 5px 0;"></div>
+
+<div class="grid_12"><!-- float 会生成一个块级框，不管对象是何种元素，比如span不是块级框，一担float就变成块级框了。 -->
+<div style="height: 55px; width: 250px;" class="dotted center"><img
+	src="images/logo/55.jpg" alt="psalmscn" border="0" style="float: left;"><span
+	style="color: gray; padding: 30px 0 0; float: left;">奉化市诗篇网络科技有限公司
+&copy; 2010</span></div>
+</div>
+
+<div class="clear"></div>
+
+<div
+	style="font-family: 'Tangerine', serif; font-size: 20px; text-shadow: 4px 4px 4px #aaa;"
+	align="center">Making the Web Useful!</div>
+
+<div class="grid_1">
+<p>ye</p>
+</div>
+<div class="clear"></div>
+<!-- folat 是指定在对象上面，而不是容器上面。 --> <!-- 
+	<div style="float: left;display: inline;">
+		<p>其它</p>
+	</div>
+	<div style="border: thin dotted;">uu</div>
+	<div>vv</div>
+	<div>xx</div>
+	 --></div>
+
+
+
+</div>
+</body>
+</html>

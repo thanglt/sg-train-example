@@ -1,0 +1,28 @@
+
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+<title>Alignment Support</title> 
+ 
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssbase/base-min.css">
+<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
+ 
+<script type="text/javascript">
+YUI().use('node',function(Y){
+	Y.on('click',function(){
+		Y.one('#hdiv').setStyle('display','');
+	},'#sb');
+});
+
+</script>
+
+</head> 
+ 
+<body class="yui3-skin-sam  yui-skin-sam">
+<button id="sb" value="abc" type="button" name="abc" title="abc">nihao</button>
+<div id='hdiv' style="display:none;">hello div!</div>
+</body> 
+</html> 

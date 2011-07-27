@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="/aaayjcsxdl/jquery/1.4.2/jquery.min.js"></script> 
+<script type="text/javascript" src="/aaayjcsxdl/jquery.form.js"></script>
+
+<script type="text/javascript"> 
+
+var assetsMethods = {
+		kindeditorClose:function(content){
+			alert(content);
+		}
+};
+	function haha(){
+		alert("haha");
+	}
+	$(document).ready(function() {
+		var openwindow = function(url,name,w,h){
+				w += 32;
+				h += 96;
+				wleft = (screen.width - w) / 2;
+				wtop = (screen.height - h) / 2;
+				if (wleft < 0) {
+					w = screen.width;
+					wleft = 0;
+				}
+				if (wtop < 0) {
+					h = screen.height;
+					wtop = 0;
+				}
+				 var win = window.open(url,
+							name,
+							'width=' + w + ', height=' + h + ', ' +
+							'left=' + wleft + ', top=' + wtop + ', ' +
+							'location=no, menubar=no, ' +
+							'status=no, toolbar=no, scrollbars=no, resizable=no');
+						  // Just in case width and height are ignored
+				  win.resizeTo(w, h);
+				  // Just in case left and top are ignored
+				  win.moveTo(wleft, wtop);
+				  win.focus();
+		};
+		$('#oop').click(function() {
+			//window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars,top=50,left=50');
+			openwindow('beopen.html','formpopup',800,600);
+		});
+	});
+</script>
+</head>
+<body>
+<span id = "oop">oop</span>
+
+<div id="abc"></div>
+</body>
+</html>

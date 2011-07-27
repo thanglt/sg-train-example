@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"
+    charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var openwindow = function(url,name,w,h){
+		  	w += 32;
+		  	h += 96;
+		  	wleft = (screen.width - w) / 2;
+		  	wtop = (screen.height - h) / 2;
+		  	if (wleft < 0) {
+			    w = screen.width;
+			    wleft = 0;
+			}
+			if (wtop < 0) {
+				h = screen.height;
+			    wtop = 0;
+			}
+			 var win = window.open(url,
+					    name,
+					    'width=' + w + ', height=' + h + ', ' +
+					    'left=' + wleft + ', top=' + wtop + ', ' +
+					    'location=no, menubar=no, ' +
+					    'status=no, toolbar=no, scrollbars=no, resizable=no');
+					  // Just in case width and height are ignored
+			  win.resizeTo(w, h);
+			  // Just in case left and top are ignored
+			  win.moveTo(wleft, wtop);
+			  win.focus();
+	};
+    $('#myform').submit(function() {
+        //window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars,top=50,left=50');
+        openwindow('','formpopup',400,400);
+        this.target = 'formpopup';
+    });
+});
+</script>
+
+<style> 
+#custom-doc { width: 95%; min-width: 950px; }
+#pagetitle {background-image: url(../../assets/bg_hd.gif);}
+#mychart {
+    margin:10px 10px 10px 10px;
+    width:90%;
+    max-width: 800px;
+    height:400px;
+}
+</style> 
+</head>
+<body>
+
+<form action="http://www.google.com" target="_blank" id="myform">
+<input type="submit"/>
+</form>
+
+<div id="mychart"></div> 
+<script type="text/javascript"> 
+(function() {
+    YUI().use('charts', function (Y) 
+    { 
+        var myDataValues = [ 
+            {category:"5/1/2010", miscellaneous:2000, expenses:3700, revenue:2200}, 
+            {category:"5/2/2010", miscellaneous:50, expenses:9100, revenue:100}, 
+            {category:"5/3/2010", miscellaneous:400, expenses:1100, revenue:1500}, 
+            {category:"5/4/2010", miscellaneous:200, expenses:1900, revenue:2800}, 
+            {category:"5/5/2010", miscellaneous:5000, expenses:5000, revenue:2650}
+        ];
+        
+        var mychart = new Y.Chart({
+                            dataProvider:myDataValues, 
+                            render:"#mychart",
+                            type:"column",
+                            horizontalGridlines: {
+                                styles: {
+                                	line: {
+                                        color: "#dad8c9"
+                                    }
+                                }
+                            },
+                            verticalGridlines: {
+                                styles: {
+                                	line: {
+                                        color: "#dad8c9"
+                                    }
+                                }
+                            }
+                        });
+    });
+})();
+</script> 
+</body>
+</html>
