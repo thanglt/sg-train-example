@@ -166,7 +166,6 @@
         <dependency>
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
-            <!--<version>1.0</version>-->
             <version>1.2</version>
             <type>jar</type>
         </dependency>
@@ -226,11 +225,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate</artifactId>
-            <!--<version>3.0</version>-->
-            <!--<version>3.0.5</version>-->
             <version>3.2.1.ga</version>
-            <!--<version>3.2.5.ga</version>-->
-            <!--<version>3.3.2.GA</version>-->
             <type>jar</type>
         </dependency>
         <dependency>
