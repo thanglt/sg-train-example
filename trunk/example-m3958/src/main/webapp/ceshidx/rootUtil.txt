@@ -1,0 +1,41 @@
+site
+section
+article
+user
+
+util:
+	findSection(String name)
+	findLinkCat(String name)
+	findLink(String name)
+	topLinkCats
+	topSections
+	
+	Article Object:
+					title
+					getTitle(int length)
+					getTitle(int length,String suffix)
+					
+					excerpt
+					content
+					titleImg
+					contentImg
+					attachments
+					
+					url
+					
+	Section Object:
+					name
+					siblings
+					parent
+					children
+					
+					url
+					getUrl(String tplName)
+					
+					getValue(String key)
+					
+	Asset Object:
+				url
+				getUrl(String size)  size: 800x600 128x128 48x48
+					
+					
