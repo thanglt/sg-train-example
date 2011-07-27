@@ -1,0 +1,41 @@
+package com.m3958.firstgwt.client.types;
+
+public class SmartParameterName{
+	public final static String RELATION_MODEL_ID = "_relationModelId";
+	public final static String RELATION_PROPERTY_NAME = "_relationPropertyName";
+	public final static String RELATION_PROPERTY_NAMEA = "_relationPropertyNamea";
+	public final static String RELATION_MODEL_NAME = "_relationModelName";
+	public final static String RELATION_METHOD_NAME = "_relationMethodName";
+	public final static String MODEL_NAME = "_modelName";
+	public final static String HINT = "_hint";
+	public final static String MODEL_ID = "id";
+	public final static String OPERATION_TYPE = "_operationType";
+	public final static String START_ROW = "_startRow";
+	public final static String END_ROW = "_endRow";
+	public final static String TEXT_MATCHSTYLE = "_textMatchStyle";
+	public final static String SORTBY = "_sortBy";
+	public final static String CREATORIDS = "creatorIds";
+	public final static String IGNOREFIELDS = "_ignoreFields";
+	public final static String PARENTID = "parentId";
+	public final static String FETCH_OWNER = "_fetchOwner";
+	public final static String USER_ID = "_userId";
+	public final static String RESERVED_CRITERIA = "criteria";
+	public final static String SUB_OPERATION_TYPE = "_subOperationType";
+	public final static String EXTRAPARAS = "_extraParas";
+	public final static String IS_ADD_RELATION = "_aodr";
+	public final static String RESERVED_OPERATOR = "operator";
+	public final static String ATTACHMENTIDS = "_attachmentsIds";
+	public final static String JATTACHMENTIDS = "attachmentsIds";
+	public static final String GUIDS = "_guids";
+	public static final String JGIDS = "jgids";
+	public static final String JUIDS = "juids";
+	public static final String JGINCLUDE = "jginclude";
+	public static final String JGID = "jgid";
+	public final static String CHECK_CODE = "_checkCode";
+	public final static String OLD_VALUES = "_oldValues";
+	public final static String IS_MASTER = "_isMaster";
+	public final static String IS_GROUP_PERM = "_isGroupPerm";
+	public final static String NAMED_QUERY_NAME = "_queryName";
+	public final static String ADD_OR_REMOVE = "_add_or_remove";
+	public final static String ATTACHMENT_JSON = "_attachment_json";
+}
