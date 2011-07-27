@@ -7,7 +7,7 @@
 
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>myGwt.html</welcome-file>
+    <welcome-file>higherlower/HigherLower.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
