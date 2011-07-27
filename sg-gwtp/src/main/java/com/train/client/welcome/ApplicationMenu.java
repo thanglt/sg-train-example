@@ -1,6 +1,5 @@
 package com.train.client.welcome;
 
-import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.core.client.GWT;
 import com.smartgwt.client.widgets.Canvas;
 import com.smartgwt.client.widgets.layout.HLayout;
@@ -43,8 +42,6 @@ public class ApplicationMenu extends HLayout {
   }
 
   public void addClickHandler(String menuName, ClickHandler clickHandler) {
-
-    Log.debug("addClickHandler(menuName, clickHandler) - " + menuName);
 
     Canvas[] members = menuBar.getMembers();
 

@@ -21,12 +21,7 @@ import com.train.client.data.ResourceCentreNavigationPaneSectionData;
 import com.train.client.data.SalesNavigationPaneSectionData;
 import com.train.client.data.SettingsNavigationPaneSectionData;
 import com.train.client.welcome.*;
-import org.gwtmultipage.client.MultipageEntryPoint;
-import org.gwtmultipage.client.UrlPatternEntryPoint;
 
-
-@UrlPatternEntryPoint(value = "myGwt.html")
-//@MultipageEntryPoint(urlPattern = "myGwt.html")
 public class myGwt implements EntryPoint {
 
     private static final int NORTH_HEIGHT = 85; // MASTHEAD_HEIGHT + APPLICATION_MENU_HEIGHT
