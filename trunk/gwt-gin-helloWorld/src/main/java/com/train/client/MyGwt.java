@@ -9,7 +9,8 @@ public class MyGwt implements EntryPoint {
 
         final MyGinjector injector = GWT.create(MyGinjector.class);
 
-        injector.getHomePage().draw();
+        HomePage homePage = injector.getHomePage();
+        homePage.draw();
 
     }
 }
