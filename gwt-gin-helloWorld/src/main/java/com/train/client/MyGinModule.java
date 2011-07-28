@@ -7,6 +7,7 @@ import com.smartgwt.client.widgets.form.DynamicForm;
 public class MyGinModule extends AbstractGinModule {
 
     protected void configure() {
-        bind(DynamicForm.class).annotatedWith(Names.named("myFrom")).toProvider(HelloDynamicForm.class);
+        //如果能通过改善配置，能省去这句 code，是否有这种可能性？
+//        bind(DynamicForm.class).annotatedWith(Names.named("myFrom")).toProvider(HelloDynamicForm.class);
     }
 }
