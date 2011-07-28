@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='myGwtp'>
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.smartgwt.SmartGwt'/>
+    <inherits name="com.smartclient.theme.enterprise.Enterprise"/>
+    <inherits name="com.google.gwt.inject.Inject"/>
+    <inherits name="com.gwtplatform.mvp.Mvp"/>
+    <!--<inherits name='com.gwtplatform.dispatch.Dispatch'/>-->
+
+    <define-configuration-property name="gin.ginjector" is-multi-valued="false"/>
+    <set-configuration-property name="gin.ginjector"
+                                value="com.train.client.gin.MyGinjector"/>
+
+    <entry-point class='com.train.client.MyGwtp'/>
+    <source path='client'/>
+
+</module>
