@@ -20,3 +20,6 @@ http://code.google.com/p/gwt-platform/
 
 Guice note
 http://blog.csdn.net/escaflone/article/details/5694108
+
+Code Splitting
+http://code.google.com/webtoolkit/doc/latest/DevGuideCodeSplitting.html
