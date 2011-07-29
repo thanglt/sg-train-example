@@ -52,7 +52,7 @@
             <version>${sg.version}</version>
         </dependency>
 
-         <!-- gin family -->
+        <!-- gin family -->
         <dependency>
             <groupId>com.google.gwt.inject</groupId>
             <artifactId>gin</artifactId>
@@ -101,6 +101,7 @@
                 <version>${gwt.version}</version>
                 <executions>
                     <execution>
+                        <phase>compile</phase>
                         <goals>
                             <goal>compile</goal>
                         </goals>
