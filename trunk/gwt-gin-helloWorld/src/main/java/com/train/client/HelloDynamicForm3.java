@@ -10,7 +10,6 @@ import com.smartgwt.client.widgets.form.DynamicForm;
 import com.smartgwt.client.widgets.form.fields.ButtonItem;
 import com.smartgwt.client.widgets.form.fields.TextItem;
 
-@Singleton
 public class HelloDynamicForm3 extends DynamicForm{
 
     @Inject
