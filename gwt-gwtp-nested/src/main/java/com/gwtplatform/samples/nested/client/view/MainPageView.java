@@ -52,7 +52,6 @@ public class MainPageView extends ViewImpl implements MyView {
     widget = uiBinder.createAndBindUi(this);
   }
 
-  @Override
   public Widget asWidget() {
     return widget;
   }
@@ -74,7 +73,6 @@ public class MainPageView extends ViewImpl implements MyView {
     }
   }
 
-  @Override
   public void showLoading(boolean visibile) {
     loadingMessage.getStyle().setVisibility(
         visibile ? Visibility.VISIBLE : Visibility.HIDDEN);

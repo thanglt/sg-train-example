@@ -37,7 +37,6 @@ public class GwtpnestedsamplePlaceManager extends PlaceManagerImpl {
     this.defaultPlaceRequest = new PlaceRequest(defaultNameToken);
   }
 
-  @Override
   public void revealDefaultPlace() {
     revealPlace(defaultPlaceRequest);
   }

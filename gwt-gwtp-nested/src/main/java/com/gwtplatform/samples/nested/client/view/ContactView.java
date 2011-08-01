@@ -42,12 +42,10 @@ public class ContactView extends ViewImpl implements MyView {
     widget = uiBinder.createAndBindUi(this);
   }
 
-  @Override
   public Widget asWidget() {
     return widget;
   }
 
-  @Override
   public void setNavigationHistory(String navigationHistory) {
     this.navigationHistory.setText(navigationHistory);
   }
