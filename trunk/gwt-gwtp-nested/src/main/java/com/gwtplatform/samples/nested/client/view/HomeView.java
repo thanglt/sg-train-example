@@ -38,7 +38,6 @@ public class HomeView extends ViewImpl implements MyView {
     widget = uiBinder.createAndBindUi(this);
   }
 
-  @Override
   public Widget asWidget() {
     return widget;
   }
