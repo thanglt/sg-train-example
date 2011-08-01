@@ -15,7 +15,7 @@ http://www.stringtemplate.org/
 Guice vs. Spring - Round 3 
 http://www.javalobby.org/java/forums/t103070.html
 
-gwtp-demo
+gwtp
 http://code.google.com/p/gwt-platform/
 
 Guice note
