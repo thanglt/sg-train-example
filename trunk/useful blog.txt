@@ -24,5 +24,8 @@ http://blog.csdn.net/escaflone/article/details/5694108
 Code Splitting
 http://code.google.com/webtoolkit/doc/latest/DevGuideCodeSplitting.html
 
+Coding Basics - Deferred Binding
+http://code.google.com/intl/zh-CN/webtoolkit/doc/latest/DevGuideCodingBasicsDeferred.html
+
 getting-started-gwt-platform
 http://uptick.com.au/content/getting-started-gwt-platform-part-2
