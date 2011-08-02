@@ -13,13 +13,12 @@
 
     <properties>
         <!-- GWT version -->
-        <!--<gwt.version>2.2.0</gwt.version>-->
         <gwt.version>2.3.0</gwt.version>
         <sg.version>2.4</sg.version>
         <gin.version>1.5.0</gin.version>
         <guice.version>3.0</guice.version>
-        <!--<gwtp.version>0.6</gwtp.version>-->
-        <gwtp.version>0.7-SNAPSHOT</gwtp.version>
+        <gwtp.version>0.6</gwtp.version>
+        <!--<gwtp.version>0.7-SNAPSHOT</gwtp.version>-->
         <!--compiler level-->
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
@@ -137,7 +136,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>2.2.0</version>
+                <version>2.3.0-1</version>
                 <executions>
                     <execution>
                         <!--<phase>compile</phase>-->
@@ -153,23 +152,6 @@
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-user</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-dev</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-servlet</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <!-- Disable annotation processors during normal compilation -->
