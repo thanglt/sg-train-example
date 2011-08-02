@@ -1,0 +1,7 @@
+#copy all jar files to D:\dev\
+
+mvn install:install-file -DgroupId=org.gwtmultipage -DartifactId=gwt-multipage-trunk -Dversion=1.0  -Dpackaging=jar -Dfile=D:\dev\gwt-multipage-trunk.jar
+
+mvn install:install-file -DgroupId=com.google.code.gwt-log -DartifactId=gwt-log -Dversion=3.1.2 -Dpackaging=jar -Dfile=D:\dev\gwt-log-3.1.2.jar
+
+
