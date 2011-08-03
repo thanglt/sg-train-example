@@ -3,8 +3,12 @@ email:
 178502261@qq.com
 
 =======================================================================================
-2. useful blog:
+2. useful site:
 
+smartgwt
+http://code.google.com/p/smartgwt/
+
+gwt
 http://code.google.com/intl/zh-CN/webtoolkit/articles/using_gwt_with_hibernate.html
 
 http://noon.gilead.free.fr/gilead/
