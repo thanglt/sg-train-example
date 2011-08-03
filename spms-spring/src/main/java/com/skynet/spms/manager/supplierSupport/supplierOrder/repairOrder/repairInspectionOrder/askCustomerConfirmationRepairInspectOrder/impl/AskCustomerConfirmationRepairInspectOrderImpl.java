@@ -1,8 +1,0 @@
-package com.skynet.spms.manager.supplierSupport.supplierOrder.repairOrder.repairInspectionOrder.askCustomerConfirmationRepairInspectOrder.impl;
-
-import com.skynet.spms.manager.supplierSupport.supplierOrder.repairOrder.repairInspectionOrder.askCustomerConfirmationRepairInspectOrder.AskCustomerConfirmationRepairInspectOrderManager;
-
-public class AskCustomerConfirmationRepairInspectOrderImpl implements
-		AskCustomerConfirmationRepairInspectOrderManager {
-
-}
