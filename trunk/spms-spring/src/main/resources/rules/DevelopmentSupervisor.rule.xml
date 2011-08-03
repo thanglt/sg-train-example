@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 经营发展主管-->
-<config name="DevelopmentSupervisor" >
-<moduleFilter default="none">
-	
-</moduleFilter>	
-
-</config>
