@@ -65,7 +65,6 @@ public class NavigationPaneSectionListGrid extends ListGrid {
     
     // register the Data Arrived Handler
     this.addDataArrivedHandler(new DataArrivedHandler() {
-      @Override
       public void onDataArrived(DataArrivedEvent event) {
         Log.debug("onDataArrived()"); 
         selectRecord(0);
