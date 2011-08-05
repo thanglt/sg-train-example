@@ -37,3 +37,12 @@ http://code.google.com/webtoolkit/doc/latest/DevGuideCodeSplitting.html
 
 getting-started-gwt-platform
 http://uptick.com.au/content/getting-started-gwt-platform-part-2
+
+Sending modified datasource back to server via GWT-RPC
+http://forums.smartclient.com/showthread.php?t=4183
+
+ListGridRecord 
+http://www.smartclient.com/smartgwt/showcase/#featured_master_detail
+
+RPCManager
+http://www.smartclient.com/smartgwtee/javadoc/com/smartgwt/client/rpc/RPCManager.html
