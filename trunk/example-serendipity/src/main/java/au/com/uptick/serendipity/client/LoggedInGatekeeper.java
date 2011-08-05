@@ -33,7 +33,6 @@ public class LoggedInGatekeeper implements Gatekeeper {
     this.eventBus = eventBus;
     
     this.eventBus.addHandler(LoginAuthenticatedEvent.getType(), new LoginAuthenticatedEventHandler() {
-      @Override
       public void onLogin(LoginAuthenticatedEvent event) {
         
         currentUser = event.getCurrentUser();
@@ -43,7 +42,6 @@ public class LoggedInGatekeeper implements Gatekeeper {
     });
   }
 
-  @Override
   public boolean canReveal() {
     boolean loggedIn = false;
     
