@@ -69,7 +69,6 @@ public class ErrorPagePresenter extends
     RevealRootContentEvent.fire(this, this);
  }
 
-  @Override
   public void onOkButtonClicked() {
     PlaceRequest placeRequest = new PlaceRequest(NameTokens.mainPage);
     placeManager.revealPlace(placeRequest);
