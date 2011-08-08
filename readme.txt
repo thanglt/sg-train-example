@@ -46,3 +46,9 @@ http://www.smartclient.com/smartgwt/showcase/#featured_master_detail
 
 RPCManager
 http://www.smartclient.com/smartgwtee/javadoc/com/smartgwt/client/rpc/RPCManager.html
+
+smartgwt-extensions
+http://code.google.com/p/smartgwt-extensions/source/checkout
+
+Compiling from Source
+http://code.google.com/p/smartgwt/wiki/BuildingFromSVN
