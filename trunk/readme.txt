@@ -26,13 +26,13 @@ http://www.stringtemplate.org/
 Guice vs. Spring - Round 3 
 http://www.javalobby.org/java/forums/t103070.html
 
-gwtp
+gwtp *****
 http://code.google.com/p/gwt-platform/
 
 Guice note
 http://blog.csdn.net/escaflone/article/details/5694108
 
-Code Splitting
+Code Splitting 
 http://code.google.com/webtoolkit/doc/latest/DevGuideCodeSplitting.html
 
 getting-started-gwt-platform
@@ -47,7 +47,7 @@ http://www.smartclient.com/smartgwt/showcase/#featured_master_detail
 RPCManager
 http://www.smartclient.com/smartgwtee/javadoc/com/smartgwt/client/rpc/RPCManager.html
 
-smartgwt-extensions
+smartgwt-extensions *****
 http://code.google.com/p/smartgwt-extensions/source/checkout
 
 Compiling from Source
