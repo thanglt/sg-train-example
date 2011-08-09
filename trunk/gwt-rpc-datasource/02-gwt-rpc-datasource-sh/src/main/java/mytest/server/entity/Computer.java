@@ -6,17 +6,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tbl_rpc_user")
-public class User implements Serializable {
+@Table(name = "tbl_rpc_computer")
+public class Computer implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String Id; //主键
-    private String name; //姓名
-    private String location; //地址
+    private String type;
+    private String code;
 
-    // Constructors
-    public User() {
+    public Computer() {
     }
 
     @Id
@@ -31,19 +30,19 @@ public class User implements Serializable {
         Id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getLocation() {
-        return location;
+    public String getCode() {
+        return code;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCode(String code) {
+        this.code = code;
     }
 }

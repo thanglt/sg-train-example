@@ -5,6 +5,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.smartgwt.client.data.*;
 import com.smartgwt.client.rpc.RPCResponse;
 import com.smartgwt.client.util.JSOHelper;
+import com.smartgwt.client.util.SC;
 import mytest.shared.lib.GenericGwtRpcList;
 
 import java.util.ArrayList;
@@ -48,7 +49,6 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         setDataSourceFields();
         serviceAsync = getServiceAsync();
     }
-
 
     public GenericGwtRpcDataSource(String id) {
         super();
@@ -124,6 +124,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         if (criteria != null) {
             criterias = criteria.getValues();
         }
+        SC.showPrompt("data processing...");
         serviceAsync.fetch(
                 startRow,
                 endRow,
@@ -138,6 +139,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
                     }
 
                     public void onSuccess(List<D> result) {
+                        SC.clearPrompt();
                         List<R> records = new ArrayList<R>();
                         for (D data : result) {
                             R newRec = getNewRecordInstance();
@@ -169,6 +171,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         newRec.setJsObj(request.getData());
         D data = getNewDataObjectInstance();
         copyValues(newRec, data);
+        SC.showPrompt("data processing...");
         serviceAsync.add(data, new AsyncCallback<D>() {
             public void onFailure(Throwable caught) {
                 response.setStatus(RPCResponse.STATUS_FAILURE);
@@ -176,6 +179,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
             }
 
             public void onSuccess(D result) {
+                SC.clearPrompt();
                 R newRec = getNewRecordInstance();
                 copyValues(result, newRec);
                 response.setData(new Record[]{newRec});
@@ -191,6 +195,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         R editedRec = getEditedRecord(request);
         D data = getNewDataObjectInstance();
         copyValues(editedRec, data);
+        SC.showPrompt("data processing...");
         serviceAsync.update(data, new AsyncCallback<D>() {
             public void onFailure(Throwable caught) {
                 response.setStatus(RPCResponse.STATUS_FAILURE);
@@ -198,6 +203,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
             }
 
             public void onSuccess(D result) {
+                SC.clearPrompt();
                 R updatedRec = getNewRecordInstance();
                 copyValues(result, updatedRec);
                 response.setData(new Record[]{updatedRec});
@@ -214,6 +220,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         rec.setJsObj(request.getData());
         D data = getNewDataObjectInstance();
         copyValues(rec, data);
+        SC.showPrompt("data processing...");
         serviceAsync.remove(data, new AsyncCallback<Void>() {
             public void onFailure(Throwable caught) {
                 response.setStatus(RPCResponse.STATUS_FAILURE);
@@ -221,6 +228,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
             }
 
             public void onSuccess(Void v) {
+                SC.clearPrompt();
                 // We do not receive removed record from server.
                 // Return record from request.
                 response.setData(new Record[]{rec});
