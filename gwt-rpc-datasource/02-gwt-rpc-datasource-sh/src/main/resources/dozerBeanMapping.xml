@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mappings xmlns="http://dozer.sourceforge.net"
-xmlns:xs="http://www.w3.org/2001/XMLSchema"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://dozer.sourceforge.net
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
 http://dozer.sourceforge.net/schema/beanmapping.xsd">
-  
-  <mapping> 
-    <class-a>mytest.server.entity.User</class-a>
-    <class-b>mytest.shared.UserDto</class-b>
-  </mapping>  
+
+    <mapping>
+        <class-a>mytest.server.entity.User</class-a>
+        <class-b>mytest.shared.UserDto</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>mytest.server.entity.Computer</class-a>
+        <class-b>mytest.shared.ComputerDto</class-b>
+    </mapping>
 
 </mappings>

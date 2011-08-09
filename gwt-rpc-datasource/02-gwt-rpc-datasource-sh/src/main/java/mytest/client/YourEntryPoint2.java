@@ -15,40 +15,41 @@ import com.smartgwt.client.widgets.events.ClickHandler;
 import com.smartgwt.client.widgets.grid.ListGrid;
 import com.smartgwt.client.widgets.grid.ListGridField;
 import com.smartgwt.client.widgets.grid.ListGridRecord;
-import mytest.client.datasource.UserDataSource;
+import mytest.client.datasource.ComputerDataSource;
 
-public class YourEntryPoint implements EntryPoint {
+public class YourEntryPoint2 implements EntryPoint {
 
     public void onModuleLoad() {
 
         Canvas canvas = new Canvas();
 
-        final ListGrid yourGrid = new ListGrid();
-        yourGrid.setWidth(550);
-        yourGrid.setHeight(200);
-        yourGrid.setCellHeight(22);
-        yourGrid.setDataSource(UserDataSource.getInstance());
+        final ListGrid grid = new ListGrid();
+        grid.setWidth(550);
+        grid.setHeight(200);
+        grid.setCellHeight(22);
+        grid.setDataSource(ComputerDataSource.getInstance());
 
-        ListGridField nameField = new ListGridField("name", "Name");
-        ListGridField locationField = new ListGridField("location", "Location");
-        yourGrid.setFields(nameField, locationField);
+        ListGridField nameField = new ListGridField("type", "Type Column");
+        ListGridField locationField = new ListGridField("code", "Code Column");
+        grid.setFields(nameField, locationField);
 
-        yourGrid.setAutoFetchData(true);
+        grid.setAutoFetchData(true);
 //		yourGrid.setDataFetchMode(FetchMode.BASIC); 
-        yourGrid.setDataFetchMode(FetchMode.PAGED);
-        yourGrid.setShowAllRecords(false);
-        yourGrid.setDataPageSize(20);
-        yourGrid.setCanEdit(true);
-        yourGrid.setShowFilterEditor(true);
-        yourGrid.setEditEvent(ListGridEditEvent.DOUBLECLICK);
+        grid.setDataFetchMode(FetchMode.PAGED);
+        grid.setShowAllRecords(false);
+        grid.setDataPageSize(20);
+        grid.setCanEdit(true);
+        grid.setShowFilterEditor(true);
+        grid.setEditEvent(ListGridEditEvent.DOUBLECLICK);
 
         IButton addRow = new IButton("Add new row");
         addRow.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
-                ListGridRecord rec = new ListGridRecord();
-                rec.setAttribute("name", "yourName");
-                rec.setAttribute("location", "yourLocation");
-                yourGrid.addData(rec);
+                grid.startEditingNew();
+//                ListGridRecord rec = new ListGridRecord();
+//                rec.setAttribute("name", "yourName");
+//                rec.setAttribute("location", "yourLocation");
+//                grid.addData(rec);
             }
         });
         addRow.setLeft(0);
@@ -58,9 +59,9 @@ public class YourEntryPoint implements EntryPoint {
         IButton removeAll = new IButton("Remove All Selected");
         removeAll.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
-                ListGridRecord[] selectedRecords = yourGrid.getSelection();
+                ListGridRecord[] selectedRecords = grid.getSelection();
                 for (ListGridRecord rec : selectedRecords) {
-                    yourGrid.removeData(rec);
+                    grid.removeData(rec);
                 }
             }
         });
@@ -68,7 +69,7 @@ public class YourEntryPoint implements EntryPoint {
         removeAll.setTop(240);
         removeAll.setWidth(140);
 
-        canvas.addChild(yourGrid);
+        canvas.addChild(grid);
         canvas.addChild(addRow);
         canvas.addChild(removeAll);
 

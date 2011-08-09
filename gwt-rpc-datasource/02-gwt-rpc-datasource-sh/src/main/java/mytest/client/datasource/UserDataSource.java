@@ -1,7 +1,8 @@
-package mytest.client;
+package mytest.client.datasource;
 
 import com.google.gwt.core.client.GWT;
 import com.smartgwt.client.data.DataSourceField;
+import com.smartgwt.client.data.Record;
 import com.smartgwt.client.data.fields.DataSourceIntegerField;
 import com.smartgwt.client.data.fields.DataSourceTextField;
 import com.smartgwt.client.widgets.grid.ListGridRecord;
@@ -13,7 +14,7 @@ import mytest.shared.UserDto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDataSource extends GenericGwtRpcDataSource<UserDto, ListGridRecord, UserServiceRPCAsync> {
+public class UserDataSource extends GenericGwtRpcDataSource<UserDto, Record, UserServiceRPCAsync> {
 
     private static UserDataSource instance;
 
@@ -29,14 +30,14 @@ public class UserDataSource extends GenericGwtRpcDataSource<UserDto, ListGridRec
     }
 
     @Override
-    public void copyValues(ListGridRecord from, UserDto to) {
+    public void copyValues(Record from, UserDto to) {
         to.setId(from.getAttributeAsString("id"));
         to.setName(from.getAttribute("name"));
         to.setLocation(from.getAttribute("location"));
     }
 
     @Override
-    public void copyValues(UserDto from, ListGridRecord to) {
+    public void copyValues(UserDto from, Record to) {
         to.setAttribute("id", from.getId());
         to.setAttribute("name", from.getName());
         to.setAttribute("location", from.getLocation());
