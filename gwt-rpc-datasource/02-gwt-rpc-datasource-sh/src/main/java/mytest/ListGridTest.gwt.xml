@@ -12,7 +12,7 @@
 	<source path='client' />
 	<source path='shared' />
 
-	<!--<entry-point class="mytest.client.YourEntryPoint"/>-->
-	<entry-point class="mytest.client.AnotherEntry"/>
+	<entry-point class="mytest.client.YourEntryPoint"/>
+	<!--<entry-point class="mytest.client.AnotherEntry"/>-->
 
 </module>
