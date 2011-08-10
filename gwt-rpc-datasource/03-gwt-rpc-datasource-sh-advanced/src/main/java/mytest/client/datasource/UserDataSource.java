@@ -18,19 +18,6 @@ import java.util.List;
 @Singleton
 public class UserDataSource extends GenericGwtRpcDataSource<UserDto, Record, UserServiceRPCAsync> {
 
-//    private static UserDataSource instance;
-
-    // forces to use the singleton through getInstance();
-   /* private UserDataSource() {
-    }
-
-    public static UserDataSource getInstance() {
-        if (instance == null) {
-            instance = new UserDataSource();
-        }
-        return (instance);
-    }*/
-
     @Override
     public void copyValues(Record from, UserDto to) {
         to.setId(from.getAttributeAsString("id"));
@@ -50,7 +37,7 @@ public class UserDataSource extends GenericGwtRpcDataSource<UserDto, Record, Use
 
         List<DataSourceField> fields = new ArrayList<DataSourceField>();
 
-        DataSourceIntegerField idField = new DataSourceIntegerField("id");
+        DataSourceTextField idField = new DataSourceTextField("id");
         idField.setHidden(true);
         idField.setPrimaryKey(true);
         fields.add(idField);
@@ -71,8 +58,7 @@ public class UserDataSource extends GenericGwtRpcDataSource<UserDto, Record, Use
         return new UserDto();
     }
 
-    @Override
-    public ListGridRecord getNewRecordInstance() {
+    public Record getNewRecordInstance() {
         return new ListGridRecord();
     }
 

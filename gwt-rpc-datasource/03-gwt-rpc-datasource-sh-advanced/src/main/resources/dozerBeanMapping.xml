@@ -15,4 +15,9 @@ http://dozer.sourceforge.net/schema/beanmapping.xsd">
         <class-b>mytest.shared.ComputerDto</class-b>
     </mapping>
 
+    <mapping>
+        <class-a>mytest.server.entity.MenuNode</class-a>
+        <class-b>mytest.shared.MenuNodeDto</class-b>
+    </mapping>
+
 </mappings>

@@ -3,6 +3,7 @@ package mytest.client.gin;
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
 import com.google.inject.name.Named;
+import com.smartgwt.client.widgets.layout.Layout;
 import com.smartgwt.client.widgets.layout.VLayout;
 
 
@@ -10,6 +11,6 @@ import com.smartgwt.client.widgets.layout.VLayout;
 public interface MyInjector extends Ginjector {
 
     @Named("homePage")
-    VLayout getHomePage();
+    Layout getHomePage();
 
 }

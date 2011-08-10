@@ -22,7 +22,7 @@ public class TestUser extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     @Rollback(value = false)
     public void batchSave() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 2000; i++) {
             User user = new User();
             user.setName("User-" + i);
             user.setLocation("Location-" + i);

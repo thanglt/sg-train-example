@@ -16,27 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Singleton
-public class ComputerDataSource extends GenericGwtRpcDataSource<ComputerDto, Record, ComputerServiceRPCAsync> {
-
-//    private static ComputerDataSource instance;
-
-    // forces to use the singleton through getInstance();
-    /*private ComputerDataSource() {
-        setShowPrompt(true);
-    }
-
-    public static ComputerDataSource getInstance() {
-        if (instance == null) {
-            instance = new ComputerDataSource();
-        }
-        return (instance);
-    }*/
+public class ComputerDataSource extends GenericGwtRpcDataSource<ComputerDto, ListGridRecord, ComputerServiceRPCAsync> {
 
     @Override
     public List<DataSourceField> getDataSourceFields() {
         List<DataSourceField> fields = new ArrayList<DataSourceField>();
 
-        DataSourceIntegerField idField = new DataSourceIntegerField("id");
+        DataSourceTextField idField = new DataSourceTextField("id");
         idField.setHidden(true);
         idField.setPrimaryKey(true);
         fields.add(idField);
@@ -53,14 +39,14 @@ public class ComputerDataSource extends GenericGwtRpcDataSource<ComputerDto, Rec
     }
 
     @Override
-    public void copyValues(Record from, ComputerDto to) {
+    public void copyValues(ListGridRecord from, ComputerDto to) {
         to.setId(from.getAttributeAsString("id"));
         to.setType(from.getAttribute("type"));
         to.setCode(from.getAttribute("code"));
     }
 
     @Override
-    public void copyValues(ComputerDto from, Record to) {
+    public void copyValues(ComputerDto from, ListGridRecord to) {
         to.setAttribute("id", from.getId());
         to.setAttribute("type", from.getType());
         to.setAttribute("code", from.getCode());

@@ -18,5 +18,7 @@
     <!--<entry-point class="mytest.client.YourEntryPoint2"/>-->
     <!--<entry-point class="mytest.client.PatternReuseSample"/>-->
     <entry-point class="mytest.client.MyTest"/>
+    <!--<entry-point class="mytest.client.view.sample2.MyTreeGrid"/>-->
+    <!--<entry-point class="mytest.client.view.sample2.HomePage2"/>-->
 
 </module>
