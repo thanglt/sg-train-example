@@ -3,7 +3,7 @@ package mytest.client.gin;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.name.Names;
 import com.smartgwt.client.widgets.layout.VLayout;
-import mytest.client.view.HomePage;
+import mytest.client.view.sample1.HomePage;
 
 public class MyGinModule extends AbstractGinModule {
 
