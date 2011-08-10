@@ -18,7 +18,7 @@ import java.util.List;
 @Singleton
 public class UserDataSource extends GenericGwtRpcDataSource<UserDto, Record, UserServiceRPCAsync> {
 
-    private static UserDataSource instance;
+//    private static UserDataSource instance;
 
     // forces to use the singleton through getInstance();
    /* private UserDataSource() {

@@ -18,7 +18,7 @@ import java.util.List;
 @Singleton
 public class ComputerDataSource extends GenericGwtRpcDataSource<ComputerDto, Record, ComputerServiceRPCAsync> {
 
-    private static ComputerDataSource instance;
+//    private static ComputerDataSource instance;
 
     // forces to use the singleton through getInstance();
     /*private ComputerDataSource() {
