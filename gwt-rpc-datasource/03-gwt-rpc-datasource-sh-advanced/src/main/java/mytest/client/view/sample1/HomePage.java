@@ -3,6 +3,10 @@ package mytest.client.view.sample1;
 import com.google.inject.Inject;
 import com.smartgwt.client.widgets.layout.VLayout;
 
+/*
+* this is a demo shows how to reuse ListGrid and DynamicForm
+*/
+
 public class HomePage extends VLayout {
 
     @Inject
