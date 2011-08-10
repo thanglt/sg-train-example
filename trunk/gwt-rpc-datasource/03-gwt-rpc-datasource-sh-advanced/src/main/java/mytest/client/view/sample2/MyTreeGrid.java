@@ -29,9 +29,9 @@ public class MyTreeGrid extends TreeGrid {
         setShowConnectors(false);
         setCanReparentNodes(false);
         //icons
-        setFolderIcon("icons/bullet_go.png");
-        setNodeIcon("icons/application.png");
-//        setCustomIconProperty("icon");
+//        setFolderIcon("icons/bullet_go.png");
+//        setNodeIcon("icons/application.png");
+        setCustomIconProperty("icon");
 //        setTreeRootValue("root");
 //        setExpansionFieldTrueImage("");
 //        setExpansionFieldFalseImage("");

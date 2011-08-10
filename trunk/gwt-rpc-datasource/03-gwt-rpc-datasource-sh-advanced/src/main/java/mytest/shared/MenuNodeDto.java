@@ -11,6 +11,7 @@ public class MenuNodeDto implements IsSerializable {
     private String parentId; //父Id
     private String category;//分类
     private boolean isFolder;//是否属于 folder
+    private String icon;//自定义图标
 
     public MenuNodeDto() {
     }
@@ -53,6 +54,14 @@ public class MenuNodeDto implements IsSerializable {
 
     public void setFolder(boolean folder) {
         isFolder = folder;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }
 
