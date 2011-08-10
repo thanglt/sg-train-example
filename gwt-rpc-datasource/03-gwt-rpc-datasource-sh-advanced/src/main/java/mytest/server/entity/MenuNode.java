@@ -16,15 +16,17 @@ public class MenuNode implements Serializable {
     private String parentId; //父Id
     private String category;//分类
     private Integer isFolder;//是否属于 folder
+    private String icon;//自定义图标
 
     public MenuNode() {
     }
 
-    public MenuNode(String name, String parentId , String category , Integer isFolder) {
+    public MenuNode(String name, String parentId , String category , Integer isFolder , String icon) {
         this.name = name;
         this.parentId = parentId;
         this.category = category;
         this.isFolder = isFolder;
+        this.icon = icon;
     }
 
     @Id
@@ -70,5 +72,13 @@ public class MenuNode implements Serializable {
 
     public void setFolder(Integer folder) {
         isFolder = folder;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

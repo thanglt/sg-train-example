@@ -24,18 +24,18 @@ public class TestMenuNode extends AbstractTransactionalJUnit4SpringContextTests{
     @Rollback(value = false)
     public void initData(){
         //level 1
-        MenuNode menuNode = new MenuNode("Charles Madigen" , "root" , "testTree" , 1);
+        MenuNode menuNode = new MenuNode("Charles Madigen" , "root" , "testTree" , 1 , "icons/bullet_go.png");
         menuNodeService.save(menuNode);
 
         //level 2
-        MenuNode menuNode2 = new MenuNode("Rogine Leger" , menuNode.getId(), "testTree" , 1);
-        MenuNode menuNode3 = new MenuNode("Gene Porter" , menuNode.getId() , "testTree", 1);
+        MenuNode menuNode2 = new MenuNode("Rogine Leger" , menuNode.getId(), "testTree" , 1 , "icons/bullet_go.png");
+        MenuNode menuNode3 = new MenuNode("Gene Porter" , menuNode.getId() , "testTree", 1 , "icons/bullet_go.png");
         menuNodeService.save(menuNode2);
         menuNodeService.save(menuNode3);
 
         //level 3
-        MenuNode menuNode4 = new MenuNode("Olivier Doucet" , menuNode3.getId() , "testTree" , 0);
-        MenuNode menuNode5 = new MenuNode("Cheryl Pearson" , menuNode3.getId() , "testTree" , 0);
+        MenuNode menuNode4 = new MenuNode("Olivier Doucet" , menuNode3.getId() , "testTree" , 0 , "icons/anchor.png");
+        MenuNode menuNode5 = new MenuNode("Cheryl Pearson" , menuNode3.getId() , "testTree" , 0 , "icons/clock.png");
         menuNodeService.save(menuNode4);
         menuNodeService.save(menuNode5);
     }
@@ -44,12 +44,12 @@ public class TestMenuNode extends AbstractTransactionalJUnit4SpringContextTests{
     @Rollback(value = false)
     public void initData2(){
         //level 1
-        MenuNode menuNode = new MenuNode("Test Root" , "root" , "testTree2" , 1);
+        MenuNode menuNode = new MenuNode("Test Root" , "root" , "testTree2" , 1 , "icons/bullet_go.png");
         menuNodeService.save(menuNode);
         //level 2
-        MenuNode menuNode2 = new MenuNode("Test App 1" , menuNode.getId() , "testTree2" , 0);
-        MenuNode menuNode3 = new MenuNode("Test App 2" , menuNode.getId() , "testTree2", 0);
-        MenuNode menuNode4 = new MenuNode("Test App 3" , menuNode.getId() , "testTree2", 0);
+        MenuNode menuNode2 = new MenuNode("Test App 1" , menuNode.getId() , "testTree2" , 0 , "icons/application_xp_terminal.png");
+        MenuNode menuNode3 = new MenuNode("Test App 2" , menuNode.getId() , "testTree2", 0 , "icons/bug.png");
+        MenuNode menuNode4 = new MenuNode("Test App 3" , menuNode.getId() , "testTree2", 0 , "icons/asterisk_orange.png");
         menuNodeService.save(menuNode2);
         menuNodeService.save(menuNode3);
         menuNodeService.save(menuNode4);

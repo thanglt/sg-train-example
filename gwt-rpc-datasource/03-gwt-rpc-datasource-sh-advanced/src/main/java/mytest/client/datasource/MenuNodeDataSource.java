@@ -39,6 +39,9 @@ public class MenuNodeDataSource extends GenericGwtRpcDataSource<MenuNodeDto, Rec
         DataSourceTextField isFolder = new DataSourceTextField("isFolder", "IsFolder");
         fields.add(isFolder);
 
+        DataSourceTextField icon = new DataSourceTextField("icon", "Icon");
+        fields.add(icon);
+
         return fields;
     }
 
@@ -49,6 +52,7 @@ public class MenuNodeDataSource extends GenericGwtRpcDataSource<MenuNodeDto, Rec
         to.setParentId(from.getAttribute("parentId"));
         to.setCategory(from.getAttribute("category"));
         to.setFolder(from.getAttributeAsBoolean("isFolder"));
+        to.setIcon(from.getAttribute("icon"));
     }
 
     @Override
@@ -58,6 +62,8 @@ public class MenuNodeDataSource extends GenericGwtRpcDataSource<MenuNodeDto, Rec
         to.setAttribute("parentId", from.getParentId());
         to.setAttribute("category", from.getCategory());
         to.setAttribute("isFolder", from.isFolder());
+        to.setAttribute("icon", from.getIcon());
+
     }
 
     @Override
