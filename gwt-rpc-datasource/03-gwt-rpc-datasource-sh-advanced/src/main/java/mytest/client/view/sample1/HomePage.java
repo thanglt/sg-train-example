@@ -15,7 +15,7 @@ public class HomePage extends VLayout {
 
         setWidth100();
         setHeight100();
-        setBackgroundColor("yellow");
+//        setBackgroundColor("yellow");
 
         listGrid.setWidth100();
         listGrid.setHeight("30%");

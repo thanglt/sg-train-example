@@ -16,8 +16,7 @@ public class MenuNodeDaoImpl extends HibernateDaoSupport implements MenuNodeDao{
 
     public List<MenuNode> getAll() {
         String hql = "from MenuNode";
-        Query query = getSession().createQuery(hql);
-        return query.list();
+        return getSession().createQuery(hql).list();
     }
 
     public MenuNode save(MenuNode menuNode) {

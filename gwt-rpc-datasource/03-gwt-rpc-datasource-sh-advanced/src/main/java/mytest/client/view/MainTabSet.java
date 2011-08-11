@@ -22,11 +22,11 @@ public class MainTabSet extends VLayout {
 
         Tab tab = new Tab();
         tab.setPane(homePage);
-        tab.setTitle("Reuse ListGrid");
+        tab.setTitle("1: Reuse ListGrid");
 
         Tab tab2 = new Tab();
         tab2.setPane(homePage2);
-        tab2.setTitle("Reuse TreeGrid");
+        tab2.setTitle("2: Reuse TreeGrid");
 
         tabSet.setTabs(tab,tab2);
 
