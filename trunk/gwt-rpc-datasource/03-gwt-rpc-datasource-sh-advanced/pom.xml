@@ -401,11 +401,11 @@
             <artifactId>dozer</artifactId>
             <version>5.3.2</version>
         </dependency>
-        <dependency>
+       <!--<dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-commons-annotations</artifactId>
-            <version>3.2.0.Final</version>
-        </dependency>
+            <version>3.3.0.ga</version>
+        </dependency>-->
 
     </dependencies>
 

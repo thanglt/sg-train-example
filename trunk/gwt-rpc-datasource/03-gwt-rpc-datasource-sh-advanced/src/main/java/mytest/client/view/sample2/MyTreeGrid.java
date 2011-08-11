@@ -28,6 +28,7 @@ public class MyTreeGrid extends TreeGrid {
         setCanAcceptDroppedRecords(false);
         setShowConnectors(false);
         setCanReparentNodes(false);
+        setShowOpener(false);
         //icons
 //        setFolderIcon("icons/bullet_go.png");
 //        setNodeIcon("icons/application.png");

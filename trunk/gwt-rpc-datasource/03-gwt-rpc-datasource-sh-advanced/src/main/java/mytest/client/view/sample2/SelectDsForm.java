@@ -14,7 +14,7 @@ public class SelectDsForm extends DynamicForm {
     public SelectDsForm(final MyTreeGrid myTreeGrid, MenuNodeDataSource menuNodeDS) {
 
         SelectItem dsSelect = new SelectItem();
-        dsSelect.setTitle("Select DataSource Category");
+        dsSelect.setTitle("Category");
         dsSelect.setValueMap("testTree", "testTree2");
 
         myTreeGrid.setDataSource(menuNodeDS);
@@ -23,10 +23,8 @@ public class SelectDsForm extends DynamicForm {
             public void onChanged(ChangedEvent event) {
                 String value = (String) event.getValue();
                 if (value.equalsIgnoreCase("testTree")) {
-                    myTreeGrid.invalidateCache();
                     myTreeGrid.fetchData(new Criteria("category", "testTree"));
                 } else if (value.equalsIgnoreCase("testTree2")) {
-                    myTreeGrid.invalidateCache();
                     myTreeGrid.fetchData(new Criteria("category", "testTree2"));
                 }
             }
