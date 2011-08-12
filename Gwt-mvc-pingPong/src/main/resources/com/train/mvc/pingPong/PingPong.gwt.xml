@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='pingPong'>
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.smartgwt.SmartGwt'/>
+    <inherits name="com.smartclient.theme.enterpriseblue.EnterpriseBlue"/>
+
+    <entry-point class='com.train.mvc.pingPong.client.PingPong'/>
+
+    <source path='client'/>
+    <source path='shared'/>
+
+</module>
