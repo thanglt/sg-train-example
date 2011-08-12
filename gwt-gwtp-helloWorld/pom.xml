@@ -14,7 +14,14 @@
     <properties>
         <!-- GWT version -->
         <gwt.version>2.2.0</gwt.version>
+        <gwt.plugin.version>2.2.0</gwt.plugin.version>
         <sg.version>2.4</sg.version>
+
+        <!--next versions-->
+        <!--<gwt.version>2.3.0</gwt.version>-->
+        <!--<gwt.plugin.version>2.3.0-1</gwt.plugin.version>-->
+        <!--<sg.version>2.5</sg.version>-->
+
         <gin.version>1.5.0</gin.version>
         <guice.version>3.0</guice.version>
         <!--<gwtp.version>0.6</gwtp.version>-->
@@ -136,7 +143,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>${gwt.version}</version>
+                <version>${gwt.plugin.version}</version>
                 <executions>
                     <execution>
                         <!--<phase>compile</phase>-->
