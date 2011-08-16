@@ -34,7 +34,6 @@ public class ArticleAssetUploadLayoutProvider implements Provider<AssetUploadLay
 	@Inject
 	private MyEventBus eventBus;
 
-	@Override
 	public AssetUploadLayout get() {
 		return new AssetUploadLayout(eventBus,bservice,uploadService,sourceViewName,uploadFors,allowExts);
 	}

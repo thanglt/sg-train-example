@@ -71,10 +71,8 @@ public abstract class HasMMRelationEditLayout extends MyVlayout implements Iview
 		button.setTitle(constants.cwFormCreateButtonLabel());
 	}
 	
-	@Override
 	public void setUnInitialized() {}
 	
-	@Override
 	public void changeDisplay(ViewAction va,String... paras) {
 		if(!initialized){
 			initLayout();
@@ -114,17 +112,14 @@ public abstract class HasMMRelationEditLayout extends MyVlayout implements Iview
 		}
 	}
 	
-	@Override
 	public Btname[] getStripStatus() {
 		return null;
 	}
 	
-	@Override
 	public ViewNameEnum nextViewName(Btname btname) {
 		return null;
 	}
 
-	@Override
 	public String[] getParas() {
 		return null;
 	}

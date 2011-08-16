@@ -32,7 +32,6 @@ public class DiskFileUploadLayoutProvider implements Provider<AssetUploadLayout>
 	@Inject
 	private VblockService bservice;
 
-	@Override
 	public AssetUploadLayout get() {
 		return new AssetUploadLayout(eventBus,bservice,uploadService,sourceViewName,uploadFors,allowExts);
 	}
