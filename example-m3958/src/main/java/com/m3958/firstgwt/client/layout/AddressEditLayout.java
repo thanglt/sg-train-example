@@ -53,7 +53,6 @@ public class AddressEditLayout extends HasMMRelationEditLayout implements Iview{
 		return null;
 	}
 
-	@Override
 	public ViewNameEnum getViewName() {
 		return ViewNameEnum.ADDRESS_EDIT;
 	}
