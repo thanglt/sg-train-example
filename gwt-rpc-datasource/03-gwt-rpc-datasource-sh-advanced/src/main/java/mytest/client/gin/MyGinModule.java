@@ -14,7 +14,7 @@ public class MyGinModule extends AbstractGinModule {
         //inject...
 //        bind(VLayout.class).annotatedWith(Names.named("homePage")).to(HomePage.class);
 //        bind(Layout.class).annotatedWith(Names.named("homePage")).to(HomePage2.class);
-//        bind(Layout.class).annotatedWith(Names.named("homePage")).to(MainTabSet.class);
-        bind(Layout.class).annotatedWith(Names.named("homePage")).to(HomePage3.class);
+        bind(Layout.class).annotatedWith(Names.named("homePage")).to(MainTabSet.class);
+//        bind(Layout.class).annotatedWith(Names.named("homePage")).to(HomePage3.class);
     }
 }
