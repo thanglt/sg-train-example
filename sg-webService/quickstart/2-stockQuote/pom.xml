@@ -6,6 +6,7 @@
 
     <groupId>com.mycompany.webservice</groupId>
     <artifactId>stockQuote</artifactId>
+    <packaging>aar</packaging>
     <name>Stock Quote Service</name>
     <version>1.0</version>
 
@@ -42,7 +43,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <!--<servicesXmlFile>${basedir}/src/sample/axisversion/META-INF/services.xml</servicesXmlFile>-->
-                    <servicesXmlFile>${basedir}/resources/META-INF/services.xml</servicesXmlFile>
+                    <servicesXmlFile>${basedir}/src/main/resources/META-INF/services.xml</servicesXmlFile>
                     <includeDependencies>false</includeDependencies>
                 </configuration>
             </plugin>
