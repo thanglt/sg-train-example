@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!-- POM file generated with GWT webAppCreator -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>train</groupId>
+    <artifactId>myGwt</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>GWT Maven Archetype</name>
+    <description>a simple SmartGwt project made by gwt maven plugin</description>
+
+    <properties>
+        <!-- GWT version -->
+        <gwt.version>2.2.0</gwt.version>
+        <sg.version>2.4</sg.version>
+        <!--compiler level-->
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <!-- encoding-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.7</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- smart gwt -->
+        <dependency>
+            <groupId>com.smartgwt</groupId>
+            <artifactId>smartgwt</artifactId>
+            <version>${sg.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <!-- Generate compiled stuff in the folder used for developing mode -->
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+
+        <plugins>
+
+            <!-- GWT Maven Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <!--<goal>test</goal>-->
+                            <!--<goal>i18n</goal>-->
+                            <!--<goal>generateAsync</goal>-->
+                        </goals>
+                    </execution>
+                </executions>
+                <!-- Plugin configuration. There are many available options, see gwt-maven-plugin
+             documentation at codehaus.org -->
+                <configuration>
+                    <!--used only before compile project-->
+                    <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+                    <runTarget>myGwt.html</runTarget>
+                    <hostedWebapp>${webappDirectory}</hostedWebapp>
+                    <!--<i18nMessagesBundle>com.train.client.Messages</i18nMessagesBundle>-->
+                    <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
+                </configuration>
+            </plugin>
+
+            <!-- Copy static web files before executing gwt:run -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exploded</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <webappDirectory>${webappDirectory}</webappDirectory>
+                </configuration>
+            </plugin>
+
+            <!--maven-jetty-plugin-->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.26</version>
+                <!--<version>8.0.0.M3</version>-->
+                <configuration>
+                    <!--<webDefaultXml>${project.basedir}/webdefault.xml</webDefaultXml>-->
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8888</port>
+                            <!-- 10 min idle-->
+                            <maxIdleTime>600000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <!-- Configure the webapp run in ROOT-->
+                    <webAppConfig>
+                        <!--<defaultsDescriptor>${project.basedir}/webdefault.xml</defaultsDescriptor>-->
+                        <contextPath>/</contextPath>
+                    </webAppConfig>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>smartgwt</id>
+            <name>SmartGwt</name>
+            <url>http://www.smartclient.com/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>
