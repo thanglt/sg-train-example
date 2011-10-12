@@ -21,6 +21,6 @@ package sample.axisversion;
 
 public class TestVersion {
     public String getVersion() throws Exception {
-        return "Hi - the Axis2 version is " + org.apache.axis2.Version.getVersionText();
+        return "TestVersion: The Axis2 version is " + org.apache.axis2.Version.getVersionText();
     }
 }
