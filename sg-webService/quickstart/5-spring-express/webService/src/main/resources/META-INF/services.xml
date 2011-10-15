@@ -1,12 +1,16 @@
 <service name="MyService">
     <description>MyService Sample</description>
+    <!--no to change-->
     <messageReceivers>
         <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
                           class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
     </messageReceivers>
+    <!--use web service interface-->
     <parameter name="ServiceClass">sample.servicelifecycle.IWeatherService</parameter>
+    <!--not to change-->
     <parameter name="ServiceObjectSupplier">
         org.apache.axis2.extensions.spring.receivers.SpringServletContextObjectSupplier
     </parameter>
+    <!--the same as spring context config xml-->
     <parameter name="SpringBeanName">weatherService</parameter>
 </service>
