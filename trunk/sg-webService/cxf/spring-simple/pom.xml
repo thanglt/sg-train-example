@@ -18,11 +18,11 @@
 
     <dependencies>
         <!-- cxf -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf</artifactId>
             <version>${cxf.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
