@@ -1,12 +1,35 @@
 <?xml version="1.0"?>
-<enunciate label="wannabecool" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://enunciate.codehaus.org/schemas/enunciate-1.24.xsd">
-   <namespaces>
-      <namespace id="api" uri="http://api.example.com/" />
-      <namespace id="link" uri="http://api.example.com/link" />
-      <namespace id="persona" uri="http://api.example.com/persona" />
-   </namespaces>
-   <modules>
-      <!-- Docs -->
-      <docs splashPackage="org.codehaus.enunciate.api" title="wannabecool" copyright="wannabecool.com"/>
-   </modules>
+<enunciate label="wannabecool" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://enunciate.codehaus.org/schemas/enunciate-1.24.xsd">
+    <namespaces>
+        <namespace id="api" uri="http://api.example.com/"/>
+        <namespace id="link" uri="http://api.example.com/link"/>
+        <namespace id="persona" uri="http://api.example.com/persona"/>
+    </namespaces>
+    <modules>
+        <!-- Docs -->
+        <docs splashPackage="org.codehaus.enunciate.api" title="wannabecool" copyright="wannabecool.com"/>
+
+        <!--  gwt
+        <gwt disabled="false"
+             rpcModuleName="com.mycompany.MyGWTRPCModule"
+             gwtHome="/home/myusername/tools/gwt-linux-1.5.2">
+            <app srcDir="src/main/mainapp">
+                <module name="com.mycompany.apps.main.MyRootModule"/>
+                <module name="com.mycompany.apps.main.MyModuleTwo" outputDir="two"/>
+            </app>
+            <app srcDir="src/main/anotherapp" name="another">
+                <module name="com.mycompany.apps.another.AnotherRootModule"/>
+                <module name="com.mycompany.apps.another.MyModuleThree" outputDir="three"/>
+            </app>
+        </gwt>    -->
+
+        <!--  amf
+        <amf disabled="false" swcName="mycompany-amf.swc"
+             flexHome="/home/myusername/tools/flex-sdk-2">
+            <app srcDir="src/main/flexapp" name="main" mainMxmlFile="src/main/flexapp/com/mycompany/main.mxml"/>
+            <app srcDir="src/main/anotherapp" name="another"
+                 mainMxmlFile="src/main/anotherapp/com/mycompany/another.mxml"/>
+        </amf>    -->
+    </modules>
 </enunciate>
