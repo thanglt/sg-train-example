@@ -1,1 +1,3 @@
 http://developer.yahooapis.com/TimeService/V1/getTime?appid=YahooDemo
+
+http://www.smartclient.com/smartgwtee/showcase/#data_integration_server_wsdl_weather
