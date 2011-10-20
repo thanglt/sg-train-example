@@ -3,10 +3,12 @@ package com.mycompany.webservice.server.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "cxf_user")
+@XmlRootElement
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
