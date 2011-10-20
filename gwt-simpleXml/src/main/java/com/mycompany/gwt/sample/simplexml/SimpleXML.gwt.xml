@@ -1,0 +1,6 @@
+<module rename-to='simpleXml'>
+    <inherits name="com.google.gwt.user.User"/>
+    <inherits name="com.google.gwt.http.HTTP"/>
+    <inherits name="com.google.gwt.xml.XML"/>
+    <entry-point class="com.mycompany.gwt.sample.simplexml.client.SimpleXML"/>
+</module>
