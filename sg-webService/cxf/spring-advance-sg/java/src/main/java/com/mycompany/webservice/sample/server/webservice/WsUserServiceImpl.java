@@ -2,6 +2,7 @@ package com.mycompany.webservice.sample.server.webservice;
 
 import com.mycompany.webservice.sample.server.entity.User;
 import com.mycompany.webservice.sample.server.service.UserService;
+import com.mycompany.webservice.sample.server.webservice.type.UserListOutputType;
 import org.springframework.stereotype.Service;
 
 import javax.jws.WebService;
@@ -18,8 +19,10 @@ public class WsUserServiceImpl implements WsUserService{
         this.userService = userService;
     }
 
-    public List<User> getList() {
-        return userService.getList();
+    public UserListOutputType getList() {
+        UserListOutputType userListOutputType = new UserListOutputType();
+        userListOutputType.getUser().addAll(userService.getList());
+        return userListOutputType;
     }
 
     public void create(String name, String email) {

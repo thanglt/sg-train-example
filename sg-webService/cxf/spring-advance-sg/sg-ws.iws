@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3127e528-52e0-464d-b090-f121aaf9301f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gwt/pom.xml" afterPath="$PROJECT_DIR$/gwt/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gwt/src/main/java/com/train/myGwt.gwt.xml" afterPath="$PROJECT_DIR$/gwt/src/main/java/com/train/myGwt.gwt.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gwt/src/main/resources/cxf-config.xml" afterPath="$PROJECT_DIR$/gwt/src/main/resources/cxf-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/entity/User.java" afterPath="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/entity/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserService.java" afterPath="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserServiceImpl.java" afterPath="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+    </list>
+    <ignored path="sg-ws.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="sg-ws" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="WebServiceSample.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gwt/src/main/java/com/train/client/WebServiceSample.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="34" selection-start="3336" selection-end="3336" vertical-scroll-proportion="0.4744186">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDebugKey.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gwt/src/main/java/com/train/client/MyDebugKey.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="35" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataSource.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/smartgwt/smartgwt/2.4/smartgwt-2.4.jar!/com/smartgwt/client/data/DataSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1811" column="46" selection-start="107981" selection-end="107981" vertical-scroll-proportion="-18.96">
+              <folding>
+                <marker date="1293714394000" expanded="true" signature="7221:7440" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="97115:97502" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="98232:98651" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="99079:99196" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="99937:100207" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="100437:100744" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="101322:101446" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="101654:101962" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="102155:102291" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="103357:104837" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="103481:104181" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="103595:104165" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="103632:104145" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="104187:104832" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="104326:104815" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="105154:105466" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="105739:105861" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="106224:106423" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="108950:109129" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="111690:111930" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="112657:112776" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="113620:114024" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="115233:115724" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="116057:116465" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="116309:116436" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="116706:117124" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="116968:117095" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="117253:120908" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="117455:118411" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="117527:117715" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="118068:118159" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="118248:118376" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="118552:119273" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="118624:118812" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="119408:120055" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="119480:119668" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="120193:120899" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="120265:120453" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="124805:124996" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="131039:131289" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="132117:132451" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="133747:134112" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="134158:134355" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="134409:134563" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="138648:138889" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="138743:138846" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="140092:140237" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="147226:147342" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="152400:152599" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="157734:158488" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="158002:158479" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="163768:164681" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="164174:164651" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="165227:165427" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="166050:166805" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="166319:166796" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="166917:167831" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="167324:167801" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="168046:168246" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="168539:169265" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="168779:169256" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="169701:170586" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="170079:170556" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="170834:171037" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="171367:172096" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="171610:172087" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="172561:173449" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="172942:173419" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="173788:173991" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="174415:175144" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="174658:175135" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="175645:176533" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="176026:176503" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="179137:179267" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="181962:182180" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="184865:185133" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="187820:188151" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="190833:191164" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="191891:192185" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="192788:193109" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="193700:194169" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="193991:194031" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="194527:194812" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="194643:194726" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="195685:196140" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="195801:195884" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="196764:197041" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="196876:196959" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="198136:198583" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="198248:198331" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="199318:199549" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="199393:199511" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="200296:200611" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="200455:200573" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="201128:201426" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="201973:202273" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="203063:203343" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="206447:207317" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="206721:207214" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="209245:209628" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="210250:210656" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="211106:211396" placeholder="{...}" />
+                <marker date="1293714394000" expanded="true" signature="211842:212218" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WsUserService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="19" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebMethod.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://D:/Java/jdk1.6.0_26/jre/lib/rt.jar!/javax/jws/WebMethod.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="21" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WsUserServiceImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="0" selection-start="877" selection-end="877" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="47" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserListOutputType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/type/UserListOutputType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="19" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/gwt/src/main/resources/cxf-config.xml" />
+        <option value="$PROJECT_DIR$/gwt/src/main/java/com/train/client/myGwt.java" />
+        <option value="$PROJECT_DIR$/gwt/src/main/java/com/train/client/TestWebService.java" />
+        <option value="$PROJECT_DIR$/gwt/src/main/java/com/train/client/WsdlDataBindingSample.java" />
+        <option value="$PROJECT_DIR$/gwt/pom.xml" />
+        <option value="$PROJECT_DIR$/gwt/src/main/java/com/train/myGwt.gwt.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/gwt/src/main/java/com/train/client/MyDebugKey.java" />
+        <option value="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserService.java" />
+        <option value="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/type/UserListOutputType.java" />
+        <option value="$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/entity/User.java" />
+        <option value="$PROJECT_DIR$/gwt/src/main/java/com/train/client/WebServiceSample.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="keepSourceFolders" value="false" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Smart Gwt Web Service" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Smart Gwt Web Service" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_INTERNAL" />
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sg-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sg-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-advance-sg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sg-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-advance-sg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gwt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sg-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-advance-sg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gwt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sg-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-advance-sg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gwt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sg-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-advance-sg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gwt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Favorites" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.train.client" />
+    </key>
+  </component>
+  <component name="RunManager" selected="GWT Configuration.myGwt">
+    <configuration default="false" name="gwt [org.codehaus.mojo:gwt-maven-plugin:2.2.0:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings">
+          <MavenGeneralSettings>
+            <option name="checksumPolicy" value="FAIL" />
+            <option name="failureBehavior" value="FAST" />
+            <option name="localRepository" value="" />
+            <option name="mavenHome" value="" />
+            <option name="nonRecursive" value="false" />
+            <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
+            <option name="printErrorStackTraces" value="false" />
+            <option name="snapshotUpdatePolicy" value="ALWAYS_UPDATE" />
+            <option name="usePluginRegistry" value="false" />
+            <option name="userSettingsFile" value="" />
+            <option name="workOffline" value="false" />
+          </MavenGeneralSettings>
+        </option>
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="jreName" value="#JAVA_INTERNAL" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="goals">
+              <list>
+                <option value="org.codehaus.mojo:gwt-maven-plugin:2.2.0:run" />
+              </list>
+            </option>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="workingDirPath" value="$PROJECT_DIR$/gwt" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1125" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings">
+          <MavenGeneralSettings>
+            <option name="checksumPolicy" value="FAIL" />
+            <option name="failureBehavior" value="FAST" />
+            <option name="localRepository" value="" />
+            <option name="mavenHome" value="" />
+            <option name="nonRecursive" value="false" />
+            <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
+            <option name="printErrorStackTraces" value="false" />
+            <option name="snapshotUpdatePolicy" value="ALWAYS_UPDATE" />
+            <option name="usePluginRegistry" value="false" />
+            <option name="userSettingsFile" value="" />
+            <option name="workOffline" value="false" />
+          </MavenGeneralSettings>
+        </option>
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="jreName" value="#JAVA_INTERNAL" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="FlashPlayer.exe" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <module name="" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="myGwt" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <module name="gwt" />
+      <option name="RUN_PAGE" value="myGwt.html" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="4381" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="GWT Configuration.myGwt" />
+      <item index="1" class="java.lang.String" itemvalue="Maven.gwt [org.codehaus.mojo:gwt-maven-plugin:2.2.0:run]" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <configuration useDefault="true">C:\Documents and Settings\hujl\Application Data\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg\gwt" />
+          <option name="myCopyRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg\gwt" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg" />
+          <option name="myCopyRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg\java" />
+          <option name="myCopyRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg\java" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg" />
+          <option name="myCopyRoot" value="E:\svn\opensource\sg-train-example\sg-webService\cxf\spring-advance-sg" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1319161445281</created>
+      <updated>1319161445281</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-4" y="-4" width="1288" height="998" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4489093" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15746753" sideWeight="0.56257176" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2913961" sideWeight="0.56257176" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43742824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://D:/Java/jdk1.6.0_26/src.zip!/javax/xml/bind/annotation/XmlRootElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="18" selection-start="4056" selection-end="4056" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/smartgwt/smartgwt/2.4/smartgwt-2.4.jar!/com/smartgwt/client/data/XmlNamespaces.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="16" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/smartgwt/smartgwt/2.4/smartgwt-2.4.jar!/com/smartgwt/client/data/WebService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="29" selection-start="9540" selection-end="9540" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1260689858000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/smartgwt/smartgwt/2.4/smartgwt-2.4.jar!/com/smartgwt/client/data/XmlNamespaces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/smartgwt/smartgwt/2.4/smartgwt-2.4.jar!/com/smartgwt/client/data/DataSourceField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="11" selection-start="2632" selection-end="2632" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/smartgwt/smartgwt/2.4/smartgwt-2.4.jar!/com/smartgwt/client/data/OperationBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="11" selection-start="2774" selection-end="2774" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gwt/src/main/java/com/train/client/MyDebugKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="35" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/smartgwt/smartgwt/2.4/smartgwt-2.4.jar!/com/smartgwt/client/data/DataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1811" column="46" selection-start="107981" selection-end="107981" vertical-scroll-proportion="-18.96">
+          <folding>
+            <marker date="1293714394000" expanded="true" signature="7221:7440" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="97115:97502" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="98232:98651" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="99079:99196" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="99937:100207" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="100437:100744" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="101322:101446" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="101654:101962" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="102155:102291" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="103357:104837" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="103481:104181" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="103595:104165" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="103632:104145" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="104187:104832" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="104326:104815" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="105154:105466" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="105739:105861" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="106224:106423" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="108950:109129" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="111690:111930" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="112657:112776" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="113620:114024" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="115233:115724" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="116057:116465" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="116309:116436" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="116706:117124" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="116968:117095" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="117253:120908" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="117455:118411" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="117527:117715" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="118068:118159" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="118248:118376" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="118552:119273" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="118624:118812" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="119408:120055" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="119480:119668" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="120193:120899" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="120265:120453" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="124805:124996" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="131039:131289" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="132117:132451" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="133747:134112" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="134158:134355" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="134409:134563" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="138648:138889" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="138743:138846" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="140092:140237" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="147226:147342" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="152400:152599" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="157734:158488" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="158002:158479" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="163768:164681" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="164174:164651" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="165227:165427" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="166050:166805" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="166319:166796" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="166917:167831" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="167324:167801" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="168046:168246" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="168539:169265" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="168779:169256" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="169701:170586" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="170079:170556" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="170834:171037" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="171367:172096" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="171610:172087" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="172561:173449" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="172942:173419" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="173788:173991" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="174415:175144" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="174658:175135" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="175645:176533" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="176026:176503" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="179137:179267" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="181962:182180" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="184865:185133" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="187820:188151" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="190833:191164" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="191891:192185" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="192788:193109" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="193700:194169" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="193991:194031" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="194527:194812" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="194643:194726" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="195685:196140" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="195801:195884" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="196764:197041" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="196876:196959" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="198136:198583" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="198248:198331" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="199318:199549" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="199393:199511" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="200296:200611" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="200455:200573" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="201128:201426" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="201973:202273" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="203063:203343" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="206447:207317" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="206721:207214" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="209245:209628" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="210250:210656" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="211106:211396" placeholder="{...}" />
+            <marker date="1293714394000" expanded="true" signature="211842:212218" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="877" selection-end="877" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.6.0_26/jre/lib/rt.jar!/javax/jws/WebMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="21" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/WsUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="19" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/webservice/type/UserListOutputType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="19" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/main/java/com/mycompany/webservice/sample/server/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="47" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gwt/src/main/java/com/train/client/WebServiceSample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="34" selection-start="3336" selection-end="3336" vertical-scroll-proportion="0.4744186">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

@@ -20,6 +20,7 @@
         <!-- GWT version -->
         <gwt.version>2.2.0</gwt.version>
         <sg.version>2.4</sg.version>
+        <hibernate.version>3.6.7.Final</hibernate.version>
         <spring.version>3.0.5.RELEASE</spring.version>
         <cxf.version>2.4.3</cxf.version>
         <!--compiler level-->
@@ -43,12 +44,6 @@
             <version>${gwt.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!--<dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.7</version>
-            <scope>test</scope>
-        </dependency>-->
 
         <!-- smart gwt -->
         <dependency>
@@ -79,51 +74,20 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>3.6.0.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
-            <!--<version>3.4.0.GA</version>-->
-            <version>3.4.0.GA</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-       <!-- <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-commons-annotations</artifactId>
-            <version>3.3.0.ga</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.4.0.GA</version>
-            <type>jar</type>
-            <scope>compile</scope>
+            <version>${hibernate.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>ejb3-persistence</artifactId>
-            <version>1.0.2.GA</version>
-            <type>pom</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate</artifactId>
-            <version>3.3.2.GA</version>
-            <type>pom</type>
-            <scope>compile</scope>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.2.0.Final</version>
         </dependency>
 
         <!-- cxf -->
-        <!--<dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>-->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
@@ -289,11 +253,31 @@
 
     </dependencies>
 
+    <!--<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>hibernate3-maven-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>-->
+
     <repositories>
         <repository>
-            <id>smartgwt</id>
+            <id>Smartgwt Repository</id>
             <name>SmartGwt</name>
             <url>http://www.smartclient.com/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>JBoss Repository</id>
+            <name>JBoss Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
