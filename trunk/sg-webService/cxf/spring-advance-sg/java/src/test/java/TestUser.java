@@ -1,6 +1,8 @@
 import com.mycompany.webservice.sample.server.entity.User;
 import com.mycompany.webservice.sample.server.service.UserService;
+import org.junit.Assert;
 import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
@@ -18,7 +20,7 @@ public class TestUser extends AbstractTransactionalJUnit4SpringContextTests {
     }
 
     @Test
-//    @Rollback(value = false)
+    @Rollback(value = false)
     public void save(){
         User user = new User();
         user.setName("jack2");
@@ -29,7 +31,7 @@ public class TestUser extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     public void getList(){
         List list = userService.getList();
-//        Assert.assertEquals(1 , list.size());
+        Assert.assertEquals(1, list.size());
     }
 
 }
