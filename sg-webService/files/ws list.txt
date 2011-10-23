@@ -1,3 +1,5 @@
 http://developer.yahooapis.com/TimeService/V1/getTime?appid=YahooDemo
 
 http://www.smartclient.com/smartgwtee/showcase/#data_integration_server_wsdl_weather
+
+http://raulraja.com/2009/06/25/spring-exposing-a-bean-as-rest-xml-json-and-soap-webservice/
