@@ -102,10 +102,10 @@
             </plugin>
 
 
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>sql-maven-plugin</artifactId>
-            </plugin>
+            </plugin>-->
 
         </plugins>
     </build>

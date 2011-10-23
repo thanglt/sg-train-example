@@ -1,2 +1,2 @@
-#h2
+#h2 web console
 java -jar h2*.jar
