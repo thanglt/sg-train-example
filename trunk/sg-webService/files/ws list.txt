@@ -2,7 +2,18 @@ http://developer.yahooapis.com/TimeService/V1/getTime?appid=YahooDemo
 
 http://www.smartclient.com/smartgwtee/showcase/#data_integration_server_wsdl_weather
 
-http://raulraja.com/2009/06/25/spring-exposing-a-bean-as-rest-xml-json-and-soap-webservice/
-
 http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl
 http://wsf.cdyne.com/WeatherWS/Weather.asmx/GetCityForecastByZIP?zip=10001
+
+Blog:
+both json-and-soap
+http://raulraja.com/2009/06/25/spring-exposing-a-bean-as-rest-xml-json-and-soap-webservice/
+
+easier use of REST?
+http://comments.gmane.org/gmane.org.google.gwt/45628
+
+Pushing Jersey to the limit
+http://weblogs.java.net/blog/ljnelson/archive/2010/04/28/pushing-jersey-limit
+
+WSDL+update
+http://forums.smartclient.com/showthread.php?t=8123&highlight=WSDL+update
