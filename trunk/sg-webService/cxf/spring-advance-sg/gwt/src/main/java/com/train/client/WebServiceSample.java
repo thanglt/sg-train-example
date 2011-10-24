@@ -5,23 +5,17 @@ import com.smartgwt.client.data.*;
 import com.smartgwt.client.types.DSOperationType;
 import com.smartgwt.client.types.FieldType;
 import com.smartgwt.client.util.BooleanCallback;
-import com.smartgwt.client.util.Page;
 import com.smartgwt.client.util.SC;
 import com.smartgwt.client.widgets.Canvas;
 import com.smartgwt.client.widgets.IButton;
 import com.smartgwt.client.widgets.events.ClickEvent;
 import com.smartgwt.client.widgets.events.ClickHandler;
-import com.smartgwt.client.widgets.form.DynamicForm;
 import com.smartgwt.client.widgets.grid.ListGrid;
 import com.smartgwt.client.widgets.layout.VLayout;
 
 public class WebServiceSample implements EntryPoint {
 
     public void onModuleLoad() {
-
-        //debug console
-        MyDebugKey debugKey = new MyDebugKey();
-        Page.registerKey(debugKey, debugKey.getCb());
 
         final Canvas canvas = new Canvas();
         canvas.setWidth100();
@@ -90,13 +84,6 @@ public class WebServiceSample implements EntryPoint {
                                 SC.say("data length : " + data.length);
                             }
                         });
-//                        listGrid.fetchData(c , new DSCallback() {
-//                            public void execute(DSResponse response, Object rawData, DSRequest request) {
-//                                int status = response.getStatus();
-//                                SC.say("status : " + status);
-//                            }
-//                        });
-//                        listGrid.fetchData(searchForm.getValuesAsCriteria());
                     }
                 });
 
