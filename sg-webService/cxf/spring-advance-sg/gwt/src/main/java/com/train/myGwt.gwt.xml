@@ -6,7 +6,7 @@
 
   <extend-property name="locale" values="zh"/>
 
-  <entry-point class='com.train.client.WebServiceSample'/>
+  <entry-point class='com.train.client.WebServiceSample2'/>
   <source path='client'/>
   <source path='shared'/>
 
