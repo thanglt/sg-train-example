@@ -1,6 +1,7 @@
 package com.mycompany.webservice.sample.server.webservice;
 
 import com.mycompany.webservice.sample.server.entity.User;
+import com.mycompany.webservice.sample.server.webservice.type.OperationOutputType;
 import com.mycompany.webservice.sample.server.webservice.type.UserListOutputType;
 
 import javax.jws.WebMethod;
@@ -20,16 +21,18 @@ public interface WsUserService {
     @WebMethod(operationName = "GetList")
     public UserListOutputType getList();
 
+    @WebResult(name = "OperationOutputType")
     @WebMethod(operationName = "Create")
-    public void create(
+    public OperationOutputType create(
             //arg name
             @WebParam(name = "Name")
             String name,
             @WebParam(name = "Email")
             String email);
 
+    @WebResult(name = "OperationOutputType")
     @WebMethod(operationName = "Update")
-    public void update(
+    public OperationOutputType update(
             @WebParam(name = "Id")
             String id,
             @WebParam(name = "Name")
@@ -37,8 +40,9 @@ public interface WsUserService {
             @WebParam(name = "Email")
             String email);
 
+    @WebResult(name = "OperationOutputType")
     @WebMethod(operationName = "Delete")
-    public void delete(
+    public OperationOutputType delete(
             @WebParam(name = "Id")
             String id);
 }

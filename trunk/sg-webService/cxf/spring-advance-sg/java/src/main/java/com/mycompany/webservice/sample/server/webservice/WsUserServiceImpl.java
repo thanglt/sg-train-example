@@ -2,6 +2,7 @@ package com.mycompany.webservice.sample.server.webservice;
 
 import com.mycompany.webservice.sample.server.entity.User;
 import com.mycompany.webservice.sample.server.service.UserService;
+import com.mycompany.webservice.sample.server.webservice.type.OperationOutputType;
 import com.mycompany.webservice.sample.server.webservice.type.UserListOutputType;
 import org.springframework.stereotype.Service;
 
@@ -25,22 +26,25 @@ public class WsUserServiceImpl implements WsUserService{
         return userListOutputType;
     }
 
-    public void create(String name, String email) {
+    public OperationOutputType create(String name, String email) {
         User user = new User();
         user.setName(name);
         user.setEmail(email);
         userService.create(user);
+        return new OperationOutputType("true" , "record created");
     }
 
-    public void update(String id , String name, String email){
+    public OperationOutputType update(String id, String name, String email){
         User user = new User();
         user.setId(id);
         user.setName(name);
         user.setEmail(email);
         userService.update(user);
+        return new OperationOutputType("true" , "record updated");
     }
 
-    public void delete(String id) {
+    public OperationOutputType delete(String id) {
         userService.deleteById(id);
+        return new OperationOutputType("true" , "record deleted");
     }
 }
