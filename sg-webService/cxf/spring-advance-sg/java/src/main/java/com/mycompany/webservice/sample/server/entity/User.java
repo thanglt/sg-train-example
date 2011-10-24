@@ -5,11 +5,12 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "cxf_user")
 //element type & complexType name
-@XmlType(name = "User" , propOrder = {"id", "name", "email"})
+@XmlType(name = "User" , propOrder = {"id", "name", "email" , "lastUpdateDate"})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,6 +22,8 @@ public class User implements Serializable {
     private String name;//name
 //    @XmlElement(name = "Email", required = true)
     private String email;//email
+
+    private Date lastUpdateDate;//create date
 
     @Id
 	@Column(length = 36, nullable = true)
@@ -48,5 +51,13 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Date getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(Date lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
     }
 }
