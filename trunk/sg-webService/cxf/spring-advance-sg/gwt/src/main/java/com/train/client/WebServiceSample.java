@@ -2,7 +2,6 @@ package com.train.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.json.client.JSONArray;
 import com.smartgwt.client.data.*;
 import com.smartgwt.client.rpc.RPCResponse;
 import com.smartgwt.client.types.Alignment;
@@ -179,10 +178,16 @@ public class WebServiceSample implements EntryPoint {
                 if (StringUtils.isNotBlank(email)) {
                     data.put("Email", email);
                 }
-                service.callOperation(wsUpdateOp, data, "success", new WebServiceCallback() {
+                service.callOperation(wsUpdateOp, data, "//OperationOutputType", new WebServiceCallback() {
                     public void execute(Object[] data, JavaScriptObject xmlDoc, RPCResponse rpcResponse, JavaScriptObject wsRequest) {
-                        int i = rpcResponse.getStatus();
-                        freshListGrid();
+                        Map map = JSOHelper.convertToMap((JavaScriptObject) data[0]);
+                        String success = (String) map.get("success");
+                        if ("true".equals(success)) {
+                            freshListGrid();
+                        } else {
+                            String reason = (String) map.get("responseText");
+                            SC.warn("Operation failed : " + reason);
+                        }
                     }
                 });
             }
@@ -197,10 +202,16 @@ public class WebServiceSample implements EntryPoint {
                     return;
                 }
                 data.put("Id", id);
-                service.callOperation(wsRemoveOp, data, "success", new WebServiceCallback() {
+                service.callOperation(wsRemoveOp, data, "//OperationOutputType", new WebServiceCallback() {
                     public void execute(Object[] data, JavaScriptObject xmlDoc, RPCResponse rpcResponse, JavaScriptObject wsRequest) {
-                        int i = rpcResponse.getStatus();
-                        freshListGrid();
+                        Map map = JSOHelper.convertToMap((JavaScriptObject) data[0]);
+                        String success = (String) map.get("success");
+                        if ("true".equals(success)) {
+                            freshListGrid();
+                        } else {
+                            String reason = (String) map.get("responseText");
+                            SC.warn("Operation failed : " + reason);
+                        }
                     }
                 });
             }
