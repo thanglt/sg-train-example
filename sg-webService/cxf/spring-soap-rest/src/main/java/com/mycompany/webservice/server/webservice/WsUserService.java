@@ -2,6 +2,8 @@ package com.mycompany.webservice.server.webservice;
 
 import com.mycompany.webservice.server.webservice.type.OperationOutputType;
 import com.mycompany.webservice.server.webservice.type.UserListOutputType;
+import org.springframework.stereotype.Component;
+
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
