@@ -17,3 +17,6 @@ http://weblogs.java.net/blog/ljnelson/archive/2010/04/28/pushing-jersey-limit
 
 WSDL+update
 http://forums.smartclient.com/showthread.php?t=8123&highlight=WSDL+update
+
+REST:
+http://rest.elkstein.org
