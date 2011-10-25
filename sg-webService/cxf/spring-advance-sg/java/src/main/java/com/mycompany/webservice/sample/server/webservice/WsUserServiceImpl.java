@@ -2,6 +2,7 @@ package com.mycompany.webservice.sample.server.webservice;
 
 import com.mycompany.webservice.sample.server.entity.User;
 import com.mycompany.webservice.sample.server.service.UserService;
+import com.mycompany.webservice.sample.server.utils.MailUtils;
 import com.mycompany.webservice.sample.server.webservice.type.OperationOutputType;
 import com.mycompany.webservice.sample.server.webservice.type.UserListOutputType;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,9 @@ public class WsUserServiceImpl implements WsUserService{
     }
 
     public OperationOutputType create(String name, String email) {
+        if(MailUtils.isNotValidEmail(email)){
+            return new OperationOutputType("false" , "is a unavailable email!");
+        }
         User user = new User();
         user.setName(name);
         user.setEmail(email);
@@ -35,6 +39,9 @@ public class WsUserServiceImpl implements WsUserService{
     }
 
     public OperationOutputType update(String id, String name, String email){
+        if(MailUtils.isNotValidEmail(email)){
+            return new OperationOutputType("false" , "is a unavailable email!");
+        }
         User user = new User();
         user.setId(id);
         user.setName(name);
