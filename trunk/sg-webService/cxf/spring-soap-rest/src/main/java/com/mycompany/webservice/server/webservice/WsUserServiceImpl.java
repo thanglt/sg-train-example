@@ -7,17 +7,19 @@ import com.mycompany.webservice.server.webservice.type.OperationOutputType;
 import com.mycompany.webservice.server.webservice.type.UserListOutputType;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.jws.WebService;
 
-@Service
+@Service("wsUserServiceImpl")
 @WebService(endpointInterface = "com.mycompany.webservice.server.webservice.WsUserService")
 public class WsUserServiceImpl implements WsUserService {
 
+    @Resource
     public UserService userService;
 
-    public void setUserService(UserService userService) {
+    /*public void setUserService(UserService userService) {
         this.userService = userService;
-    }
+    }*/
 
     public UserListOutputType getList() {
         UserListOutputType userListOutputType = new UserListOutputType();
