@@ -15,22 +15,22 @@ import javax.xml.bind.annotation.XmlType;
 public class OperationOutputType {
 
 //    private boolean success;
-    private String success;
+    private boolean success;
     private String responseText;
 
     public OperationOutputType() {
     }
 
-    public OperationOutputType(String success , String responseText){
+    public OperationOutputType(boolean success, String responseText) {
         this.success = success;
         this.responseText = responseText;
     }
 
-    public String getSuccess() {
+    public boolean isSuccess() {
         return success;
     }
 
-    public void setSuccess(String success) {
+    public void setSuccess(boolean success) {
         this.success = success;
     }
 
