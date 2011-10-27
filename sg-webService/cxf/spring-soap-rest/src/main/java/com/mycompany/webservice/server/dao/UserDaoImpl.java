@@ -3,6 +3,8 @@ package com.mycompany.webservice.server.dao;
 import com.mycompany.webservice.server.entity.User;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
+
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -14,10 +16,12 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     }
 
     public void create(User user) {
+        user.setLastUpdate(new Date());
         this.getHibernateTemplate().save(user);
     }
 
     public void update(User user) {
+        user.setLastUpdate(new Date());
         this.getHibernateTemplate().merge(user);
     }
 

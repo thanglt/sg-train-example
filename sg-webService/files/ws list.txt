@@ -20,3 +20,9 @@ http://forums.smartclient.com/showthread.php?t=8123&highlight=WSDL+update
 
 REST:
 http://rest.elkstein.org
+
+A RESTful Web service, an example
+http://www.peej.co.uk/articles/restfully-delicious.html
+
+Online REST Web Service Demo
+http://www.predic8.com/rest-demo.htm
