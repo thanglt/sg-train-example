@@ -32,3 +32,9 @@ http://java.net/projects/rome/
 
 Creating RESTful services
 http://static.springsource.org/spring/docs/3.0.0.M3/spring-framework-reference/html/ch18s02.html
+
+RESTful MVC Features in Spring 3.0 and 3.1
+http://java.dzone.com/articles/restful-mvc-features-spring-30
+
+OpenSearch
+http://www.opensearch.org/Home
