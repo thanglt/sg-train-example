@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author Eggsy - eggsy_at_eggsylife.co.uk
  *
  */
-@XmlRootElement(name = "class")
+@XmlRootElement(name = "classroom")
 @XmlType(propOrder={"classId", "students" , "remark"})
 public class Classroom {
  
