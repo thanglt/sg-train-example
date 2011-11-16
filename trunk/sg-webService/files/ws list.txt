@@ -38,3 +38,20 @@ http://java.dzone.com/articles/restful-mvc-features-spring-30
 
 OpenSearch
 http://www.opensearch.org/Home
+
+Do we need WADL?
+http://bitworking.org/news/193/Do-we-need-WADL
+
+WEB API
+http://static.springsource.org/spring/docs/3.0.5.RELEASE/spring-framework-reference/html/index.html
+
+How Does JAXB Compare to XStream? 
+http://blog.bdoughan.com/2010/10/how-does-jaxb-compare-to-xstream.html
+
+
+================================ wiki ===================================
+media types
+http://en.wikipedia.org/wiki/Internet_media_type
+
+content negotiation
+http://en.wikipedia.org/wiki/Content_negotiation
