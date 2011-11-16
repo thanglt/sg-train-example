@@ -1,12 +1,14 @@
 package com.spring.datasource;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * @author Eggsy - eggsy_at_eggsylife.co.uk
  *
  */
 @XmlRootElement(name = "student")
+@XmlType(propOrder={"id", "name"})
 public class Student {
 	private int id = -1;
 	private String name = null;
