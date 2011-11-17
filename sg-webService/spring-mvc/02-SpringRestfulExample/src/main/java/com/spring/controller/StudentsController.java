@@ -43,4 +43,21 @@ public class StudentsController {
 		return mav;
 	}
 
+    @RequestMapping(method=RequestMethod.GET,value="/classesAll")
+	public ModelAndView showStudentsPage3() {
+		Classroom classroom1 = new Classroom("Class One");
+        classroom1.setRemark("this is a test remark");
+
+        Classroom classroom2 = new Classroom("Class Two");
+        classroom2.setRemark("this is a test remark 222");
+
+        List list = new ArrayList();
+        list.add(classroom1);
+        list.add(classroom2);
+		ModelAndView mav = new ModelAndView("classesAllView");
+		mav.addObject("classesAll", list);
+		return mav;
+	}
+
+
 }
