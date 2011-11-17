@@ -49,6 +49,13 @@ How Does JAXB Compare to XStream?
 http://blog.bdoughan.com/2010/10/how-does-jaxb-compare-to-xstream.html
 
 
+RESTful Web services: The basics
+http://www.ibm.com/developerworks/webservices/library/ws-restful/index.html
+
+
+ContentNegotiatingViewResolver and MarshallingView 
+http://forum.springsource.org/showthread.php?83599-ContentNegotiatingViewResolver-and-MarshallingView
+
 ================================ wiki ===================================
 media types
 http://en.wikipedia.org/wiki/Internet_media_type
