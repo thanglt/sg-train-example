@@ -7,5 +7,6 @@
  
 	<definition name="studentsView" template="/pages/students.jsp"/>
 	<definition name="classesView" template="/pages/classes.jsp"/>
+	<definition name="classesAllView" template="/pages/classesAll.jsp"/>
 
 </tiles-definitions>
