@@ -1,0 +1,13 @@
+
+project --topLevelPackage com.mycompany.userinfo
+
+persistence setup --provider HIBERNATE --database H2_IN_MEMORY 
+
+// [failed] entity --class ~.domain.User
+entity --class ~.domain.Account
+field string --fieldName username --notNull --sizeMin 2
+field string --fieldName password --notNull
+field boolean --fieldName isEnabled
+
+controller all --package com.mycompany.userinfo.web
+
