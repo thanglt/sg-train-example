@@ -9,7 +9,7 @@
         <property name="autodetectAnnotations" value="true"/>
         <property name="aliases">
             <props>
-                <prop key="base">com.mycompany.userinfo.domain.Account</prop>
+                <prop key="account">com.mycompany.userinfo.domain.Account</prop>
             </props>
         </property>
         <property name="supportedClasses">
