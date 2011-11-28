@@ -27,6 +27,8 @@ public class StudentsController {
 		return mav;
 	}
 
+    @Deprecated
+    //thers's no need to use ClassroomOutputType
     @RequestMapping(method=RequestMethod.GET,value="/classes")
 	public ModelAndView showStudentsPage2() {
 		Classroom classroom1 = new Classroom("Class One");
