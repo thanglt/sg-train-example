@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='sales'>
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name='com.smartgwt.SmartGwt' />
+  <inherits name="com.smartclient.theme.enterprise.Enterprise"/>
+
+  <extend-property name="locale" values="zh"/>
+
+  <entry-point class='com.mycompany.gwt.sales.client.Sales'/>
+  <source path='client'/>
+  <source path='shared'/>
+
+</module>
