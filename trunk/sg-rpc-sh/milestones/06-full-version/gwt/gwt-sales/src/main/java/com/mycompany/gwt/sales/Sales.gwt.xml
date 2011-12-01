@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='sales'>
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.smartgwt.SmartGwt'/>
+    <inherits name="com.smartclient.theme.enterpriseblue.EnterpriseBlue"/>
+    <inherits name="com.google.gwt.inject.Inject"/>
+
+    <!--gwt rpc datasource implement-->
+    <inherits name="com.mycompany.gwt.common.Common" />
+
+    <!--to use locale_zh , add locale=zh after http url -->
+    <!--http://localhost/sales.html?locale=zh-->
+    <extend-property name="locale" values="zh"/>
+
+     <entry-point class='com.mycompany.gwt.sales.client.Sales'/>
+    <!--<entry-point class='com.mycompany.gwt.sales.client.view.sample.PatternReuseSample'/>-->
+    <source path='client'/>
+    <source path='shared'/>
+
+</module>

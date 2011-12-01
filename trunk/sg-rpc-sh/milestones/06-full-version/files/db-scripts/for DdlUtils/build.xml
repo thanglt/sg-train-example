@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project name="MigrateToDerby" basedir=".">
+
+   <path id="classpath">
+      <fileset dir="./lib">
+         <include name="**/*.jar"/>
+      </fileset>
+   </path>
+
+   <target name="export" description="Dumps db structure and data">
+      <taskdef name="databaseToDdl"
+              classname="org.apache.ddlutils.task.DatabaseToDdlTask">
+         <classpath refid="classpath"/>
+      </taskdef>
+
+      <databaseToDdl modelName="MigrateTest">
+         <database url="jdbc:mysql://localhost:3306/test"
+                 driverClassName="com.mysql.jdbc.Driver"
+                 usernAme="root"
+                 password="root"/>
+				 <!-- -->
+         <writeSchemaToFile outputFile="db-schema.xml"/>
+         <!-- -->
+         <writeDataToFile outputFile="db-data.xml"/>
+      </databaseToDdl>
+
+   </target>
+   
+   <target name="import" description="Creates db and loads data">
+      <taskdef name="ddlToDatabase"
+              classname="org.apache.ddlutils.task.DdlToDatabaseTask">
+         <classpath refid="classpath"/>
+      </taskdef>
+
+      <ddlToDatabase schemaFile="db-schema.xml">
+
+         <database url="jdbc:oracle:thin:@localhost:1521:xe"
+                 driverClassName="oracle.jdbc.OracleDriver"
+                 username="wangzi"
+                 password="12345"/>
+
+					<!-- 
+         <createDatabase failonerror="false"/>-->
+         <!-- 
+         <writeSchemaToDatabase/>-->
+         
+         <!--   -->
+         <writeDataToDatabase datafile="db-data.xml"/> 
+
+      </ddlToDatabase>
+   </target> 
+
+</project> 

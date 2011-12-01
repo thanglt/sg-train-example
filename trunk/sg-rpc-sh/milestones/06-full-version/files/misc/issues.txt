@@ -1,0 +1,9 @@
+Caused by: java.sql.SQLException: 流已被关闭
+	at oracle.jdbc.driver.LongAccessor.getBytesInternal(LongAccessor.java:156)
+	at oracle.jdbc.driver.LongAccessor.getBytes(LongAccessor.java:126)
+	at oracle.jdbc.driver.LongAccessor.getString(LongAccessor.java:201)
+	at oracle.jdbc.driver.T4CLongAccessor.getString(T4CLongAccessor.java:427)
+	at oracle.jdbc.driver.OracleResultSetImpl.getString(OracleResultSetImpl.java:1283)
+	at oracle.jdbc.driver.OracleResultSet.getString(OracleResultSet.java:494)
+
+这种错误基本是由于hibernte自动创建表时，在oracle中字段为long的原因所致，修改long为Clob即可。

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <!--登陆页面, 成功跳转页面, 失败页面-->
+    <!--default-target-url 的值根据本机 gwt:run 给出地址自行替换-->
+    <http auto-config="true" use-expressions="true">
+        <form-login login-page="/login.html"
+                    default-target-url="/sales.html?gwt.codesvr=127.0.0.1:9997"
+                    always-use-default-target="true"
+                    login-processing-url="/loginVerify"
+                    authentication-failure-url="/failed.html"/>
+        <!-- url 访问权限 -->
+        <intercept-url pattern="/login.html" access="permitAll"/>
+        <intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+        <!-- logout 跳转 url -->
+        <logout invalidate-session="true" logout-success-url="/login.html"/>
+        <!-- session 过期跳转 url -->
+        <session-management invalid-session-url="/login.html"/>
+    </http>
+
+    <beans:bean id="userDetailService"
+		class="com.mycompany.java.common.service.impl.MyDetailsServiceImpl" />
+
+    <!-- 后台管理权限认证 -->
+    <authentication-manager alias="authenticationManager">
+        <!--<authentication-provider user-service-ref="myDetailsServiceImpl"/>-->
+        <!--定义认证提供接口  -->
+		<authentication-provider user-service-ref="userDetailService">
+			  <!--定义密码加密算法  -->
+			  <!--<password-encoder ref="passwordEncoder">
+    			&lt;!&ndash;定义密码字元，增加密码的安全性  &ndash;&gt;
+    			<salt-source ref="saltSource"/>
+  			 </password-encoder>    -->
+		</authentication-provider>
+		<!--<authentication-provider ref="portalLoginProvider" />-->
+    </authentication-manager>
+
+</beans:beans>

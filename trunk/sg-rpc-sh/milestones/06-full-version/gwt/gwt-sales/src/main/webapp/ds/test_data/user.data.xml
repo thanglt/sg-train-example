@@ -1,0 +1,10 @@
+<List>
+    <user>
+        <id>001</id>
+        <userName>user one</userName>
+    </user>
+    <user>
+        <id>002</id>
+        <userName>user two</userName>
+    </user>
+</List>

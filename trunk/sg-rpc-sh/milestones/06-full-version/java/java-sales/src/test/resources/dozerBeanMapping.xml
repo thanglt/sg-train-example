@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <!--此文件用于定义 Dozer 进行 Entity 和 Dto 之间的自动转换  -->
+    <!--每个mapping定义一组转换-->
+    <!--class-a 定义 server端的 Entity 全路径-->
+    <!--class-b 定义 Client 端的 Dto 全路径-->
+
+    <mapping>
+        <class-a>com.mycompany.java.common.entity.Resource</class-a>
+        <class-b>com.mycompany.gwt.sales.client.dto.ResourceDto</class-b>
+    </mapping>
+
+</mappings>
