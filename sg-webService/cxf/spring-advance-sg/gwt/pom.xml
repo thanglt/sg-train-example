@@ -20,12 +20,14 @@
             <groupId>com.mycompany.webservice.cxf</groupId>
             <artifactId>java</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <classifier>api</classifier>
             <type>jar</type>
         </dependency>
     </dependencies>
 
     <build>
         <!-- Generate compiled stuff in the folder used for developing mode -->
+        <!--suppress MavenModelInspection -->
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
 
         <plugins>

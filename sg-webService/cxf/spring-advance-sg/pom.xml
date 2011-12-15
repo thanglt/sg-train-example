@@ -8,7 +8,8 @@
     <artifactId>spring-advance-sg</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Smart Gwt with SOAP Web Service and XML format (CRUD)</name>
+    <name>Super Pom</name>
+    <description>Smart Gwt with SOAP Web Service and XML format (CRUD)</description>
 
     <modules>
         <module>java</module>
