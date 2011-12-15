@@ -7,12 +7,10 @@
                             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
-    <!--<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>-->
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 
-    <bean id="wsUser" class="com.mycompany.webservice.sample.server.webservice.WsUserServiceImpl">
-        <property name="userService" ref="userServiceImpl"/>
-    </bean>
-    <jaxws:endpoint id="wsUserService" implementor="#wsUser" address="/UserService"/>
+    <jaxws:endpoint id="userServiceEp"
+                    implementor="#wsUserService"
+                    address="/UserService"/>
 
 </beans>

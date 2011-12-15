@@ -8,11 +8,9 @@
 
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
-    <!--<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>-->
 
-    <bean id="wsUser" class="com.mycompany.webservice.sample.server.webservice.WsUserServiceImpl">
-        <property name="userService" ref="userServiceImpl"/>
-    </bean>
-    <jaxws:endpoint id="wsUserService" implementor="#wsUser" address="/UserService"/>
+    <jaxws:endpoint id="userServiceEp"
+                    implementor="#wsUserService"
+                    address="/UserService"/>
 
 </beans>
