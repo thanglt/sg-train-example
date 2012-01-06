@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='myGwt'>
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name='com.smartgwt.SmartGwt' />
+  <inherits name="com.smartclient.theme.enterpriseblue.EnterpriseBlue"/>
+
+  <extend-property name="locale" values="zh"/>
+
+  <entry-point class='com.train.client.myGwt'/>
+  <source path='client'/>
+  <source path='shared'/>
+
+</module>
