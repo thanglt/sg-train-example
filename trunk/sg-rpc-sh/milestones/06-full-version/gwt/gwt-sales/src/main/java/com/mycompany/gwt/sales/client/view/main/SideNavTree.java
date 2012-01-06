@@ -8,6 +8,7 @@ import com.mycompany.gwt.sales.client.dto.MenuNodeDto;
 import com.mycompany.gwt.sales.client.event.ModuleSelectedEvent;
 import com.mycompany.gwt.sales.client.event.ModuleSelectedEventHandler;
 import com.mycompany.gwt.sales.client.event.TreeNodeSelectedEvent;
+import com.smartgwt.client.data.Criteria;
 import com.smartgwt.client.data.Record;
 import com.smartgwt.client.types.SelectionStyle;
 import com.smartgwt.client.types.TreeModelType;
@@ -80,44 +81,44 @@ public class SideNavTree extends TreeGrid {
 
         eventBus.addHandler(ModuleSelectedEvent.TYPE, new ModuleSelectedEventHandler() {
             public void onEvent(ModuleSelectedEvent event) {
-//                String moduleName = event.moduleName;
-//                fetchData(new Criteria("category", moduleName));
+                String moduleName = event.moduleName;
+                fetchData(new Criteria("category", moduleName));
 
-                TreeNode[] data = new TreeNode[2];
-                TreeNode record1 = new TreeNode();
-                record1.setAttribute("id", "test1");
-                record1.setAttribute("isFolder", "1");
-                record1.setAttribute("icon", "icons/bullet_go.png");
-                record1.setAttribute("name", "Test 1");
-                record1.setAttribute("parentId", "root");
-                data[0] = record1;
-
-                TreeNode record2 = new TreeNode();
-                record2.setAttribute("id", "test2");
-                record2.setAttribute("isFolder", "0");
-                record2.setAttribute("icon", "icons/key.png");
-                record2.setAttribute("name", "Test 2");
-                record2.setAttribute("parentId", "test1");
-                data[1] = record2;
-
-                Record record3 = new Record();
-                record3.setAttribute("id", "test2");
-                record3.setAttribute("isFolder", true);
-                record3.setAttribute("icon", "icons/key.png");
-                record3.setAttribute("name", "Test 2");
-                record3.setAttribute("parentId", "root");
-
-//                getData().setData(data);
-                getDataSource().invalidateCache();
-//                getDataSource().addData(record3);
-                MenuNodeDto dto = new MenuNodeDto();
-                dto.setId("test1");
-                dto.setFolder(true);
-                dto.setIcon("icons/key.png");
-                dto.setName("test 1");
-                dto.setParentId("root");
-
-                getDataSource().setCacheData(record3);
+//                TreeNode[] data = new TreeNode[2];
+//                TreeNode record1 = new TreeNode();
+//                record1.setAttribute("id", "test1");
+//                record1.setAttribute("isFolder", "1");
+//                record1.setAttribute("icon", "icons/bullet_go.png");
+//                record1.setAttribute("name", "Test 1");
+//                record1.setAttribute("parentId", "root");
+//                data[0] = record1;
+//
+//                TreeNode record2 = new TreeNode();
+//                record2.setAttribute("id", "test2");
+//                record2.setAttribute("isFolder", "0");
+//                record2.setAttribute("icon", "icons/key.png");
+//                record2.setAttribute("name", "Test 2");
+//                record2.setAttribute("parentId", "test1");
+//                data[1] = record2;
+//
+//                Record record3 = new Record();
+//                record3.setAttribute("id", "test2");
+//                record3.setAttribute("isFolder", true);
+//                record3.setAttribute("icon", "icons/key.png");
+//                record3.setAttribute("name", "Test 2");
+//                record3.setAttribute("parentId", "root");
+//
+////                getData().setData(data);
+//                getDataSource().invalidateCache();
+////                getDataSource().addData(record3);
+//                MenuNodeDto dto = new MenuNodeDto();
+//                dto.setId("test1");
+//                dto.setFolder(true);
+//                dto.setIcon("icons/key.png");
+//                dto.setName("test 1");
+//                dto.setParentId("root");
+//
+//                getDataSource().setCacheData(record3);
 
             }
         });
