@@ -55,6 +55,11 @@
         <url-pattern>/sales/springGwtServices/*</url-pattern>
     </servlet-mapping>
 
+    <!--设置 session 失效时间-->
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
     <welcome-file-list>
         <welcome-file>login.html</welcome-file>
     </welcome-file-list>

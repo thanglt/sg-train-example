@@ -9,6 +9,7 @@
 
     <!-- url 访问权限 -->
     <http auto-config="true" use-expressions="true">
+    <!--<http use-expressions="true">-->
         <form-login login-page="/login.html"
                     login-processing-url="/loginVerify"
                     authentication-success-handler-ref="customAuthenticationSuccessHandler"
@@ -24,12 +25,40 @@
         <intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
         <!-- logout 跳转 url -->
         <logout invalidate-session="true" logout-success-url="/login.html"/>
-        <!-- session 过期跳转 url -->
-        <session-management invalid-session-url="/sessionExpired.html">
-            <!-- 防止用户重复登录 -->
-            <concurrency-control max-sessions="1"/>
+
+        <!-- session 控制 -->
+        <custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter" />
+
+        <session-management
+                session-authentication-error-url="/sessionAuthenticationError.html"
+                invalid-session-url="/sessionExpired.html"
+                session-authentication-strategy-ref="sas">
+            <!-- 防止用户重复登录-->
+            <!--第二次登陆会踢掉第一次登陆 -->
+            <!--<concurrency-control max-sessions="1"/>-->
+            <!--第二次登陆会失败，除非第一次登陆失效 -->
+            <!--<concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>-->
         </session-management>
     </http>
+
+    <!-- session 失效控制 -->
+    <beans:bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">
+        <beans:property name="sessionRegistry" ref="sessionRegistry" />
+        <beans:property name="expiredUrl" value="/sessionExpired.html" />
+    </beans:bean>
+    <!--<beans:bean id="myAuthFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">-->
+        <!--<beans:property name="sessionAuthenticationStrategy" ref="sas" />-->
+        <!--<beans:property name="authenticationManager" ref="authenticationManager" />-->
+    <!--</beans:bean>-->
+    <beans:bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+        <beans:constructor-arg name="sessionRegistry" ref="sessionRegistry" />
+        <beans:property name="maximumSessions" value="1" />
+        <!--true:第二次登陆会失败，除非第一次登陆失效 -->
+        <!--false:第二次登陆会踢掉第一次登陆-->
+        <beans:property name="exceptionIfMaximumExceeded" value="true"/>
+    </beans:bean>
+    <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
+
 
     <!--自定义用户认证类-->
     <beans:bean id="userDetailService"
@@ -54,7 +83,8 @@
     <beans:bean id="customAuthenticationSuccessHandler"
                 class="com.mycompany.java.common.util.CustomAuthenticationSuccessHandler">
         <!--<beans:property name="defaultTargetUrl" value="/success.html"/>-->
-        <beans:property name="defaultTargetUrl" value="/sales.html?gwt.codesvr=127.0.0.1:9997"/>
+        <!--<beans:property name="defaultTargetUrl" value="/sales.html?gwt.codesvr=127.0.0.1:9997"/>-->
+        <beans:property name="defaultTargetUrl" value="/sales.html"/>
         <beans:property name="alwaysUseDefaultTargetUrl" value="true"/>
     </beans:bean>
 
@@ -74,5 +104,4 @@
         <!--最大密码输入错误次数, 否则账号锁定-->
         <beans:property name="maxLoginFailureCount" value="5"/>
     </beans:bean>
-
 </beans:beans>
