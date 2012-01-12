@@ -1,7 +1,10 @@
 package com.mycompany.gwt.common.client;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.rpc.InvocationException;
 import com.mycompany.gwt.common.shared.GenericGwtRpcList;
 import com.smartgwt.client.data.*;
 import com.smartgwt.client.rpc.RPCResponse;
@@ -41,6 +44,9 @@ import java.util.Map;
  */
 public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends GenericGwtRpcServiceAsync<D>>
         extends GwtRpcDataSource {
+
+    private static final String LOGIN_MARKER = "User Login Page"; // the key words which indicate is a session expired error
+    private static final String RELATIVE_LOGIN_URL = "login.html"; //the url to redirect for login
 
     private GenericGwtRpcServiceAsync<D> serviceAsync;
 
@@ -134,8 +140,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
                 criterias,
                 new AsyncCallback<List<D>>() {
                     public void onFailure(Throwable caught) {
-                        response.setStatus(RPCResponse.STATUS_FAILURE);
-                        processResponse(requestId, response);
+                        failureHandler(requestId, response, caught);
                     }
 
                     public void onSuccess(List<D> result) {
@@ -163,6 +168,20 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
                 });
     }
 
+    private void failureHandler(String requestId, DSResponse response, Throwable caught) {
+        SC.clearPrompt();
+        String msg = caught.getMessage();
+        if (caught instanceof InvocationException
+                && msg.indexOf(LOGIN_MARKER) >= 0) {
+            //session expired
+            Window.open(GWT.getHostPageBaseURL() + RELATIVE_LOGIN_URL, "_self", null);
+        } else {
+            SC.warn(msg);
+            response.setStatus(RPCResponse.STATUS_FAILURE);
+            processResponse(requestId, response);
+        }
+    }
+
     @Override
     protected void executeAdd(final String requestId, final DSRequest request,
                               final DSResponse response) {
@@ -174,8 +193,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         SC.showPrompt("data processing...");
         serviceAsync.add(data, new AsyncCallback<D>() {
             public void onFailure(Throwable caught) {
-                response.setStatus(RPCResponse.STATUS_FAILURE);
-                processResponse(requestId, response);
+                failureHandler(requestId, response, caught);
             }
 
             public void onSuccess(D result) {
@@ -198,8 +216,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         SC.showPrompt("data processing...");
         serviceAsync.update(data, new AsyncCallback<D>() {
             public void onFailure(Throwable caught) {
-                response.setStatus(RPCResponse.STATUS_FAILURE);
-                processResponse(requestId, response);
+                failureHandler(requestId, response, caught);
             }
 
             public void onSuccess(D result) {
@@ -215,7 +232,7 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
     @Override
     protected void executeRemove(final String requestId,
                                  final DSRequest request, final DSResponse response) {
-        // Retrieve record which should be removed.
+// Retrieve record which should be removed.
         final R rec = getNewRecordInstance();
         rec.setJsObj(request.getData());
         D data = getNewDataObjectInstance();
@@ -223,14 +240,13 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
         SC.showPrompt("data processing...");
         serviceAsync.remove(data, new AsyncCallback<Void>() {
             public void onFailure(Throwable caught) {
-                response.setStatus(RPCResponse.STATUS_FAILURE);
-                processResponse(requestId, response);
+                failureHandler(requestId, response, caught);
             }
 
             public void onSuccess(Void v) {
                 SC.clearPrompt();
-                // We do not receive removed record from server.
-                // Return record from request.
+// We do not receive removed record from server.
+// Return record from request.
                 response.setData(new Record[]{rec});
                 processResponse(requestId, response);
             }
@@ -241,15 +257,15 @@ public abstract class GenericGwtRpcDataSource<D, R extends Record, SA extends Ge
     private R getEditedRecord(DSRequest request) {
         // Creating new record for combining old values with changes
         R newRecord = getNewRecordInstance();
-        // Retrieving values before edit
+// Retrieving values before edit
         if (request.getOldValues() != null) {
             JavaScriptObject oldValues = request.getOldValues().getJsObj();
-            // Copying properties from old record
+// Copying properties from old record
             JSOHelper.apply(oldValues, newRecord.getJsObj());
         }
         // Retrieving changed values
         JavaScriptObject changedData = request.getData();
-        // Apply changes
+// Apply changes
         JSOHelper.apply(changedData, newRecord.getJsObj());
         return newRecord;
     }
