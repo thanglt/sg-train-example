@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:security="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <!-- beans -->
+    <!--authenticationEntryPoint-->
+    <beans:bean id="authenticationEntryPoint"
+                class="com.mycompany.gwt.sales.server.security.BiztrackAuthenticationEntryPoint"/>
+
+    <!--sessionRegistry-->
+    <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+
+    <!--sessionAuthenticationStrategy-->
+    <beans:bean id="sessionAuthenticationStrategy"
+                class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+        <beans:constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+        <beans:property name="maximumSessions" value="1"/>
+        <!--true:第二次登陆会失败，除非第一次登陆失效 -->
+        <!--false:第二次登陆会踢掉第一次登陆-->
+        <beans:property name="exceptionIfMaximumExceeded" value="false"/>
+    </beans:bean>
+
+    <!--自定义用户认证类-->
+    <beans:bean id="userDetailService"
+                class="com.mycompany.java.common.service.impl.MyDetailsServiceImpl"/>
+
+    <!--<beans:bean id="biztrackAuthenticationSuccessHandler"
+                class="com.mycompany.gwt.sales.server.security.BiztrackAuthenticationSuccessHandler">
+    </beans:bean>-->
+
+    <!--formLoginFilter-->
+    <beans:bean id="formLoginFilter"
+                class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
+        <beans:property name="sessionAuthenticationStrategy" ref="sessionAuthenticationStrategy"/>
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+        <beans:property name="authenticationSuccessHandler" ref="customAuthenticationSuccessHandler"/>
+        <beans:property name="authenticationFailureHandler">
+            <beans:bean class="com.mycompany.gwt.sales.server.security.BiztrackAuthenticationFailureHandler"/>
+        </beans:property>
+        <beans:property name="filterProcessesUrl" value="/loginVerify"/>
+    </beans:bean>
+
+    <!--accessDeniedHandler-->
+    <beans:bean id="accessDeniedHandler"
+                class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+        <beans:property name="errorPage" value="/accessDenied.html"/>
+    </beans:bean>
+
+    <!-- ============================== security ================================= -->
+    <!-- url 访问权限 -->
+    <!--<security:http auto-config="true"-->
+    <!--use-expressions="true"-->
+    <!--entry-point-ref="authenticationEntryPoint">-->
+    <security:http use-expressions="true" entry-point-ref="authenticationEntryPoint">
+        <!--<http use-expressions="true">-->
+        <security:custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter"/>
+        <security:custom-filter position="FORM_LOGIN_FILTER" ref="formLoginFilter"/>
+        <!--<security:form-login login-page="/login.html"-->
+        <!--login-processing-url="/loginVerify"-->
+        <!--authentication-success-handler-ref="customAuthenticationSuccessHandler"-->
+        <!--authentication-failure-handler-ref="customAuthenticationFailureHandler"/>-->
+        <security:anonymous enabled="false"/>
+        <!--匿名可访问-->
+        <security:intercept-url pattern="/sales/sc/IDACall*" access="ROLE_USER"/>
+
+        <!--<security:intercept-url pattern="/login.html" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/failed.html" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/accountDisabled.html" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/accountExpired.html" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/accountLocked.html" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/credentialsExpired.html" access="permitAll"/>-->
+        <!--登录授权可访问-->
+        <!--<security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>-->
+        <!-- logout 跳转 url -->
+        <security:logout invalidate-session="true" logout-success-url="/login.html"/>
+
+        <security:access-denied-handler ref="accessDeniedHandler"/>
+
+        <!-- session 控制 -->
+        <security:session-management
+                session-authentication-error-url="/sessionAuthenticationError.html"
+                invalid-session-url="/sessionExpired.html"
+                session-authentication-strategy-ref="sessionAuthenticationStrategy">
+        </security:session-management>
+    </security:http>
+
+    <!-- session 失效控制 -->
+    <beans:bean id="concurrencyFilter" class="com.mycompany.gwt.sales.server.security.BiztrackConcurrentSessionFilter">
+        <beans:property name="sessionRegistry" ref="sessionRegistry"/>
+        <!--<beans:property name="expiredUrl" value="/sessionExpired.html"/>-->
+        <beans:property name="invalidSessionHandler">
+            <beans:bean class="com.mycompany.gwt.sales.server.security.BiztrackInvalidSessionHandler"/>
+        </beans:property>
+    </beans:bean>
+    <!--<beans:bean id="myAuthFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">-->
+    <!--<beans:property name="sessionAuthenticationStrategy" ref="sas" />-->
+    <!--<beans:property name="authenticationManager" ref="authenticationManager" />-->
+    <!--</beans:bean>-->
+
+    <!-- 后台管理权限认证 -->
+    <security:authentication-manager alias="authenticationManager">
+        <!--定义认证提供接口  -->
+        <security:authentication-provider user-service-ref="userDetailService">
+            <!--定义密码加密算法  -->
+            <!--<password-encoder ref="passwordEncoder">
+                   &lt;!&ndash;定义密码字元，增加密码的安全性  &ndash;&gt;
+                   <salt-source ref="saltSource"/>
+                  </password-encoder>    -->
+        </security:authentication-provider>
+
+    </security:authentication-manager>
+
+    <!--自定义 AuthenticationSuccessHandler-->
+    <!--default-target-url 的值根据本机 gwt:run 给出地址自行替换-->
+    <!--/sales.html?gwt.codesvr=127.0.0.1:9997"-->
+    <beans:bean id="customAuthenticationSuccessHandler"
+                class="com.mycompany.java.common.util.CustomAuthenticationSuccessHandler">
+        <!--<beans:property name="defaultTargetUrl" value="/success.html"/>-->
+        <!--<beans:property name="defaultTargetUrl" value="/sales.html?gwt.codesvr=127.0.0.1:9997"/>-->
+        <beans:property name="defaultTargetUrl" value="/sales.html"/>
+        <beans:property name="alwaysUseDefaultTargetUrl" value="true"/>
+    </beans:bean>
+
+    <!--自定义AuthenticationFailureHandler-->
+    <beans:bean id="customAuthenticationFailureHandler"
+                class="com.mycompany.java.common.util.CustomAuthenticationFailureHandler">
+        <!--密码错误-->
+        <beans:property name="passwordFailureUrl" value="/failed.html"/>
+        <!--账号禁用-->
+        <beans:property name="accountDisabledUrl" value="/accountDisabled.html"/>
+        <!--账号过期-->
+        <beans:property name="accountExpiredUrl" value="/accountExpired.html"/>
+        <!--账号锁定-->
+        <beans:property name="accountLockedUrl" value="/accountLocked.html"/>
+        <!--账号凭证过期-->
+        <beans:property name="credentialsExpiredUrl" value="/credentialsExpired.html"/>
+        <!--最大密码输入错误次数, 否则账号锁定-->
+        <beans:property name="maxLoginFailureCount" value="5"/>
+    </beans:bean>
+</beans:beans>
