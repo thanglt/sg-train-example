@@ -60,7 +60,7 @@ public class OrderServiceRPCServlet implements OrderServiceRPC {
 
         // to implement sorting, use the transfered sortBy String. It contains the field name to sort,
         // preceded by a '-' if the sorting is to be descending.
-        System.out.println("sortBy : " + sortBy);
+//        System.out.println("sortBy : " + sortBy);
 
         // if startRow and endRow are not null, the client wishes paged fetching.
         if (startRow != null && endRow != null) {
