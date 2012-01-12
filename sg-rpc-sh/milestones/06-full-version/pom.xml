@@ -11,14 +11,14 @@
 
     <properties>
         <!--stable versions-->
+        <!--<gwt.version>2.2.0</gwt.version>-->
+        <!--<gwt.plugin.version>2.2.0</gwt.plugin.version>-->
+        <!--<sg.version>2.4</sg.version>-->
+
+        <!--next versions-->
         <gwt.version>2.3.0</gwt.version>
         <gwt.plugin.version>2.3.0</gwt.plugin.version>
         <sg.version>2.5-patch</sg.version>
-
-        <!--next versions-->
-        <!--<gwt.version>2.3.0</gwt.version>-->
-        <!--<gwt.plugin.version>2.3.0-1</gwt.plugin.version>-->
-        <!--<sg.version>2.5</sg.version>-->
 
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>

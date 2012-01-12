@@ -33,11 +33,6 @@
                 session-authentication-error-url="/sessionAuthenticationError.html"
                 invalid-session-url="/sessionExpired.html"
                 session-authentication-strategy-ref="sas">
-            <!-- 防止用户重复登录-->
-            <!--第二次登陆会踢掉第一次登陆 -->
-            <!--<concurrency-control max-sessions="1"/>-->
-            <!--第二次登陆会失败，除非第一次登陆失效 -->
-            <!--<concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>-->
         </session-management>
     </http>
 
@@ -55,7 +50,7 @@
         <beans:property name="maximumSessions" value="1" />
         <!--true:第二次登陆会失败，除非第一次登陆失效 -->
         <!--false:第二次登陆会踢掉第一次登陆-->
-        <beans:property name="exceptionIfMaximumExceeded" value="true"/>
+        <beans:property name="exceptionIfMaximumExceeded" value="false"/>
     </beans:bean>
     <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
 
