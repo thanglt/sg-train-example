@@ -1,0 +1,20 @@
+========================================================
+
+http://forums.smartclient.com/showthread.php?t=6719&page=3
+
+Here is my general steps:
+1.GWT-RPC call (from client)
+2. In server side implementation first thing is: getThreadLocalRequest ().getSession (false)
+3. Exception is thrown if there is no session.
+4. (Client side) onFailure test for this exception type
+5. Open login url with Window.open (GWT.getHostPageBaseURL () + "relative_login_url", "_self", null);
+
+It works.
+
+Step 5 can be replaced with popup login window.
+
+=========================================================
+How TO relogin with SpringSecurity 3.0
+http://forums.smartclient.com/showthread.php?s=a9810ebce7db02d1b32c96f7fdcc0a17&t=9633&highlight=spring+security
+
+
