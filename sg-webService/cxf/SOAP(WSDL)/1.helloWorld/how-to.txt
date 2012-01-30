@@ -1,0 +1,6 @@
+1. mvn clean jetty:run
+2. http://localhost:8888/services
+3. http://localhost:8888/services/HelloWorld/sayHi?name=whatever
+4. http://localhost:8888/services/HelloWorld/getUser?name=whatever
+5. http://localhost:8888/services/HelloWorld/getSimpleList?num=5
+6. http://localhost:8888/services/HelloWorld/getComplexList
