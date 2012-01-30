@@ -264,12 +264,12 @@
         <pluginManagement>
             <plugins>
                 <!-- sql-maven-plugin -->
-                <plugin>
+                <!--<plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>sql-maven-plugin</artifactId>
                     <version>1.5</version>
                     <dependencies>
-                        <!-- specify the dependent JDBC driver here -->
+                        &lt;!&ndash; specify the dependent JDBC driver here &ndash;&gt;
                         <dependency>
                             <groupId>org.apache.derby</groupId>
                             <artifactId>derby</artifactId>
@@ -280,14 +280,14 @@
                         <username>user</username>
                         <password>user</password>
                         <driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
-                        <!--<url>jdbc:derby:${project.build.directory}/derbyDB;create=true</url>-->
+                        &lt;!&ndash;<url>jdbc:derby:${project.build.directory}/derbyDB;create=true</url>&ndash;&gt;
                         <url>jdbc:derby:derbyDB;create=true</url>
-                        <!--all executions are ignored if -Dmaven.test.skip=true-->
-                        <!--<skip>${maven.test.skip}</skip>-->
+                        &lt;!&ndash;all executions are ignored if -Dmaven.test.skip=true&ndash;&gt;
+                        &lt;!&ndash;<skip>${maven.test.skip}</skip>&ndash;&gt;
                         <skip>${skipTests}</skip>
                     </configuration>
                     <executions>
-                        <!--sample executions
+                        &lt;!&ndash;sample executions
                         <execution>
                             <id>drop-db-before-test-if-any</id>
                             <phase>process-test-resources</phase>
@@ -357,10 +357,10 @@
                                 <autocommit>true</autocommit>
                                 <sqlCommand>drop database yourdb</sqlCommand>
                             </configuration>
-                        </execution>  -->
+                        </execution>  &ndash;&gt;
 
                     </executions>
-                </plugin>
+                </plugin>-->
 
             </plugins>
         </pluginManagement>

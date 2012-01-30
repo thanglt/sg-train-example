@@ -1,0 +1,8 @@
+1. mvn clean install
+
+2. cd gwt module, mvn 
+
+3. get wsdl 
+
+4. http://localhost:8081/myGwt.html
+   feel free to use CRUD operation
