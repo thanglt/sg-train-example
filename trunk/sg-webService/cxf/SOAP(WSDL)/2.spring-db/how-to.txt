@@ -1,0 +1,14 @@
+1. mvn clean jetty:run
+
+2. http://localhost:8882/services
+
+3. http://localhost:8082/services/UserService/getList
+
+4. http://localhost:8082/services/UserService/create?name=test&email=test@abc.com
+   http://localhost:8082/services/UserService/getList
+   
+5. http://localhost:8082/services/UserService/update?id={uuid}&name=updatedName&email=updatedEmail@abc.com
+   http://localhost:8082/services/UserService/getList
+
+6. http://localhost:8082/services/UserService/delete?id={uuid}
+   http://localhost:8082/services/UserService/getList
