@@ -9,12 +9,21 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
  * The interface exposed as soap and rest
+ *
  * @ WebService is for soap
  * @ Path is for the rest top path, ,should be the same as cxf-config.xml
+ * @ WebMethod is for SOAP
+ * @ WebParam is for SOAP parameter
+ * @ GET/POST/PUT/DELETE is for REST
+ * @ Path is for the REST service path
+ * @ PathParam is for REST parameter in url
+ * @ FormParam is for REST parameter in form
+ * @ Produces is marked for response type
  */
 
 @WebService
@@ -22,23 +31,14 @@ import javax.ws.rs.core.Response;
 //@Produces("application/xml")
 public interface WsUserService {
 
-
-    /**
-	 * @ WebMethod is for SOAP
-     * @ WebParam is for SOAP parameter
-     *
-	 * @ GET/POST/PUT/DELETE is for REST
-	 * @ Path is for the REST service path
-     * @ PathParam is for REST parameter in url
-     * @ FormParam is for REST parameter in form
-	 */
-	@WebMethod
-	@GET
+    @WebMethod
+    @GET
     @Path("/users/")
+    @Produces({MediaType.APPLICATION_JSON , MediaType.APPLICATION_XML})
     public UserListOutputType getList();
 
     @WebMethod
-	@POST
+    @POST
     @Path("/users/")
     @Consumes("application/x-www-form-urlencoded")
     public Response addUser(
@@ -51,7 +51,7 @@ public interface WsUserService {
             String email);
 
     @WebMethod
-	@POST
+    @POST
     @Path("/users2/")
     public Response addUser2(User user);
 

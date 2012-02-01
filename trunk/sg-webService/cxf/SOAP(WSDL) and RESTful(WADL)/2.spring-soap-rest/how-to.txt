@@ -23,17 +23,14 @@ For SOAP:
 For REST:
 1. mvn clean jetty:run
 
-2. http://localhost:8082/services
-   http://localhost:8082/services/rest/?_wadl&_type=xml
+2. http://localhost:8082/services/
+   http://localhost:8082/services/rest/?_wadl
 
-3. http://localhost:8082/services/rest/userService/
+3. http://localhost:8082/services/rest/userService/users
+   http://localhost:8082/services/rest/userService/users.json (content negotiation)
+   http://localhost:8082/services/rest/userService/users.xml (content negotiation)
 
-
-4. http://localhost:8082/services/rest/?_wadl&_type=xml
-   GET http://localhost:8082/services/rest/customerservice/customers/123
-   GET http://localhost:8082/services/rest/customerservice/orders/223/
-	
-   ps:PUT / DELETE can not test by browser directly
+4. ps:PUT/POST/DELETE can not test by browser directly
    please see TestRestClient.
 
 5. mvn jetty:stop
