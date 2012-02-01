@@ -1,0 +1,42 @@
+======================================================
+For SOAP:
+1. mvn clean jetty:run
+
+2. http://localhost:8082/services
+   http://localhost:8082/services/UserService?wsdl
+
+3. http://localhost:8082/services/UserService/getList
+
+4. http://localhost:8082/services/UserService/create?name=test2&email=email2@asd.com
+   http://localhost:8082/services/UserService/getList
+
+5. http://localhost:8082/services/UserService/update?id={uuid}&name=update2&email=update2@asd.com
+   http://localhost:8082/services/UserService/getList
+
+6. http://localhost:8082/services/UserService/delete?id={uuid}
+   http://localhost:8082/services/UserService/getList
+
+   see TestSoapClient.
+
+7. mvn jetty:stop
+======================================================
+For REST:
+1. mvn clean jetty:run
+
+2. http://localhost:8082/services
+   http://localhost:8082/services/rest/?_wadl&_type=xml
+
+3. http://localhost:8082/services/rest/userService/
+
+
+4. http://localhost:8082/services/rest/?_wadl&_type=xml
+   GET http://localhost:8082/services/rest/customerservice/customers/123
+   GET http://localhost:8082/services/rest/customerservice/orders/223/
+	
+   ps:PUT / DELETE can not test by browser directly
+   please see TestRestClient.
+
+5. mvn jetty:stop
+======================================================
+Thanks to:
+http://fusesource.com/docs/esb/4.2/rest/JAXRSResponseObjectCommon.html
