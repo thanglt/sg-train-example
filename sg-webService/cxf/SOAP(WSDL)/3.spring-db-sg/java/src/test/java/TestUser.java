@@ -31,7 +31,7 @@ public class TestUser extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     public void getList(){
         List list = userService.getList();
-        Assert.assertEquals(1, list.size());
+        Assert.assertTrue(list.size()>0);
     }
 
 }
