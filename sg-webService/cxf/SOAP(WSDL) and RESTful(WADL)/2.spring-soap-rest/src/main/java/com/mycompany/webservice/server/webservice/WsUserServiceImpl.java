@@ -4,6 +4,7 @@ import com.mycompany.webservice.server.entity.User;
 import com.mycompany.webservice.server.service.UserService;
 import com.mycompany.webservice.server.webservice.type.UserListOutputType;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.ws.rs.core.Response;
@@ -37,12 +38,12 @@ public class WsUserServiceImpl implements WsUserService {
     public Response update(User user) {
         User u = userService.getById(user.getId());
         Response r;
-        if(u!=null){
+        if (u != null) {
             u.setName(user.getName());
             u.setEmail(user.getEmail());
             userService.update(u);
             r = Response.ok(u).build();
-        }else{
+        } else {
             r = Response.notModified().build();
         }
         return r;
@@ -51,10 +52,10 @@ public class WsUserServiceImpl implements WsUserService {
     public Response delete(String id) {
         User user = userService.getById(id);
         Response r;
-        if(user!=null){
+        if (user != null) {
             userService.deleteById(id);
             r = Response.ok().build();
-        }else{
+        } else {
             r = Response.notModified().build();
         }
         return r;
