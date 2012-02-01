@@ -1,6 +1,6 @@
 1. mvn clean install
 
-2. cd gwt module, mvn 
+2. cd gwt module, mvn jetty:run
 
 3. get wsdl 
 
