@@ -1,0 +1,20 @@
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-02-02 10:40:39
+project --topLevelPackage com.mycompany.roo
+hint
+jpa setup --provider HIBERNATE --database H2_IN_MEMORY 
+hint
+entity jpa --class com.mycompany.roo.domain.Student --testAutomatically 
+field string --fieldName name --sizeMin 2 --notNull 
+hint
+repository jpa --interface ~.repository.StudentRepo --entity ~.domain.Student
+service --interface ~.service.StudentService --entity ~.domain.Student
+hint
+web gwt setup
+web gwt all --proxyPackage com.mycompany.roo.client.proxy --requestPackage com.mycompany.roo.client.request
+perform tests
+security setup
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-02-02 10:50:01
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-02-02 10:52:50
+hint
+hint topics
